@@ -19,6 +19,15 @@ Rails.application.routes.draw do
   #                          PATCH  /users         devise/registrations#update
   #                          DELETE /users         devise/registrations#destroy
 
+  #     musicians GET    /musicians          musicians#index
+  #               POST   /musicians          musicians#create
+  #  new_musician GET    /musicians/new      musicians#new
+  # edit_musician GET    /musicians/:id/edit musicians#edit
+  #      musician GET    /musicians/:id      musicians#show
+  #               PATCH  /musicians/:id      musicians#update
+  #               PUT    /musicians/:id      musicians#update
+  #               DELETE /musicians/:id      musicians#destroy
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
