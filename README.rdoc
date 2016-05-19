@@ -1,3 +1,30 @@
+  <] Jam Circle Features [>
+
+* Musician Seeker (for gigs, parties, live events, etc.)
+
+  Useful for finding a particular kind of musician at the last minute
+      or for finding a musician to become a part of you're band.
+
+  For example: you might be playing at a Jazz club,
+               but you're bassist is unable to play.
+               With the Musician Seeker, you can easily find another bassist.
+
+  Musician search sortable by:
+    - iclocation, distance, instrument, pre, genre, available time
+
+  Musicians can also search for musician seekers by:
+    - location, distance, price, genre, available time, part-time/full-time
+
+* Jam App, find musicians to jam with, sortable by:
+    - location, distance, instruments, price, genre, available time
+
+* Drum Circle App, a calendar of scheduled drum circles
+
+  - Users can add/delete their own drum circles.
+  - Users can vote on and comment on drum circles.
+
+* Remix Version Control (Git-style music version control system)
+
 In production, make sure to set :host to the actual host of the application in 
   
   config/environments/development.rb:
