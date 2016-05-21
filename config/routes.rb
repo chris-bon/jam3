@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'application#home'
-  resources :musicians
+  resources :profiles
 
   #     new_user_session GET    /users/sign_in  devise/sessions#new
   #         user_session POST   /users/sign_in  devise/sessions#create
@@ -19,14 +19,13 @@ Rails.application.routes.draw do
   #                          PATCH  /users         devise/registrations#update
   #                          DELETE /users         devise/registrations#destroy
 
-  #     musicians GET    /musicians          musicians#index
-  #               POST   /musicians          musicians#create
-  #  new_musician GET    /musicians/new      musicians#new
-  # edit_musician GET    /musicians/:id/edit musicians#edit
-  #      musician GET    /musicians/:id      musicians#show
-  #               PATCH  /musicians/:id      musicians#update
-  #               PUT    /musicians/:id      musicians#update
-  #               DELETE /musicians/:id      musicians#destroy
+  #     profiles GET    /profiles          profiles#index
+  #      profile GET    /profiles/:id      profiles#show
+  #              POST   /profiles          profiles#create
+  #  new_profile GET    /profiles/new      profiles#new
+  # edit_profile GET    /profiles/:id/edit profiles#edit
+  #              PATCH  /profiles/:id      profiles#update
+  #              DELETE /profiles/:id      profiles#destroy
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

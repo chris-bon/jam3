@@ -7,13 +7,10 @@
   For example: you might be playing at a Jazz club, but you're bassist is unable to play. With the Musician Seeker, you can easily find another bassist.
 
   Musician search sortable by:
-    - iclocation, distance, instrument, pre, genre, available time
-
-  Musicians can also search for musician seekers by:
-    - location, distance, price, genre, available time, part-time/full-time
+    - location, distance, instrument, pre, genre, available time
 
 * Jam App, find musicians to jam with, sortable by:
-    - location, distance, instruments, price, genre, available time
+    - location, distance, instruments, genre, available time
 
 * Drum Circle App, a calendar of scheduled drum circles
 
