@@ -4,8 +4,8 @@
       resource, as: resource_name, url: session_path(resource_name)
     ) do |f| %>
   <div class='field'>
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.label :login %> (<em>username or email</em>)<br />
+    <%= f.text_field :login, autofocus: true %>
   </div>
 
   <div class='field'>

@@ -2,12 +2,9 @@
 
 * Musician Seeker (for gigs, parties, live events, etc.)
 
-  Useful for finding a particular kind of musician at the last minute
-      or for finding a musician to become a part of you're band.
+  Useful for finding a particular kind of musician at the last minute or for finding a musician to become a part of you're band.
 
-  For example: you might be playing at a Jazz club,
-               but you're bassist is unable to play.
-               With the Musician Seeker, you can easily find another bassist.
+  For example: you might be playing at a Jazz club, but you're bassist is unable to play. With the Musician Seeker, you can easily find another bassist.
 
   Musician search sortable by:
     - iclocation, distance, instrument, pre, genre, available time
@@ -25,9 +22,10 @@
 
 * Remix Version Control (Git-style music version control system)
 
-In production, make sure to set :host to the actual host of the application in 
-  
-  config/environments/development.rb:
-  
-  config.action_mailer.default_url_options = { host: 'url', port: ? }
+Unfinished Features:
 
+ - Add confirmation email to user registration
+
+In production, make sure to set :host to the actual host of the application in 
+  config/environments/development.rb:
+  config.action_mailer.default_url_options = { host: 'url', port: ? }
