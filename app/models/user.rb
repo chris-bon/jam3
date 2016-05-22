@@ -1,8 +1,8 @@
 class User < ActiveRecord::Base
-  devise :database_authenticatable, :registerable, :recoverable, :rememberable,
-         :trackable, :validatable, :lockable, :timeoutable
-         #:confirmable, :omniauthable
-  
+  attr_accessor :login
+
+  has_one :profile, dependent: :destroy
+
   validates :username,  presence: true, uniqueness: { case_sensitive: false },
                         length: { maximum: 20 }
   validates :email, confirmation: true, uniqueness: { case_sensitive: false },
@@ -11,7 +11,9 @@ class User < ActiveRecord::Base
   validate :username_differs_from_emails
   validate :password_complexity
 
-  attr_accessor :login
+  devise :database_authenticatable, :registerable, :recoverable, :rememberable,
+         :trackable, :validatable, :lockable, :timeoutable
+         #:confirmable, :omniauthable
 
   def self.find_for_database_authentication warden_conditions
     conditions = warden_conditions.dup
