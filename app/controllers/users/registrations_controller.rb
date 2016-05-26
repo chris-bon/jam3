@@ -46,6 +46,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
     new_profile_path
   end
 
+  def after_inactive_sign_up_path_for resource
+    new_profile_path
+  end
+
   def update_resource resource, params
     resource.update_with_password params
   end

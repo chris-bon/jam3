@@ -45,6 +45,7 @@ GEM
     bootstrap-sass (3.3.6)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
+    bootstrap_form (2.3.0)
     builder (3.2.2)
     byebug (9.0.4)
     coffee-rails (4.1.1)
@@ -147,8 +148,6 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (2.0.4)
-    turbolinks (2.5.3)
-      coffee-rails
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uglifier (3.0.0)
@@ -166,6 +165,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-sass
+  bootstrap_form
   byebug
   coffee-rails (~> 4.1.0)
   devise
@@ -178,7 +178,6 @@ DEPENDENCIES
   sdoc (~> 0.4.0)
   seed_dump
   spring
-  turbolinks
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
 
