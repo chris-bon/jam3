@@ -1,29 +1,47 @@
 class ProfilesController < ApplicationController
+  before_action :set_profile, only: [:show, :edit, :update, :destroy]
   # GET /profiles
   def index
   end
 
   # GET /profiles/:id
   def show
+    @username = User.find(params[:id]).username
   end
 
   # GET /profiles/new
   def new
-    flash[:success] = 'New user registered!' if user_signed_in?
-    @profile = Profile.new
+    if Profile.find current_user.id
+      redirect_to profile_path
+    else
+      @profile = Profile.new
+    end
   end
 
   # POST /profiles
   def create
-    new_profile = Profile.create(
-      name: params[:name], age: params[:age], gender: params[:gender],
-      phone_number: params[:phone_number], email: params[:email],
-      location: params[:location], instruments: params[:instruments].downcase,
-      genre: params[:genre], availability: params[:availability], 
-      user_id: current_user.id
-    )
-    User.find_by(current_user.id).update(profile_id: new_profile.id)
-    redirect_to root_path
+    @profile = Profile.new    name: params[:name],      
+                               age: params[:age],   
+                            gender: params[:gender],  
+                      phone_number: params[:phone_number], 
+                             email: params[:email],
+                          location: params[:location],
+                       instruments: params[:instruments].downcase,
+                             genre: params[:genre],
+                      availability: params[:availability], 
+                           user_id: current_user.id 
+    current_user.update profile_id: @profile.id
+    respond_to do |format|
+      if @profile.save
+        format.html { redirect_to root_path, 
+                                  notice: 'Profile was successfully created.' }
+        format.json { render :show, status: :created, location: @profile }
+      else
+        format.html { render :new }
+        format.json { render json: @profile.errors, 
+                             status: :unprocessable_entity }
+      end
+    end
   end
 
   # GET /profiles/:id/edit
@@ -34,7 +52,21 @@ class ProfilesController < ApplicationController
   def update
   end
 
+  # GET /profiles/:id/settings
+  def settings
+  end
+
   # DELETE /profiles/:id
   def destroy
+  end
+
+  private
+
+  def set_profile
+    @profile = Profile.find params[:id]
+  end
+
+  def profile_params
+    params.fetch :profile, {}
   end
 end

@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'application#home'
   devise_for :users, controllers: { registrations: 'users/registrations' }
   resources :profiles
+  get '/profiles/:id/settings' => 'profiles#settings'
 end
 
 =begin      
@@ -9,14 +10,14 @@ end
         user_session  POST    /users/sign_in   devise/sessions#create
 destroy_user_session  DELETE  /users/sign_out  devise/sessions#destroy
 
-     user_password  POST   /users/password       devise/passwords#create
  new_user_password  GET    /users/password/new   devise/passwords#new
+     user_password  POST   /users/password       devise/passwords#create
 edit_user_password  GET    /users/password/edit  devise/passwords#edit
                     PATCH  /users/password       devise/passwords#update
 
 cancel_user_registration  GET     /users/cancel   devise/registrations#cancel
-       user_registration  POST    /users          devise/registrations#create
    new_user_registration  GET     /users/sign_up  devise/registrations#new
+       user_registration  POST    /users          devise/registrations#create
   edit_user_registration  GET     /users/edit     devise/registrations#edit
                           PATCH   /users          devise/registrations#update
                           DELETE  /users          devise/registrations#destroy
