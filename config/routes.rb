@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'application#home'
+  root 'application#index'
   devise_for :users, controllers: { registrations: 'users/registrations' }
   resources :profiles
   get '/profiles/:id/settings' => 'profiles#settings'
