@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'users/registrations' }
   resources :profiles
   get '/profiles/:id/settings' => 'profiles#settings'
+  get '/profiles_test' => 'profiles#test'
 end
 
 =begin      

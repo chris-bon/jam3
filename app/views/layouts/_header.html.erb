@@ -12,34 +12,12 @@
       </button>
       <%= link_to "JamCircle", root_path, class: "navbar-brand" %>
     </div>
-
-    <!-- Nav Links -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active">
-          <%= link_to root_path do %>Link
-            <span class="sr-only">(current)</span>
-          <% end %>
-        </li>
-        <li><%= link_to "Link Name", root_path %></li>
-
-        <!-- Dropdown Menu -->
-        <li class="dropdown">
-          <%= link_to root_path, class: "dropdown-toggle", role: "button",
-                      data: { toggle: "dropdown" },
-                      aria: { haspopup: true, expanded: false } do %>Dropdown 
-            <span class="caret"></span>
-          <% end %>
-          <ul class="dropdown-menu">
-            <li><%= link_to "A link", "/" %></li>
-            <li><%= link_to "Another link", "/" %></li>
-            <li><%= link_to "Yet another link", "/" %></li>
-            <li role="separator" class="divider"></li>
-            <li><%= link_to "A separated link", "/" %></li>
-            <li role="separator" class="divider"></li>
-            <li><%= link_to "Another separated link", "/" %></li>
-          </ul>
-        </li> 
+        <li class="<%= 'active' if current_page? profiles_path %>">
+          <%= link_to "Musician Seeker", profiles_path %></li>
+        <li class="<%= 'active' if current_page? '/profiles_test' %>">
+          <%= link_to "Jam Seeker", "/profiles_test" %></li>
       </ul>
 
       <!-- Search Bar -->

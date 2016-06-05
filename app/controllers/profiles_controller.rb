@@ -1,12 +1,18 @@
 class ProfilesController < ApplicationController
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
+  
+  # GET /profiles_test
+  def test
+  end
+
   # GET /profiles
   def index
+    @profiles = Profile.all
   end
 
   # GET /profiles/:id
   def show
-    @username = User.find(params[:id]).username
+    @profile = Profile.find params[:id]
   end
 
   # GET /profiles/new
