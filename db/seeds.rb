@@ -1,11 +1,12 @@
 =begin
-     User = { profile_id: integer,     username: string, email: string,
-                password: string,        password_confirmation: string }
+     User = { profile_id: integer,     
+                username: string, email: string,
+                password: string, password_confirmation: string }
 
-  Profile = {    user_id: integer,         name: string,   age: integer, 
-                  gender: string,  phone_number: string, email: string, 
-                location: string,   instruments: string, genre: string,
-            availability: string }
+  Profile = {    user_id: integer,
+                    name: string,   age: integer,      gender: string,  
+            phone_number: string, email: string,     location: string,   
+             instruments: string, genre: string, availability: string }
 =end
 
 Faker::Config.locale = 'en-US'
@@ -40,7 +41,7 @@ genres = ['alternative', 'blues', 'children', 'classical', 'country',
 num_gen = [1,1,1,1,1,1,1,1,2,2,2,2,3,3,4]
 
 # User Attribute Data Generation
-(2..999).each do |n|
+(1..999).each do |n|
   # Name
   name = 'name'
   while names.include? name do
@@ -50,7 +51,7 @@ num_gen = [1,1,1,1,1,1,1,1,2,2,2,2,3,3,4]
   end
   names << name
 
-  email = Faker::Internet.safe_email(name.split.join)
+  email = Faker::Internet.safe_email name.split.join
 
   phone_number = ''
   while phone_numbers.include? phone_number do
