@@ -9,22 +9,6 @@ $scope.setup = function() {
   });
 }
 
-// $scope.addProfile = function(name, email) {
-//   var profile = {name: name, email: email}
-//   $http.post('profiles.json', profile).then(function(response) {
-//     $scope.profiles.push(response.data);
-//   }, function(error) {
-//     $scope.errors = error.data.errors;
-//   });
-// }
-
-// $scope.deleteProfile = function(profile) {
-//   $http.delete('api/v1/profiles/' + profile.id + '.json').then(function(response) {
-//     var index = $scope.profiles.indexOf(profile);
-//     $scope.profiles.splice(index, 1);
-//   });
-// }
-
 $scope.toggleOrder = function(attribute) {
   if(attribute != $scope.orderAttribute) {
     $scope.descending = false;

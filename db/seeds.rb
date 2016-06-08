@@ -9,23 +9,23 @@
              instruments: string, genre: string, availability: string }
 =end
 
-# Admin
-User.create  profile_id: 1, 
-               username: 'admin',
-                  email: 'chrisbon315@gmail.com',
-               password: 'Qwert1',
-  password_confirmation: 'Qwert1' 
+# # Admin
+# User.create  profile_id: 1, 
+#                username: 'admin',
+#                   email: 'chrisbon315@gmail.com',
+#                password: 'Qwert1',
+#   password_confirmation: 'Qwert1' 
 
-# Create Profile
-Profile.create  user_id: 1,
-                   name: 'Chris Bon',
-                    age: 27,
-                 gender: 'Male',
-           phone_number: '(650) 449-6622',
-               location: 'San Leandro',
-            instruments: 'guitar, keyboard',
-                  genre: 'jazz, trip hop, indie',
-           availability: '24/7'
+# # Create Profile
+# Profile.create  user_id: 1,
+#                    name: 'Chris Bon',
+#                     age: 27,
+#                  gender: 'Male',
+#            phone_number: '(650) 449-6622',
+#                location: 'San Leandro',
+#             instruments: 'guitar, keyboard',
+#                   genre: 'jazz, trip hop, indie',
+#            availability: '24/7'
 
 Faker::Config.locale = 'en-US'
 
@@ -90,7 +90,7 @@ random_num_gen = [1,1,1,1,1,1,1,1,2,2,2,2,3,3,4]
   genres_array = []
   num = random_num_gen.sample
   while genres_array.size < num
-    genre = genres_array.sample
+    genre = genres.sample
     genres_array << genre unless genres_array.include? genre
   end
 

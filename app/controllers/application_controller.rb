@@ -5,8 +5,25 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   
   def frontpage
-    
   end
+
+  def about
+  end
+
+  def contact
+  end
+
+  ##### Under Construction! #####
+  # GET '/jamseeker'
+  def jamseeker
+  end
+  # GET '/drumcircles'
+  def drumcircles
+  end
+  # GET '/remixes'
+  def remixes
+  end
+  ###############################
 
   protected
   

@@ -1,41 +1,50 @@
-<div class="container">
+<div ng-app="app" ng-controller="profileCtrl" ng-init="setup()">
+<ul>
+  <li ng-repeat="error in errors">{{ error }}</li>
+</ul>
 
-
-<div class="input-group">
-  <span class="input-group-addon" id="basic-addon1">@</span>
-  <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+<!-- <div>
+  Name: <input ng-model="newPersonName">
+  <button ng-click="addPerson(newPersonName, newPersonBio)">Add Person</button>
 </div>
+<label>Filter by Name:</label> -->
 
-<div class="input-group">
-  <input type="text" class="form-control" placeholder="Recipient's username" aria-describedby="basic-addon2">
-  <span class="input-group-addon" id="basic-addon2">@example.com</span>
-</div>
-
-<div class="input-group">
-  <span class="input-group-addon">$</span>
-  <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-  <span class="input-group-addon">.00</span>
-</div>
-
-<label for="basic-url">Your vanity URL</label>
+<datalist id="names">
+  <option ng-repeat="person in people">{{ person.name }}</option>
+</datalist>
 
 
-<div class="input-group">
-  <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
-  <div class="btn-group" role="group" aria-label="...">
-  <a href="/profiles/musicians"><button type="button" class="btn btn-default">Search</button></a>
-</div>
+Filter by name: <input ng-model="nameFilter" list="names">
 
+<table class="table table-hover">
+<tr>
+<th><a href="#" ng-click="toggleOrder('id')">ID</a></th>
+<th><a href="#" ng-click="toggleOrder('username')">Username</a></th>
+<th><a href="#" ng-click="toggleOrder('email')">Email</a></th>
+<th><a href="#" ng-click="toggleOrder('name')">Name</a></th>
+<th><a href="#" ng-click="toggleOrder('age')">Age</a></th>
+<th>Gender</th>
+<th>Phone Number</th>
 
-<!-- Search Bar -->
-<%= form_tag "/profiles/musicians", class: "input-group", method: "get" do %>
-  <div class="form-group">
-    <%= search_field_tag "search", nil, class: "form-control", 
-                                  placeholder: "Search musicians" %>
-  </div>
-  <%= submit_tag "Search", class: "btn btn-default" %>
-<% end %>
+<th><a href="#" ng-click="toggleOrder('location')">Location</a></th>
+<th><a href="#" ng-click="toggleOrder('instruments')">Instruments</a></th>
+<th><a href="#" ng-click="toggleOrder('genre')">Genre</a></th>
+<th><a href="#" ng-click="toggleOrder('availability')">Availability</a></th>
+</tr>
 
-
-</div>
+<tr ng-repeat="user_profile in user_profiles | filter: nameFilter | 
+               orderBy: orderAttribute:descending">
+<td>{{user_profile.profile.id}}</td>
+<td>{{user_profile.user.username}}</td>
+<td>{{user_profile.user.email}}</td>
+<td>{{user_profile.profile.name}}</td>
+<td>{{user_profile.profile.age}}</td>
+<td>{{user_profile.profile.gender}}</td>
+<td>{{user_profile.profile.phone_number}}</td>
+<td>{{user_profile.profile.location}}</td>
+<td>{{array_to_list(user_profile.profile.instruments)}}</td>
+<td>{{user_profile.profile.genre}}</td>
+<td>{{user_profile.profile.availability}}</td>
+</tr>
+</table>
 </div>

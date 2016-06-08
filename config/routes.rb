@@ -1,11 +1,22 @@
 Rails.application.routes.draw do
+  # Front Pages
   root 'application#frontpage'
+  get  '/about'   => 'application#about'
+  get  '/contact' => 'application#contact'
+
+  # User
   devise_for :users, controllers: { registrations: 'users/registrations' }
+
+  # Profile
   resources :profiles
   get '/profiles/:id/settings' => 'profiles#settings'
-  get '/profiles/musicians' => 'profiles#musicians'
-  get '/profiles_test' => 'profiles#test'
+  get '/profiles/musicians'    => 'profiles#musicians'
 
+  # Apps
+  get '/musicseeker' => 'application#musicseeker'
+  get '/jamseeker'   => 'application#jamseeker'
+  get '/drumcircles' => 'application#drumcircles'
+  get '/remixes'     => 'application#remixes'
 end
 
 =begin      
