@@ -1,65 +1,41 @@
-<div ng-app="app" ng-controller="profileCtrl" ng-init="setup()">
-<ul>
-  <li ng-repeat="error in errors">{{ error }}</li>
-</ul>
-<table class="table table-hover">
-<tr>
-<th><a href="#" ng-click="toggleOrder('id')">ID</a></th>
-<th><a href="#" ng-click="toggleOrder('username')">Username</a></th>
-<th><a href="#" ng-click="toggleOrder('email')">Email</a></th>
-<th><a href="#" ng-click="toggleOrder('name')">Name</a></th>
-<th><a href="#" ng-click="toggleOrder('age')">Age</a></th>
-<th>Gender</th>
-<th>Phone Number</th>
+<div class="container">
 
-<th><a href="#" ng-click="toggleOrder('location')">Location</a></th>
-<th><a href="#" ng-click="toggleOrder('instruments')">Instruments</a></th>
-<th><a href="#" ng-click="toggleOrder('genre')">Genre</a></th>
-<th><a href="#" ng-click="toggleOrder('availability')">Availability</a></th>
-</tr>
 
-<tr ng-repeat="user_profile in user_profiles | orderBy: orderAttribute:descending">
-<td>{{user_profile.profile.id}}</td>
-<td>{{user_profile.user.username}}</td>
-<td>{{user_profile.user.email}}</td>
-<td>{{user_profile.profile.name}}</td>
-<td>{{user_profile.profile.age}}</td>
-<td>{{user_profile.profile.gender}}</td>
-<td>{{user_profile.profile.phone_number}}</td>
-<td>{{user_profile.profile.location}}</td>
-<td>{{user_profile.profile.instruments}}</td>
-<td>{{user_profile.profile.genre}}</td>
-<td>{{user_profile.profile.availability}}</td>
-</tr>
-</table>
-<!-- <p>
-  First Name<input ng-model="firstName">
-  Last Name<input ng-model="lastName">
-  Email<input ng-model="email">
-  <button ng-click="addEmployee(lastName, firstName, email)">Add Employee</button>
-</p>
-<p>
-  First Name<input ng-model="firstNameFilter">
-</p>
-<table>
-  <tr>
-    <th ng-click="toggleOrder("first_name")">First Name</th>
-    <th ng-click="toggleOrder("last_name")">Last Name</th>
-    <th ng-click="toggleOrder("email")">Email</th>
-    <th ng-click="toggleOrder("birthday")">Birthdate</th>
-    <th ng-click="toggleOrder("ssn")">SSN</th>
-    <th>Delete this Entry</th>
-  </tr>
-  <tr ng-repeat="employee in employees | 
-                filter: {first_name: firstNameFilter} | 
-                orderBy: orderAttribute:purpleHippo">
-    <td>{{ employee.first_name}}</td>
-    <td>{{ employee.last_name}}</td>
-    <td>{{ employee.email}}</td>
-    <td>{{ employee.birthday}}</td>
-    <td>{{ employee.ssn}}</td>
-    <td><button ng-click="deleteEmployee(employee)">Delete</button></td>
-  </tr>
-</table> -->
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">@</span>
+  <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+</div>
 
+<div class="input-group">
+  <input type="text" class="form-control" placeholder="Recipient's username" aria-describedby="basic-addon2">
+  <span class="input-group-addon" id="basic-addon2">@example.com</span>
+</div>
+
+<div class="input-group">
+  <span class="input-group-addon">$</span>
+  <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+  <span class="input-group-addon">.00</span>
+</div>
+
+<label for="basic-url">Your vanity URL</label>
+
+
+<div class="input-group">
+  <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+  <div class="btn-group" role="group" aria-label="...">
+  <a href="/profiles/musicians"><button type="button" class="btn btn-default">Search</button></a>
+</div>
+
+
+<!-- Search Bar -->
+<%= form_tag "/profiles/musicians", class: "input-group", method: "get" do %>
+  <div class="form-group">
+    <%= search_field_tag "search", nil, class: "form-control", 
+                                  placeholder: "Search musicians" %>
+  </div>
+  <%= submit_tag "Search", class: "btn btn-default" %>
+<% end %>
+
+
+</div>
 </div>

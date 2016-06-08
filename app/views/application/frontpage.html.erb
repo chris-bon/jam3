@@ -1,0 +1,64 @@
+<!DOCTYPE html><html lang="en">
+<body>
+<header>
+  <h1><br /><br />JamCircle</h1>
+  <p>Musician finding web app for jam seekers and music lovers.</p><br />
+  <a href="#apps" class="btn btn-primary btn-xl page-scroll">Go to Apps</a>
+</header>
+<section class="no-padding" id="apps"><div class="container-fluid">
+<div class="row">
+  <div class="col-lg-12"><hr /></div>
+  <div class="col-lg-6 col-sm-6 text-center">
+    <h4>Musician Seeker</h4>
+    <p class="text-muted">
+      Need a bassist for an upcoming jazz gig?
+      Looking for a new banjo player for your blues band? 
+      Find a musician for any style or genre!</p></div>
+  <div class="col-lg-6 col-sm-6 text-center">
+    <h4>Jam Seeker</h4>
+    <p class="text-muted"><i>(Under construction!)</i><br />
+      Find someone to jam with and meet new people!</p></div></div>
+<div class="row no-gutter">
+  <div class="col-lg-6 col-sm-6">
+    <%= link_to "/profiles", class: "app-box" do %>
+      <%= image_tag "strum.jpg", class: "img-responsive" %>
+      <div class="app-box-caption">
+        <div class="app-box-caption-content">
+          <div class="project-name">Musician Seeker</div></div></div><% end %>
+  </div>
+  <div class="col-lg-6 col-sm-6">
+    <%= link_to "/profiles_test", class: "app-box" do %>
+      <%= image_tag "harp.jpg", class: "img-responsive" %>
+      <div class="app-box-caption">
+        <div class="app-box-caption-content">
+          <div class="project-name">Jam Seeker</div></div></div><% end %></div>
+</div>
+<div class="row"><div class="col-lg-12"><hr /><div></div>
+<div class="row">
+  <div class="col-lg-6 col-sm-6 text-center">
+    <h4>Drum Circles</h4>
+    <p class="text-muted"><i>(Under construction!)</i><br />
+    Find drum circles in your area! Put up your own drum circle listings!
+    These open jam sessions are open to anyone who wants to play music, sing,
+    or dance!</p>
+  </div>
+  <div class="col-lg-6 col-sm-6 text-center">
+    <h4>Remix Version Control</h4>
+    <p class="text-muted"><i>(Under construction!)</i><br />
+      Open-source music hosting, sharing, and editing.</p></div></div>
+<div class="row no-gutter">
+  <div class="col-lg-6 col-sm-6">
+    <%= link_to "/profiles_test", class: "app-box" do %>
+      <%= image_tag "drumfire.jpg", class: "img-responsive" %>
+      <div class="app-box-caption">
+        <div class="app-box-caption-content">
+          <div class="project-name">Drum Circles</div></div></div><% end %>
+  </div>
+  <div class="col-lg-6 col-sm-6">
+    <%= link_to "/profiles_test", class: "app-box" do %>
+      <%= image_tag "hole.jpg", class: "img-responsive" %>
+      <div class="app-box-caption">
+        <div class="app-box-caption-content">
+          <div class="project-name">Remix Version Control</div></div></div>
+    <%end%></div></div>
+</section></body></html>

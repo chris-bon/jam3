@@ -2,11 +2,12 @@
 
 // Override variables here
 // $textColor: #000;
+$alert-padding: 0px;
+$alertMarginBottom: 0px;
 
 @import "bootswatch/cyborg/variables";
 @import "bootstrap";
 
-// padding for fixed navbar
-body { padding-top: 60px; }
+// body { padding-top: 0px; }  // padding for fixed navbar
 
 @import "bootswatch/cerulean/bootswatch";

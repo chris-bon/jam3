@@ -9,6 +9,24 @@
              instruments: string, genre: string, availability: string }
 =end
 
+# Admin
+User.create  profile_id: 1, 
+               username: 'admin',
+                  email: 'chrisbon315@gmail.com',
+               password: 'Qwert1',
+  password_confirmation: 'Qwert1' 
+
+# Create Profile
+Profile.create  user_id: 1,
+                   name: 'Chris Bon',
+                    age: 27,
+                 gender: 'Male',
+           phone_number: '(650) 449-6622',
+               location: 'San Leandro',
+            instruments: 'guitar, keyboard',
+                  genre: 'jazz, trip hop, indie',
+           availability: '24/7'
+
 Faker::Config.locale = 'en-US'
 
 # User Attributes Array Initialization
@@ -38,10 +56,10 @@ genres = ['alternative', 'blues', 'children', 'classical', 'country',
           'christian', 'j-pop', 'k-pop', 'jazz', 'new age', 'opera', 'pop', 
           'r&b', 'reggae', 'rock', 'punk', 'folk', 'vocal', 'world']
 
-num_gen = [1,1,1,1,1,1,1,1,2,2,2,2,3,3,4]
+random_num_gen = [1,1,1,1,1,1,1,1,2,2,2,2,3,3,4]
 
 # User Attribute Data Generation
-(1..999).each do |n|
+(2..99).each do |n|
   # Name
   name = 'name'
   while names.include? name do
@@ -62,22 +80,21 @@ num_gen = [1,1,1,1,1,1,1,1,2,2,2,2,3,3,4]
   end
   phone_numbers << phone_number
 
-  user_instruments = []
-  num = num_gen.sample
-  while user_instruments.size < num
+  instruments_array = []
+  num = random_num_gen.sample
+  while instruments_array.size < num
     instrument = instruments.sample
-    user_instruments << instrument unless user_instruments.include? instrument
+    instruments_array << instrument unless instruments_array.include? instrument
   end
 
-  user_genres = []
-  num = num_gen.sample
-  while user_genres.size < num
-    genre = genres.sample
-    user_genres << genre unless user_genres.include? genre
+  genres_array = []
+  num = random_num_gen.sample
+  while genres_array.size < num
+    genre = genres_array.sample
+    genres_array << genre unless genres_array.include? genre
   end
 
-  days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].shuffle
-  availability = days[0..rand(7)]
+  days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].shuffle[0..rand(7)]
 
   # Create User
   User.create  profile_id: n, 
@@ -94,7 +111,7 @@ num_gen = [1,1,1,1,1,1,1,1,2,2,2,2,3,3,4]
              phone_number: phone_number,
                     email: email,
                  location: Faker::Address.city,
-              instruments: user_instruments,
-                    genre: user_genres,
-             availability: availability
+              instruments: instruments_array.join(', '),
+                    genre: genres_array.join(', '),
+             availability: days.join(', ')
 end

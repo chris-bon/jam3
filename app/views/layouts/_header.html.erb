@@ -1,56 +1,47 @@
-<nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" 
-              data-toggle="collapse" 
-              data-target="#bs-example-navbar-collapse-1" 
-              aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <%= link_to "JamCircle", root_path, class: "navbar-brand" %>
-    </div>
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="<%= 'active' if current_page? profiles_path %>">
-          <%= link_to "Musician Seeker", profiles_path %></li>
-        <li class="<%= 'active' if current_page? '/profiles_test' %>">
-          <%= link_to "Jam Seeker", "/profiles_test" %></li>
-      </ul>
+<!-- Custom Fonts -->
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' 
+      rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' 
+      rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" 
+      type="text/css">
 
-      <!-- Search Bar -->
-      <%= form_tag "/", class: "navbar-form navbar-left", method: "get" do %>
-        <div class="form-group">
-          <%= search_field_tag "search", nil, class: "form-control", 
-                                        placeholder: "Search musicians" %>
-        </div>
-        <%= submit_tag "Submit", class: "btn btn-default" %>
+<nav class="navbar navbar-default navbar-fixed-top">
+<div class="container-fluid">
+<ul class="nav navbar-nav">
+  <li class=<%= "active" if current_page? root_path %>>
+    <%= link_to "JamCircle", root_path, class: "navbar-brand" %></li>
+  <li>
+    <%= image_tag "note-circle.gif", height: "52" %></li>
+  <li class=<%= 'active' if current_page? profiles_path %>>
+    <%= link_to "Musician Seeker", profiles_path %></li>
+  <li class=<%= 'active' if current_page? '/profiles_test' %>>
+    <%= link_to "Jam Seeker", "/profiles_test" %></li>
+  <li class=<%= 'active' if current_page? '/profiles_test' %>>
+    <%= link_to "Drum Circles", "/profiles_test" %></li>
+</ul>
+
+<!-- User Registration/Login/Logout -->
+<ul class="nav navbar-nav navbar-right">
+  <% if user_signed_in? %>
+    <li class="dropdown">
+      <%= link_to root_path, class: "dropdown-toggle", role: "button",
+                  data: { toggle: "dropdown" },
+                  aria: { haspopup: true, expanded: false } do %>
+        <%= current_user.username %> <span class="caret"></span>
       <% end %>
-
-      <!-- User Sign-Up/In/Out -->
-      <ul class="nav navbar-nav navbar-right">
-        <% if user_signed_in? %>
-          <li class="dropdown">
-            <%= link_to root_path, class: "dropdown-toggle", role: "button",
-                        data: { toggle: "dropdown" },
-                        aria: { haspopup: true, expanded: false } do %>
-              <%= current_user.username %> <span class="caret"></span>
-            <% end %>
-            <ul class="dropdown-menu">
-              <li><%= link_to "Profile", "/profiles/#{current_user.id}" %></li>
-              <li><%= link_to "Settings", "/settings" %></li>
-              <li role="separator" class="divider"></li>
-              <li><%= link_to "Sign Out", destroy_user_session_path, 
-                              method: "delete" %></li>
-            </ul>
-          </li>
-        <% else %>
-          <li><%= link_to "Sign In",  new_user_session_path %></li>
-          <li><%= link_to "Register", new_user_registration_path %></li>
-        <% end %>
-      </ul> 
-    </div>
-  </div>
+      <ul class="dropdown-menu">
+        <li><%= link_to "Profile", "/profiles/#{current_user.id}" %></li>
+        <li><%= link_to "Settings", "/settings" %></li>
+        <li role="separator" class="divider"></li>
+        <li><%= link_to "Sign Out", destroy_user_session_path, 
+                        method: "delete" %></li>
+      </ul>
+    </li>
+  <% else %>
+    <li><%= link_to "Sign In",  new_user_session_path %></li>
+    <li><%= link_to "Register", new_user_registration_path %></li>
+  <% end %>
+</ul> 
+</div>
 </nav>

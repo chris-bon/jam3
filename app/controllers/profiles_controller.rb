@@ -15,6 +15,11 @@ class ProfilesController < ApplicationController
     @profile = Profile.find params[:id]
   end
 
+  # GET /profiles/musicians
+  def musicians
+    @profiles = Profile.all
+  end
+
   # GET /profiles/new
   def new
     if Profile.find current_user.id
@@ -39,8 +44,7 @@ class ProfilesController < ApplicationController
     current_user.update profile_id: @profile.id
     respond_to do |format|
       if @profile.save
-        format.html { redirect_to root_path, 
-                                  notice: 'Profile was successfully created.' }
+        format.html { redirect_to root_path, notice: 'New profile created!' }
         format.json { render :show, status: :created, location: @profile }
       else
         format.html { render :new }
