@@ -1,6 +1,7 @@
 class ProfilesController < ApplicationController
+  skip_before_action :verify_authenticity_token
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
-  
+
   # GET /profiles_test
   def test
   end

@@ -1,0 +1,55 @@
+<div class="container" style="text-align:center;">
+  <h1>Musician Seeker</h1>
+  <p><em>You don't have to fill out the form to search, but you will get better 
+         search results if you fill in more input fields.</em></p><br />
+
+<form class="form-inline" role="form" method="get" action="/musicians_index">
+<div class="form-group">
+  <!-- Name -->
+  <label for="name">Name </label>
+  <input type="name" class="form-control" id="name" />
+  <!-- Age -->
+  <fieldset class="form-group">
+    <label for="age">Age</label>
+    <select class="form-control" id="age">
+      <% (10..99).each do |age| %><option><%= age %></option><% end %>
+    </select>
+  </fieldset>
+  <!-- Gender -->
+  <div class="radio-inline">
+    <label>
+      <input type="radio" name="genderRadio" id="gender" value="male" />Male
+    </label>
+  </div>
+  <div class="radio-inline">
+    <label>
+      <input type="radio" name="genderRadio" id="gender" value="female" /> 
+        Female
+    </label>
+  </div>
+</div><br /><br />
+
+<div class="form-group">
+  <!-- Location -->
+  <label for="location">Location </label>
+  <input type="location" class="form-control" id="location"
+         placeholder="City, State" />
+  <label for="phone_number">Phone Number</label>
+  <input type="email" class="form-control" id="phone_number"
+         placeholder="(   )    -    " />
+</div><br /><br />
+
+<div class="form-group">
+  <label for="genre">Genres </label>
+  <input type="genre" class="form-control" id="genre"
+         placeholder="Genre" />
+  <label for="availability">Availability</label>
+  <input type="availability" class="form-control" id="availability"
+         placeholder="e.g., Sat, Sun, Mon" />
+</div><br /><br />
+
+<div class="form-group">
+  <button type="submit" class="btn btn-primary">Search Musicians 
+    <span class="glyphicon glyphicon-search"></span>
+  </button>
+</div></form></div>

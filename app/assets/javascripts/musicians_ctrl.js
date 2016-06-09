@@ -1,11 +1,9 @@
-(function() {
-'use strict';
-angular.module('app').controller(
-  'profileCtrl', ['$scope', '$http', function($scope, $http) {
+(function() { 'use strict'; angular.module('app')
+.controller('musiciansCtrl', ['$scope', '$http', function($scope, $http) {
 
 $scope.setup = function() {
   $http.get('/profiles.json').then(function(response) {
-    $scope.user_profiles = response.data;
+    $scope.musicians = response.data;
   });
 }
 

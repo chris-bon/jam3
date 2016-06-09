@@ -1,5 +1,5 @@
-<nav class="navbar navbar-default navbar-fixed-top">
-<div class="container-fluid">
+<nav class="navbar navbar-default navbar-fixed-top" ng-app="app">
+<div class="container-fluid" ng-controller="headerCtrl">
 <ul class="nav navbar-nav">
   <li class="dropdown"><li class=<%="active" if current_page? root_path%>>
     <%= link_to "#", class: ["navbar-brand", "dropdown-toggle"], 
@@ -11,22 +11,33 @@
       <li><%= link_to "About Me", '/about' %></li>
       <li><%= link_to "Contact Me!", '/contact' %></li>
       <li role="separator" class="divider"></li>
-      <li><a href="#">Separated link</a></li>
-    </ul>
-  </li></li>
+      <li><a href="/timeline">Future App Updates</a></li>
+    </ul></li></li>
 
-  <li>
-    <%= image_tag "note-circle.gif", height: "52" do %><%= link_to "#" %><% end %></li>
+
+
+
+
+  <li ng-click="toggleIcon = !toggleIcon">
+    <a href="#" ng-class="toggleIcon ? 'icon-circle' : 'icon-seizure'">
+    <%= image_tag "note-circle.gif", height: "52" do %>
+      <% end %></a></li>
+  <li> stuff {{1 + 2}}</li>
   <li class=<%= 'active' if current_page? profiles_path %>>
-    <%= link_to "MusicianSeeker", profiles_path %></li>
-  <li class=<%= 'active' if current_page? '/jamseeker' %>>
-    <%= link_to "JamSeeker", "/jamseeker" %></li>
-  <li class=<%= 'active' if current_page? '/drumcircles' %>>
-    <%= link_to "DrumCircles", "/drumcircles" %></li>
-  <li class=<%= 'active' if current_page? '/remixes' %>>
-    <%= link_to "RmxVersionCtrl", "/remixes" %></li>
-</ul>
-
+    <%= link_to "MusicianSeeker", '/musician_seeker' %></li>
+  <li class="dropdown">
+    <%= link_to "#", class: "dropdown-toggle", role: "button",
+                     data: { "toggle" => "dropdown" },
+                     aria: { "haspopup" => "true", "expanded" => "false" } do %>
+      Unfinished Apps <span class="caret"></span><% end %>
+    <ul class="dropdown-menu">
+      <li class=<%= 'active' if current_page? '/jam_seeker' %>>
+        <%= link_to "JamSeeker", "/jamseeker" %></li>
+      <li class=<%= 'active' if current_page? '/drum_circles' %>>
+        <%= link_to "DrumCircles", "/drumcircles" %></li>
+      <li class=<%= 'active' if current_page? '/remixes' %>>
+        <%= link_to "RmxVersionCtrl", "/remixes" %></li></ul></li></ul>
+        
 <!-- User Registration/Login/Logout -->
 <ul class="nav navbar-nav navbar-right">
   <% if user_signed_in? %>
@@ -34,20 +45,14 @@
       <%= link_to root_path, class: "dropdown-toggle", role: "button",
                   data: { toggle: "dropdown" },
                   aria: { haspopup: true, expanded: false } do %>
-        <%= current_user.username %> <span class="caret"></span>
-      <% end %>
+        <%= current_user.username %> <span class="caret"></span><% end %>
       <ul class="dropdown-menu">
         <li><%= link_to "Profile", "/profiles/#{current_user.id}" %></li>
         <li><%= link_to "Settings", "/settings" %></li>
         <li role="separator" class="divider"></li>
         <li><%= link_to "LogOut", destroy_user_session_path, 
-                        method: "delete" %></li>
-      </ul>
-    </li>
+                                  method: "delete" %></li></ul></li>
   <% else %>
     <li><%= link_to "LogIn",  new_user_session_path %></li>
-    <li><%= link_to "Register", new_user_registration_path %></li>
-  <% end %>
-</ul> 
-</div>
-</nav>
+    <li><%= link_to "Register", new_user_registration_path %></li><% end %></ul> 
+</div></nav>
