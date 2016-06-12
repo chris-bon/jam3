@@ -1,4 +1,4 @@
-/*!
+     /*!
  * Creative v1.0.4 (http://startbootstrap.com/template-overviews/creative)
  * Copyright 2013-2016 Start Bootstrap
  * Licensed under MIT
@@ -26,7 +26,7 @@ aside { padding: 50px 0; }
 .navbar-default .nav > li.active > a:focus:hover {
   background-color: transparent; }
 header { position: relative; width: 100%; background-size: cover;
-         background-position: center; background-image: url('guitarist.jpg');
+         background-position: center; background: image-url('guitarist.jpg');
          text-align: center; padding: 100px 0px 100px; }
 .section-heading { margin-top: 0; }
 @media (min-width: 100px) {}.app-box { position: relative; display: block;
