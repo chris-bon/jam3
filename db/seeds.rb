@@ -1,35 +1,21 @@
-=begin
-     User = { profile_id: integer,     
-                username: string, email: string,
-                password: string, password_confirmation: string }
-
-  Profile = {    user_id: integer,
-                    name: string,   age: integer,      gender: string,  
-            phone_number: string, email: string,     location: string,   
-             instruments: string, genre: string, availability: string }
-=end
-
-# # Admin
-# User.create  profile_id: 1, 
-#                username: 'admin',
-#                   email: 'chrisbon315@gmail.com',
-#                password: 'Qwert1',
-#   password_confirmation: 'Qwert1' 
-
-# # Create Profile
-# Profile.create  user_id: 1,
-#                    name: 'Chris Bon',
-#                     age: 27,
-#                  gender: 'Male',
-#            phone_number: '(650) 449-6622',
-#                location: 'San Leandro',
-#             instruments: 'guitar, keyboard',
-#                   genre: 'jazz, trip hop, indie',
-#            availability: '24/7'
-
 Faker::Config.locale = 'en-US'
 
-# User Attributes Array Initialization
+User.create  profile_id: 1, 
+               username: 'admin',
+                  email: 'chrisbon315@gmail.com',
+               password: 'Qwert1',
+  password_confirmation: 'Qwert1' 
+Profile.create  user_id: 1,
+                   name: 'Chris Bon',
+                    age: 27,
+                 gender: 'Male',
+           phone_number: '(650) 449-6622',
+               location: 'San Leandro',
+            instruments: 'guitar, keyboard',
+                  genre: 'jazz, trip hop, indie',
+           availability: '24/7'
+
+# Initialize User Attributes Array
 names = ['name']
 
 ages = []
@@ -109,7 +95,6 @@ random_num_gen = [1,1,1,1,1,1,1,1,2,2,2,2,3,3,4]
                       age: ages.sample,
                    gender: ['Male', 'Female'].sample,
              phone_number: phone_number,
-                    email: email,
                  location: Faker::Address.city,
               instruments: instruments_array.join(', '),
                     genre: genres_array.join(', '),
