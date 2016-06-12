@@ -3,11 +3,13 @@ class User < ActiveRecord::Base
 
   has_one :profile, dependent: :destroy
 
-  validates :username,  presence: true, uniqueness: { case_sensitive: false },
-                        length: { maximum: 20 }
-  validates :email, confirmation: true, uniqueness: { case_sensitive: false },
-                        length: { maximum: 40 }, 
-                        format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }
+  validates :email, format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i },
+                       uniqueness: { case_sensitive: false }, 
+                           length: { maximum: 40 }, confirmation: true
+
+  validates :username, uniqueness: { case_sensitive: false }, 
+                           length: { maximum: 20 }, presence: true   
+
   validate :username_differs_from_emails
   validate :password_complexity
 
@@ -20,8 +22,7 @@ class User < ActiveRecord::Base
     if login = conditions.delete(:login)
       where(conditions.to_hash).where([
         "lower(username) = :value OR lower(email) = :value",
-        { value: login.downcase }
-      ]).first
+        { value: login.downcase }]).first
     elsif conditions.has_key?(:username) || conditions.has_key?(:email)
       conditions[:email].downcase! if conditions[:email]
       where(conditions.to_hash).first
@@ -29,12 +30,13 @@ class User < ActiveRecord::Base
   end
 
   def username_differs_from_emails
-    errors.add :username, :invalid if User.where(email: username).exists?
+    errors.add(:username, :invalid) if User.where(email: username).exists?
   end
 
   def password_complexity
     complexity_regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/
-    error_message = 'must include at least one lowercase letter, one uppercase letter, and one digit'
+    error_message =
+      'password must have a lowercase letter, an uppercase letter, and a digit'
     if password.present? && !password.match(complexity_regex)
       errors.add :password, error_message
     end
