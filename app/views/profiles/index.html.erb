@@ -1,50 +1,42 @@
-<div ng-app="app" ng-controller="musiciansCtrl" ng-init="setup()">
+<div ng-app="app"><div ng-controller="musiciansCtrl" ng-init="setup()">
 <ul>
   <li ng-repeat="error in errors">{{ error }}</li>
 </ul>
 
-<!-- <div>
-  Name: <input ng-model="newPersonName">
-  <button ng-click="addPerson(newPersonName, newPersonBio)">Add Person</button>
-</div>
-<label>Filter by Name:</label> -->
-
 <datalist id="names">
-  <option ng-repeat="musician in musicians">{{ musician.name }}</option>
+  <option ng-repeat="profile in profiles">{{ profile.name }}</option>
 </datalist>
-
 
 Filter by name: <input ng-model="nameFilter" list="names">
 
 <table class="table table-hover">
 <tr>
-<th><a href="#" ng-click="toggleOrder('id')">ID</a></th>
-<th><a href="#" ng-click="toggleOrder('username')">Username</a></th>
-<th><a href="#" ng-click="toggleOrder('email')">Email</a></th>
-<th><a href="#" ng-click="toggleOrder('name')">Name</a></th>
-<th><a href="#" ng-click="toggleOrder('age')">Age</a></th>
-<th>Gender</th>
-<th>Phone Number</th>
-
-<th><a href="#" ng-click="toggleOrder('location')">Location</a></th>
-<th><a href="#" ng-click="toggleOrder('instruments')">Instruments</a></th>
-<th><a href="#" ng-click="toggleOrder('genre')">Genre</a></th>
-<th><a href="#" ng-click="toggleOrder('availability')">Availability</a></th>
+  <!-- th><a href="#" ng-click="toggleOrder('id')">ID</a></th -->
+  <th><a href="#" ng-click="toggleOrder('username')">Username</a></th>
+  <th><a href="#" ng-click="toggleOrder('email')">Email</a></th>
+  <th><a href="#" ng-click="toggleOrder('name')">Name</a></th>
+  <th><a href="#" ng-click="toggleOrder('age')">Age</a></th>
+  <th>Gender</th>
+  <th>Phone Number</th>
+  <th><a href="#" ng-click="toggleOrder('location')">Location</a></th>
+  <th><a href="#" ng-click="toggleOrder('instruments')">Instruments</a></th>
+  <th><a href="#" ng-click="toggleOrder('genre')">Genre</a></th>
+  <th><a href="#" ng-click="toggleOrder('availability')">Availability</a></th>
 </tr>
-
-<tr ng-repeat="musician in musicians | filter: nameFilter | 
-               orderBy: orderAttribute:descending">
-<td>{{musician.profile.id}}</td>
-<td>{{musician.user.username}}</td>
-<td>{{musician.user.email}}</td>
-<td>{{musician.profile.name}}</td>
-<td>{{musician.profile.age}}</td>
-<td>{{musician.profile.gender}}</td>
-<td>{{musician.profile.phone_number}}</td>
-<td>{{musician.profile.location}}</td>
-<td>{{array_to_list(musician.profile.instruments)}}</td>
-<td>{{musician.profile.genre}}</td>
-<td>{{musician.profile.availability}}</td>
+<tr ng-repeat="profile in profiles | filter: nameFilter | 
+               orderBy: orderAttribute:descending"
+    ng-if="profile.user.username != 'admin'">
+  <!-- td>{{profile.user.id}}</td -->
+  <td>{{profile.user.username}}</td>
+  <td>{{profile.user.email}}</td>
+  <td>{{profile.profile.name}}</td>
+  <td>{{profile.profile.age}}</td>
+  <td>{{profile.profile.gender}}</td>
+  <td>{{profile.profile.phone_number}}</td>
+  <td>{{profile.profile.location}}</td>
+  <td>{{array_to_list(profile.profile.instruments)}}</td>
+  <td>{{profile.profile.genre}}</td>
+  <td>{{profile.profile.availability}}</td>
 </tr>
 </table>
-</div>
+</div></div>

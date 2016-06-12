@@ -2,10 +2,6 @@ class ProfilesController < ApplicationController
   skip_before_action :verify_authenticity_token
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
 
-  # GET /profiles_test
-  def test
-  end
-
   # GET /profiles
   def index
     @profiles = Profile.all
@@ -14,11 +10,6 @@ class ProfilesController < ApplicationController
   # GET /profiles/:id
   def show
     @profile = Profile.find params[:id]
-  end
-
-  # GET /profiles/musicians
-  def musicians
-    @profiles = Profile.all
   end
 
   # GET /profiles/new

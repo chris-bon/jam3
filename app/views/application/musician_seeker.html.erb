@@ -1,9 +1,9 @@
 <div class="container" style="text-align:center;">
-  <h1>Musician Seeker</h1>
-  <p><em>You don't have to fill out the form to search, but you will get better 
-         search results if you fill in more input fields.</em></p><br />
 
-<form class="form-inline" role="form" method="get" action="/musicians_index">
+  <h1>Musician Seeker</h1><br />
+
+<%= form_tag "/profiles", class: "form-inline", role: "form", method: :get do %>
+
 <div class="form-group">
   <!-- Name -->
   <label for="name">Name </label>
@@ -52,4 +52,14 @@
   <button type="submit" class="btn btn-primary">Search Musicians 
     <span class="glyphicon glyphicon-search"></span>
   </button>
-</div></form></div>
+</div>
+
+<% end %>
+
+<!-- %= button_tag class: "btn btn-primary" do %>
+  <%= link_to "/profiles" do %>Search musicians
+    <span class="glyphicon glyphicon-search"></span>
+  <% end %>
+<% end % -->
+
+</div>

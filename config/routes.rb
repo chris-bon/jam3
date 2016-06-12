@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  # Front Pages
+  # Home
   root 'application#frontpage'
   get '/about'    => 'application#about'
   get '/contact'  => 'application#contact'
