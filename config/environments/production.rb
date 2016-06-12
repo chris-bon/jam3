@@ -61,7 +61,7 @@ Rails.application.configure do
   # config.action_controller.asset_host = 'http://assets.example.com'
 
   config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  #config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
