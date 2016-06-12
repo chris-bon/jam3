@@ -175,6 +175,7 @@ DEPENDENCIES
   autoprefixer-rails
   bootstrap-sass
   bootswatch-rails
+  bundler (= 1.12.5)
   byebug
   coffee-rails (~> 4.1.0)
   devise
