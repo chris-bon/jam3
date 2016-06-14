@@ -1,4 +1,6 @@
-  <] Harmony Features [>
+  { philosonic.heroku.com }=> PhiloSonic <={ github.com/chris-bon/philosonic }
+
+  <] Features [>
 
 * Musician Seeker
 
