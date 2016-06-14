@@ -1,63 +1,75 @@
-<!DOCTYPE html><html lang="en">
-<body>
+<!DOCTYPE html><html lang="en"><body><br /><br />
+
 <header>
-  <h1><br /><br />JamCircle</h1>
+  <h1>JamCircle</h1>
   <p>Musician finding web app for jam seekers and music lovers.</p><br />
-  <a href="#apps" class="btn btn-primary btn-xl page-scroll">Go to Apps</a>
+  <%= link_to 'Go to Apps', '#apps',
+              class: 'btn btn-primary btn-xl page-scroll' %>
 </header>
+
 <section class="no-padding" id="apps"><div class="container-fluid">
+
 <div class="row">
   <div class="col-lg-12"><hr /></div>
-  <div class="col-lg-6 col-sm-6 text-center">
+
+  <div class="col-lg-4 col-sm-4 text-center">
     <h4>Musician Seeker</h4>
     <p class="text-muted">
-      Need a bassist for an upcoming jazz gig?
-      Looking for a new banjo player for your blues band? 
-      Find a musician for any style or genre!</p></div>
-  <div class="col-lg-6 col-sm-6 text-center">
-    <h4>Jam Seeker</h4>
-    <p class="text-muted"><em>(Under construction!)</em><br />
-      Find someone to jam with and meet new people!</p></div></div>
-<div class="row no-gutter">
-  <div class="col-lg-6 col-sm-6">
-    <%= link_to "/musician_seeker", class: "app-box" do %>
-      <%= image_tag "strum.jpg", class: "img-responsive" %>
-      <div class="app-box-caption">
-        <div class="app-box-caption-content">
-          <div class="app-name">Musician Seeker</div></div></div><% end %></div>
-  <div class="col-lg-6 col-sm-6">
-    <%= link_to "/profiles_test", class: "app-box" do %>
-      <%= image_tag "harp.jpg", class: "img-responsive" %>
-      <div class="app-box-caption">
-        <div class="app-box-caption-content">
-          <div class="app-name">Jam Seeker</div></div></div><% end %></div>
-</div>
-<div class="row"><div class="col-lg-12"><hr /><div></div>
-<div class="row">
-  <div class="col-lg-6 col-sm-6 text-center">
+      Find a musician with similar interests to jam with or search for someone who plays a specific instrument or style to join your band or group.</p>
+  </div>
+
+  <div class="col-lg-4 col-sm-4 text-center">
     <h4>Drum Circles</h4>
     <p class="text-muted"><em>(Under construction!)</em><br />
     Find drum circles in your area! Put up your own drum circle listings!
     These open jam sessions are open to anyone who wants to play music, sing,
     or dance!</p>
   </div>
-  <div class="col-lg-6 col-sm-6 text-center">
-    <h4>Remix Version Control</h4>
+
+  <div class="col-lg-4 col-sm-4 text-center">
+    <h4>Forum</h4>
     <p class="text-muted"><em>(Under construction!)</em><br />
-      Open-source music hosting, sharing, and editing.</p></div></div>
-<div class="row no-gutter">
-  <div class="col-lg-6 col-sm-6">
-    <%= link_to "/profiles_test", class: "app-box" do %>
-      <%= image_tag "drumfire.jpg", class: "img-responsive" %>
-      <div class="app-box-caption">
-        <div class="app-box-caption-content">
-          <div class="app-name">Drum Circles</div></div></div><% end %>
+      Share your experiences or just say hello, we all love music!
+    </p>
   </div>
-  <div class="col-lg-6 col-sm-6">
-    <%= link_to "/profiles_test", class: "app-box" do %>
-      <%= image_tag "hole.jpg", class: "img-responsive" %>
-      <div class="app-box-caption">
-        <div class="app-box-caption-content">
-          <div class="app-name">Remix Version Control</div></div></div>
-    <%end%></div></div>
-</section></body></html>
+</div>
+
+<div class="row no-gutter">
+  <div class="col-lg-4 col-sm-4">
+    <%= link_to '/musician_seeker', class: 'app-box' do %>
+      <%= image_tag 'strum.jpg', class: 'img-responsive' %>
+      <div class="app-box-caption"><div class="app-box-caption-content">
+        <div class="app-name">Musician Seeker</div>
+      </div></div>
+    <% end %>
+  </div>
+
+  <div class="col-lg-4 col-sm-4">
+    <%= link_to '/profiles_test', class: 'app-box' do %>
+      <%= image_tag 'harp.jpg', class: 'img-responsive' %>
+      <div class="app-box-caption"><div class="app-box-caption-content">
+        <div class="app-name">Jam Seeker</div>
+      </div></div>
+    <% end %>
+  </div>
+
+  <div class="col-lg-4 col-sm-4">
+    <%= link_to '/profiles_test', class: 'app-box' do %>
+      <%= image_tag 'drumfire.jpg', class: 'img-responsive' %>
+      <div class="app-box-caption"><div class="app-box-caption-content">
+        <div class="app-name">Drum Circles</div>
+      </div></div>
+    <% end %>
+  </div>
+
+  <div class="col-lg-4 col-sm-4">
+    <%= link_to '/profiles_test', class: 'app-box' do %>
+      <%= image_tag 'hole.jpg', class: 'img-responsive' %>
+      <div class="app-box-caption"><div class="app-box-caption-content">
+        <div class="app-name">Forum</div>
+      </div></div>
+    <%end%>
+  </div>
+</div>
+
+</section></div></body></html>

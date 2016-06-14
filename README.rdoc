@@ -1,4 +1,4 @@
-  { philosonic.heroku.com }=> PhiloSonic <={ github.com/chris-bon/philosonic }
+  { circlejam.heroku.com }=> JamCircle <={ github.com/chris-bon/jam }
 
   <] Features [>
 
@@ -9,8 +9,10 @@
   Search for musicians based on:
     - location, distance, instrument, genre, available time
 
-* Drum Circle App (plan on finishing by June 15)
+* Drum Circle App (finish June 15)
 
   - Find drum circles in your area using Google Maps API.
 
-* Forums and Chatting (plan on finishing by July)
+* Forum (finish by July)
+
+* Instant Message (finish by July)
