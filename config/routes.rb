@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   get '/musician_seeker' => 'application#musician_seeker'
   get '/musicians_index' => 'application#musicians_index'
 
-  # Jam Seeker
+  # Philosonic Seeker
   get '/jam_seeker'   => 'application#jam_seeker'
 
   # Drum Circle Seeker
