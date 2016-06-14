@@ -32,16 +32,15 @@ instruments = []
 6.times { instruments << 'piano' }
 4.times { instruments << 'drums' }
 3.times { instruments << 'bass guitar' }
-2.times { instruments += ['saxophone', 'violin'] }
-instruments += ['clarinet', 'flute', 'trumpet', 'trombone', 'ukelele', 'bass',
-                'banjo', 'sitar', 'harmonica', 'vocals', 'accordion', 'oboe',
-                'other', 'cello', 'bassoon', 'bagpipe']
-
-genres = ['alternative', 'blues', 'children', 'classical', 'country', 
-          'electronica', 'euro', 'hip hop', 'holiday', 'indie', 'industrial',
-          'christian', 'j-pop', 'k-pop', 'jazz', 'new age', 'opera', 'pop', 
-          'r&b', 'reggae', 'rock', 'punk', 'folk', 'vocal', 'world']
-
+2.times { instruments += ['saxophone','violin'] }
+instruments += [
+  'oboe','cello','flute','trumpet','bagpipe','trombone','harmonica','vocals',
+  'bass','banjo','sitar','ukelele','bassoon','clarinet','accordion'
+]
+genres = [ 'r&b','jazz','punk','k-pop','world','reggae','new age',
+           'pop','euro','rock','j-pop','indie','vocals','country',
+           'opera','classical','alternative','industrial',
+           'blues','christian','electronica','folk' ]
 random_num_gen = [1,1,1,1,1,1,1,1,2,2,2,2,3,3,4]
 
 # User Attribute Data Generation
