@@ -1,11 +1,5 @@
-     /*!
- * Creative v1.0.4 (http://startbootstrap.com/template-overviews/creative)
- * Copyright 2013-2016 Start Bootstrap
- * Licensed under MIT
- * https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE
- */
 html, body { height: 100%; width: 100%; 
-             font-family: 'Merriweather', 'Helvetica Neue', Arial, sans-serif;}
+             font-family: 'Merriweather', 'Helvetica Neue', Arial, sans-serif; }
 hr { border-color: #00ffff; border-width: 3px; max-width: 10000px; }
 hr.light { border-color: white; }
 a { transition: all 0.35s; color: #f05f40; }
@@ -26,8 +20,9 @@ aside { padding: 50px 0; }
 .navbar-default .nav > li.active > a:focus:hover {
   background-color: transparent; }
 header { position: relative; width: 100%; background-size: cover;
-         background-position: center; background: image-url('guitarist.jpg');
-         text-align: center; padding: 100px 0px 100px; }
+         background-position: center; padding: 100px 0px 100px;
+         background-image: url("gathering.jpeg"); text-align: center; 
+         text-color: #663300; }
 .section-heading { margin-top: 0; }
 @media (min-width: 100px) {}.app-box { position: relative; display: block;
   max-width: 1000px; margin: 0 auto; }
@@ -35,8 +30,8 @@ header { position: relative; width: 100%; background-size: cover;
   color: white; opacity: 0; display: block; 
   background: rgba(225, 95, 64, 0.9); position: absolute; bottom: 0;
   text-align: center; width: 100%; height: 100%; transition: all 0.35s; }
-.app-box .app-box-caption .app-box-caption-content { width: 100%; 
-  text-align: center; position: absolute; top: 50%; transform: translateY(-50%)}
+.app-box .app-box-caption .app-box-caption-content { width: 100%; top: 50%;
+  text-align: center; position: absolute; transform: translateY(-50%) }
 .app-box .app-box-caption .app-box-caption-content,
 .app-box .app-box-caption .app-box-caption-content .app-name {
   font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif; padding: 0 15px; }

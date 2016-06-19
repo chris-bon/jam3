@@ -1,0 +1,48 @@
+<div class="container" style="text-align:center;">
+
+<% title 'Contact Me' %>
+
+<h1 class="page-title">Send Me A Message!</h1>
+
+<div class="row"><div class="col-sm-6">
+
+<%= content_tag :p, 'Use this form to send me an e-mail!' %>
+
+<%= form_tag email_path, method: 'post', 
+                                      html: { role: 'form' } do %>
+<div class="form-group">
+  <%= label_tag :name, 'Your name' %>
+  <div class="row"><div class="col-xs-12">
+    <%= text_field_tag :name, @name, placeholder: 'Enter your name...', 
+                                     autofocus: true, class: 'form-control' %>
+  </div></div>
+</div>
+
+<div class="form-group">
+  <%= label_tag :email, 'Your email' %>
+  <div class="row"><div class="col-xs-12">
+    <%= text_field_tag :email, @email, placeholder: 'Enter your email...',
+                                       class: 'form-control' %>
+  </div></div>
+</div>
+
+<div class="form-group">
+  <%= label_tag :message, 'Your message' %>
+  <div class="row"><div class="col-xs-12">
+  <%= text_area_tag :message, @message, placeholder: 'Enter your message...', 
+                                        rows: 10, class: 'form-control' %>
+  </div></div>
+</div>
+
+<div class="row"><div class="col-xs-12 padded">
+  <button class="btn btn-primary"><i class="fa fa-envelope"></i> Send</button>
+</div></div>
+
+<% end %>
+
+<%= content_tag :p, 'Chris Bon - chrisbon315@gmail.com' %>
+<%= content_tag :p, 'circlejam.heroku.com' %>
+
+<%= content_tag :p, 'Github: ' %><%= link_to 'github.com/chris-bon' %>
+<%= content_tag :p, 'LinkedIn: ' %><%= link_to 'linked-in.com/in/bonchris' %>
+</div></div></div>

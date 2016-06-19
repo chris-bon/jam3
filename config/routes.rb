@@ -1,4 +1,16 @@
 Rails.application.routes.draw do
+  get 'pages/about'
+
+  get 'pages/contact'
+
+  get 'pages/email'
+
+  get 'pages/homepage'
+
+  get 'pages/settings'
+
+  get 'pages/timeline'
+
   # Home
   root 'application#frontpage'
   get '/about'    => 'application#about'
