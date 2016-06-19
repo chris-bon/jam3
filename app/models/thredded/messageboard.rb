@@ -2,21 +2,21 @@
 module Thredded
   class Messageboard < ActiveRecord::Base
     extend FriendlyId
-    friendly_id :slug_candidates,
-                use:            [:slugged, :reserved],
-                # Avoid route conflicts
-                reserved_words: ::Thredded::FriendlyIdReservedWordsAndPagination.new(
-                  %w(
-                    admin
-                    autocomplete-users
-                    messageboards
-                    posts
-                    preferences
-                    private-posts
-                    private-topics
-                    theme-preview
-                  )
-                )
+    # friendly_id :slug_candidates,
+    #             use:            [:slugged, :reserved],
+    #             # Avoid route conflicts
+    #             reserved_words: ::Thredded::FriendlyIdReservedWordsAndPagination.new(
+    #               %w(
+    #                 admin
+    #                 autocomplete-users
+    #                 messageboards
+    #                 posts
+    #                 preferences
+    #                 private-posts
+    #                 private-topics
+    #                 theme-preview
+    #               )
+    #             )
 
    # validates :name, uniqueness: true, length: { maximum: 60 }, presence: true
    # validates :topics_count, numericality: true

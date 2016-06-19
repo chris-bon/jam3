@@ -4,7 +4,7 @@ ruby '2.3.1'
 # Required
 gem 'rails',   '4.2.6'
 gem 'bundler', '1.12.5'
-gem 'tzinfo-data', platforms: [:mingw, :mswin]  # Windows compatibility
+# gem 'tzinfo-data', platforms: [:mingw, :mswin]  # Windows compatibility
 
 # Database
 gem 'pg', '~> 0.15'          # Postgres plug-in for Rails
