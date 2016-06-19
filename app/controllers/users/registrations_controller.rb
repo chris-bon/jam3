@@ -10,6 +10,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     super
+    Profile.create!(user_id: current_user.id)
   end
 
   # GET /resource/edit
@@ -43,7 +44,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   def after_sign_up_path_for resource
-    edit_profile_path
+    '/musician_seeker'
   end
 
   # def after_inactive_sign_up_path_for resource
