@@ -16,6 +16,6 @@
 //= require angular
 //= require angular-animate
 //= require underscore
-//= require gmaps/google
+// require gmaps/google
 //= require app
 //= require_tree .

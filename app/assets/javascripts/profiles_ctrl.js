@@ -1,13 +1,16 @@
 (function() {'use strict'; 
 angular.module('app')
-.controller('musiciansCtrl', ['$scope', '$http', function($scope, $http) {
+.controller('profilesCtrl', ['$scope', '$http', function($scope, $http) {
 
-  $scope.setup = function() {
+  // $scope.setup = function() {
 
-    $http.get('/profiles.json').then(function(response) {
-      $scope.profiles = response.data;
-    });
-  };
+  //   $http.get('/profiles.json').then(function(response) {
+  //     $scope.profiles = response.data;
+  //   });
+  // };
+
+  $scope.profs = @profs;
+
   $scope.toggleOrder = function(attribute) {
 
     if(attribute != $scope.orderAttribute) {

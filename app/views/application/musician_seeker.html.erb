@@ -1,6 +1,6 @@
 <div class="container" style="text-align:center;">
 
-  <h1>Musician Seeker</h1><br />
+<h1>Musician Seeker</h1><br />
 
 <%= form_tag "/profiles", class: "form-inline", role: "form", method: :get do %>
 
@@ -12,6 +12,7 @@
   <fieldset class="form-group">
     <label for="age">Age</label>
     <select class="form-control" id="age">
+      <option></option>
       <% (10..99).each do |age| %><option><%= age %></option><% end %>
     </select>
   </fieldset>
@@ -55,11 +56,5 @@
 </div>
 
 <% end %>
-
-<!-- %= button_tag class: "btn btn-primary" do %>
-  <%= link_to "/profiles" do %>Search musicians
-    <span class="glyphicon glyphicon-search"></span>
-  <% end %>
-<% end % -->
 
 </div>

@@ -8,28 +8,22 @@ module Thredded
 
     # @param user [Thredded.user_class, Thredded::NullUser]
     # @return [String] path to the user as specified by {Thredded.user_path}
-    def user_path(user)
-      Thredded.user_path(self, user)
+    def user_path user
+      Thredded.user_path self, user
     end
 
     # @param topic [Topic, PrivateTopic, UserTopicDecorator, UserPrivateTopicDecorator]
     # @return [String]
-    def topic_url(topic, params = {})
+    def topic_url topic, params = {}
       if params[:page] == 1
         params = params.dup
-        params.delete(:page)
+        params.delete :page
       end
+      
       if topic.private?
-        private_topic_url(
-          topic.slug,
-          params
-        )
+        private_topic_url topic.slug, params
       else
-        messageboard_topic_url(
-          topic.messageboard.slug,
-          topic.slug,
-          params
-        )
+        messageboard_topic_url topic.messageboard.slug, topic.slug, params
       end
     end
 

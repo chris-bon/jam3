@@ -4,15 +4,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   skip_before_action :verify_authenticity_token
   before_action :configure_permitted_parameters, if: :devise_controller?
-  
-  def frontpage
-  end
-  def about
-  end
-  def contact
-  end
-  def timeline
-  end
 
   # GET '/musician_seeker'  # Musician search form
   def musician_seeker

@@ -38,25 +38,25 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   protected
 
-  def sign_up resource_name, resource
-    sign_in resource_name, resource
-  end
+  # def sign_up resource_name, resource
+  #   sign_in resource_name, resource
+  # end
 
   def after_sign_up_path_for resource
-    new_profile_path
+    edit_profile_path
   end
 
-  def after_inactive_sign_up_path_for resource
-    new_profile_path
-  end
+  # def after_inactive_sign_up_path_for resource
+  #   new_profile_path
+  # end
 
-  def update_resource resource, params
-    resource.update_with_password params
-  end
+  # def update_resource resource, params
+  #   resource.update_with_password params
+  # end
 
-  def after_update_path_for resource
-    signed_in_root_path resource
-  end
+  # def after_update_path_for resource
+  #   signed_in_root_path resource
+  # end
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_up_params

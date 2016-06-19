@@ -1,1 +1,1 @@
-json.musician @profile
+json.profile @profile

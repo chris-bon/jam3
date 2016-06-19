@@ -1,5 +1,7 @@
-<nav class="navbar navbar-default navbar-fixed-top" ng-app="app">
-<div class="container-fluid" style="padding-left:0px;">
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+<div class="container-fluid" style="padding-left:0px;" ng-app="app">
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <div class="navbar-inner">  
 <ul class="nav navbar-nav" ng-controller="navbarCtrl">
 
 <li style="padding-right:15px;">
@@ -17,10 +19,8 @@
     <% end %>
     <ul class="dropdown-menu">
       <li><%= link_to 'Homepage', root_path %></li>
-      <li><%= link_to 'About Me', about_path %></li>
+      <li><%= link_to 'About', about_path %></li>
       <li><%= link_to 'Contact Me', contact_path %></li>
-      <li role="separator" class="divider"></li>
-      <li><%= link_to 'Future App Updates', timeline_path %></li>
     </ul>
   </li>
 </li>
@@ -36,7 +36,7 @@
 <li class="<%= 'active' if current_page? '/forum' %>">
   <%= link_to 'Forum', '/forum' %>
 </li>
-      
+</ul>
 <!-- User Registration/Login/Logout -->
 <ul class="nav navbar-nav navbar-right">
 
@@ -49,9 +49,9 @@
 
     <ul class="dropdown-menu">
       <li><%= link_to 'Profile',  
-                      "/profiles/#{current_user.profile.id}" %></li>
-      <li><%= link_to 'Settings', 
-                      "profiles/#{current_user.profile.id}/settings" %></li>
+                      "/profiles/#{current_user.profile.id}/edit" %></li>
+<!--       <li><%# link_to 'Settings', 
+                      "profiles/#{current_user.profile.id}/edit" %></li> -->
       <li role="separator" class="divider"></li>
       <li><%= link_to 'Sign Out', destroy_user_session_path, 
                       method: 'delete' %></li>
@@ -63,5 +63,6 @@
   <li class="<%= 'active' if current_page? new_user_registration_path %>">
     <%= link_to 'Register', new_user_registration_path %></li>
 <% end %>
-
-</ul></div></nav>
+</ul></div>
+</div></div>
+</div></nav>

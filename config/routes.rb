@@ -10,21 +10,22 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'users/registrations' }
   
   # Profiles
-  get    '/profiles'          => 'profiles#index',  as: 'profiles'
-  get    '/profiles/:id'      => 'profiles#show',   as: 'profile'
-  # Create
-  get    '/profiles/new'      => 'profiles#new',    as: 'new_profile'
-  post   '/profiles'          => 'profiles#create'
-  # Edit
-  get    '/profiles/:id/edit' => 'profiles#edit',   as: 'edit_profile'
-  patch  '/profiles/:id'      => 'profiles#update'
-  # Delete
-  delete '/profiles/:id'      => 'profiles#destroy'
+  resources :profiles
+  # get    '/profiles'          => 'profiles#index',  as: 'profiles'
+  # get    '/profiles/:id'      => 'profiles#show',   as: 'profile'
+  # # Create
+  # get    '/profiles/new'      => 'profiles#new',    as: 'new_profile'
+  # post   '/profiles'          => 'profiles#create'
+  # # Edit
+  # get    '/profiles/:id/edit' => 'profiles#edit',   as: 'edit_profile'
+  # patch  '/profiles/:id'      => 'profiles#update'
+  # # Delete
+  # delete '/profiles/:id'      => 'profiles#destroy'
 
   # Apps
-  get '/musician_seeker' => 'application#musician_seeker'
-  get '/musicians_index' => 'application#musicians_index'
-  get '/drum_circles'    => 'application#drum_circles'
+  get '/musician_seeker' => 'application#musician_seeker', as: 'seeker'
+  get '/musicians_index' => 'application#musicians_index', as: 'index'
+  get '/drum_circles'    => 'application#drum_circles',    as: 'drum_circle'
   mount Thredded::Engine => '/forum'
 
   resources :posts

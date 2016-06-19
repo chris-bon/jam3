@@ -25,7 +25,8 @@ module Thredded
       @private_post      = private_topic.posts.build(
         id: 1337, postable: private_topic, content: 'A private hello world', user: @user
       )
-      @preferences = UserPreferencesForm.new(user: @user, messageboard: @messageboard)
+      @preferences = UserPreferencesForm.new user: @user, 
+                                     messageboard: @messageboard
     end
   end
 end

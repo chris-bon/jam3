@@ -5,20 +5,59 @@ class ProfilesController < ApplicationController
   # GET /profiles
   def index
     @profiles = Profile.all
+    profiles = []
+    if params[:name]
+      Profile.all.each do |p| 
+        if p.name.include? params[:name]
+          profiles << p
+        end
+      end
+    end
+    if params[:age]
+      Profile.all.each do |p|
+        unless profiles.include?(p) || p.age != params[:age]
+          profiles << p
+        end
+      end
+    end
+    if params[:location]
+      Profile.all.each do |p|
+        unless profiles.include?(p) || !p.location.include?(params[:location])
+          profiles << p
+        end
+      end
+    end
+    if params[:genres]
+      Profile.all.each do |p|
+        unless profiles.include?(p) || !p.genres.include?(params[:genres])
+          profiles << p
+        end
+      end
+    end
+    if params[:availability]
+      days = params[:availability].downcase.split(',').map! &:strip  
+      Profile.all.each do |p|
+        unless profiles.include? p
+          days.each do |day| 
+            if p.include? day
+              profiles << p
+              break
+            end
+          end
+        end
+      end
+    end
+    @profs = profiles
   end
 
   # GET /profiles/:id
   def show
-    @profile = Profile.find params[:id]
   end
 
   # GET /profiles/new
   def new
-    if Profile.find current_user.id
-      redirect_to profile_path
-    else
-      @profile = Profile.new
-    end
+    @profile = Profile.new
+
   end
 
   # POST /profiles
@@ -52,6 +91,25 @@ class ProfilesController < ApplicationController
 
   # PATCH /profiles/:id
   def update
+    post_params = { name: params[:name],      
+                     age: params[:age],   
+                  gender: params[:gender],  
+            phone_number: params[:phone_number], 
+                   email: params[:email],
+             instruments: params[:instruments].downcase,
+                   genre: params[:genre],
+            availability: params[:availability], 
+                 user_id: current_user.id }
+    respond_to do |format|
+      if @profile.update post_params
+        format.html { redirect_to @post, notice: 'Profile updated!' }
+        format.json { render :show, status: :ok, location: @profile }
+      else
+        format.html { render :edit }
+        format.json { render json: @profile.errors,
+                           status: :unprocessable_entity }
+      end
+    end
   end
 
   # GET /profiles/:id/settings
@@ -60,6 +118,11 @@ class ProfilesController < ApplicationController
 
   # DELETE /profiles/:id
   def destroy
+    @profile.destroy
+    respond_to do |format|
+      format.html { redirect_to posts_url, notice: 'Post was destroyed!' }
+      format.json { head :no_content }
+    end
   end
 
   private

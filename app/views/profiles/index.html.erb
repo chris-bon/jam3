@@ -1,17 +1,15 @@
-<div ng-app="app"><div ng-controller="musiciansCtrl" ng-init="setup()">
+<div ng-app="app"><div ng-controller="profilesCtrl" ng-init="setup()">
 <ul>
   <li ng-repeat="error in errors">{{ error }}</li>
 </ul>
-
-<datalist id="names">
-  <option ng-repeat="profile in profiles">{{ profile.name }}</option>
+<datalist id="instruments">
+  <option ng-repeat="profile in profiles">{{ profile.instruments }}</option>
 </datalist>
 
-Filter by name: <input ng-model="nameFilter" list="names">
+Filter by instrument: <input ng-model="instrumentFilter" list="names">
 
 <table class="table table-hover">
 <tr>
-  <!-- th><a href="#" ng-click="toggleOrder('id')">ID</a></th -->
   <th><a href="#" ng-click="toggleOrder('username')">Username</a></th>
   <th><a href="#" ng-click="toggleOrder('email')">Email</a></th>
   <th><a href="#" ng-click="toggleOrder('name')">Name</a></th>
@@ -23,20 +21,19 @@ Filter by name: <input ng-model="nameFilter" list="names">
   <th><a href="#" ng-click="toggleOrder('genre')">Genre</a></th>
   <th><a href="#" ng-click="toggleOrder('availability')">Availability</a></th>
 </tr>
-<tr ng-repeat="profile in profiles | filter: nameFilter | 
-               orderBy: orderAttribute:descending"
-    ng-if="profile.user.username != 'admin'">
-  <!-- td>{{profile.user.id}}</td -->
-  <td>{{profile.user.username}}</td>
-  <td>{{profile.user.email}}</td>
-  <td>{{profile.profile.name}}</td>
-  <td>{{profile.profile.age}}</td>
-  <td>{{profile.profile.gender}}</td>
-  <td>{{profile.profile.phone_number}}</td>
-  <td>{{profile.profile.location}}</td>
-  <td>{{array_to_list(profile.profile.instruments)}}</td>
-  <td>{{profile.profile.genre}}</td>
-  <td>{{profile.profile.availability}}</td>
+<tr ng-repeat="profile in profiles" | filter: 'instrumentFilter' | 
+               orderBy: {orderAttribute:descending}
+    ng-hide="profile.username == 'admin'" >
+  <td>{{profile.username}}</td>
+  <td>{{profile.email}}</td>
+  <td>{{profile.name}}</td>
+  <td>{{profile.age}}</td>
+  <td>{{profile.gender}}</td>
+  <td>{{profile.phone_number}}</td>
+  <td>{{profile.location}}</td>
+  <td>{{profile.instruments)}}</td>
+  <td>{{profile.genre}}</td>
+  <td>{{profile.availability}}</td>
 </tr>
 </table>
 </div></div>
