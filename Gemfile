@@ -10,21 +10,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin]  # Windows compatibility
 gem 'pg', '~> 0.15'          # Postgres plug-in for Rails
 gem 'seed_dump'              # database dumper
 gem 'faker'                  # random data generator
+gem 'factory_girl_rails'     # create factories
 gem 'friendly_id', '5.0.5'   # slugging and permalink plugins for ActiveRecord
-
-# Forum System
-gem 'forem',           github: 'radar/forem',           branch: 'rails4'
-gem 'forem-bootstrap', github: 'radar/forem-bootstrap', branch: 'master'
-gem 'forem-redcarpet', github: 'radar/forem-redcarpet'
-gem 'forem-rdiscount'     # Post formatter
-
-# Rails Extensions
-gem 'gravtastic'          # User avatars    
-gem 'redcarpet', '3.0.0'  # Markdown parser 
-gem 'kaminari'            # Pagination
-gem 'devise'              # User authentication
-gem 'bcrypt'              # Encryption
-gem 'mailboxer'           # User messaging
 
 # JavaScript
 gem 'uglifier',     '>= 1.3.0'
@@ -39,10 +26,26 @@ gem 'bootstrap-sass'
 gem 'bootswatch-rails'
 gem 'font-awesome-sass'
 gem 'autoprefixer-rails'
+gem 'babel-source'
 
+# User Authentication
+gem 'devise'         
+gem 'bcrypt'            
 
+# User Avatars:  Profile <-{ Images }
+gem 'gravtastic'
 
+# Messager
+gem 'mailboxer' 
 
+# Search Engine
+gem 'sunspot_rails'
+
+# Forum System
+gem 'thredded', '~> 0.6.1'
+
+# Pagination
+gem 'kaminari'
 
 # Google Maps
 gem 'gmaps4rails'
@@ -50,6 +53,8 @@ gem 'geocoder'
 
 # Extra
 gem 'rename'
+gem 'redcarpet', '3.0.0'  # Markdown parser
+gem 'simple_form'
 
 group :development, :test do
   gem 'byebug'

@@ -15,12 +15,12 @@ class User < ActiveRecord::Base
   validates :email, format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i },
                        uniqueness: { case_sensitive: false }, 
                            length: { maximum: 40 }, confirmation: true
-  validates :username, uniqueness: { case_sensitive: false }, 
-                           length: { minimum: 4, maximum: 40 }, presence: true
-  validates_format_of :username, with: /\A[a-zA-Z0-9]*\z/, on: :create, 
-    message: 'Only letters and numbers are permitted for your username!'
-  validate :username_differs_from_emails
-  validate :password_complexity
+ # validates :username, uniqueness: { case_sensitive: false }, 
+  #                         length: { minimum: 4, maximum: 40 }, presence: true
+ # validates_format_of :username, with: /\A[a-zA-Z0-9]*\z/, on: :create, 
+ #  message: 'Only letters and numbers are permitted for your username!'
+ # validate :username_differs_from_emails
+  #validate :password_complexity
 
   def self.paged page_number
     order(admin: :desc, username: :asc).page page_number
@@ -81,11 +81,16 @@ class User < ActiveRecord::Base
     @login || self.username || self.email
   end
 
-  def forem_name
-    name
+  # Required for Mailboxer
+  def name
+    self.username
   end
 
-  def forem_email
-    email_address
+  def mailboxer_email object
+    self.email
+  end
+
+  def to_s
+    username
   end
 end

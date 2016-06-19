@@ -1,6 +1,6 @@
 (function() {'use strict'; 
 
-angular.module('app').controller('headerCtrl', ['$scope', function($scope) {
+angular.module('app').controller('navbarCtrl', ['$scope', function($scope) {
 
   $scope.image_url = 'note-circle.gif'
 

@@ -1,4 +1,4 @@
-<div class="container" style="text-align:center;">
+<div class="container">
 
 <% title 'Contact Me' %>
 
@@ -35,14 +35,16 @@
 </div>
 
 <div class="row"><div class="col-xs-12 padded">
-  <button class="btn btn-primary"><i class="fa fa-envelope"></i> Send</button>
-</div></div>
+  <button class="btn btn-primary">
+    <span class="glyphicon glyphicon-envelope"></span> Send
+  </button>
+</div></div><%= tag 'br' %>
 
 <% end %>
 
-<%= content_tag :p, 'Chris Bon - chrisbon315@gmail.com' %>
-<%= content_tag :p, 'circlejam.heroku.com' %>
-
-<%= content_tag :p, 'Github: ' %><%= link_to 'github.com/chris-bon' %>
-<%= content_tag :p, 'LinkedIn: ' %><%= link_to 'linked-in.com/in/bonchris' %>
+<%= content_tag :p, 'Chris Bon' %>
+<%= content_tag :p, 'chrisbon315@gmail.com' %>
+<p>Heroku:  <%= link_to 'circlejam.heroku.com' %></p>
+<p>Github:  <%= link_to 'github.com/chris-bon/jam3' %></p>
+<p>LinkedIn:  <%= link_to 'linked-in.com/in/bonchris' %></p>
 </div></div></div>

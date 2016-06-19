@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PhiloSonic Forums | <%= yield :thredded_page_title %></title>
+    <%= stylesheet_link_tag 'thredded' %>
+    <%= csrf_meta_tag %>
+    <%= javascript_include_tag 'thredded' %>
+    <%== Gravatar.prefetch_dns %>
+  </head>
+  <body>
+    <%= yield %>
+  </body>
+</html>

@@ -1,42 +1,51 @@
 <div class="container">
-  <%= form_for(resource, as: resource_name, 
+  <%= form_for resource, as: resource_name, 
                          url: registration_path(resource_name),
-                         class: "form-group") do |f| %>
+                         class: "form-group" do |f| %>
     <%= devise_error_messages! %>
 
-    <h2>Registration</h2><br />
+    <h2>Registration</h2><%= tag 'br' %>
+
+    <div class="form-inline">
+      <div class="form-group">
+        <%= f.label :username, 'Username', class: 'control-label' %>
+        <%= tag 'br' %>
+        <%= f.text_field :username, autofocus: true, class: 'form-control', 
+                                    placeholder: 'Username' %>
+        <%= tag 'br' %><%= tag 'br' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :email, 'Email', class: 'control-label' %><%= tag 'br' %>
+        <%= f.text_field :email, class: 'form-control', placeholder: 'Email' %>
+        <%= tag 'br' %><%= tag 'br' %>
+      </div>
+    </div>
+
+    <div class="form-inline">
+
+      <div class="form-group">
+        <%= f.label :password, 'Password', class: 'control-label' %>
+        <em>( > four letters )</em><%= tag 'br' %>
+        <%= f.password_field :password, placeholder: 'Password', 
+            class: 'form-control', autocomplete: 'off' %>
+        <%= tag 'br' %><%= tag 'br' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :password_confirmation, 'Password Confirmation', 
+                    class: 'control-label' %><%= tag 'br' %>
+        <%= f.password_field :password, placeholder: 'Re-enter password', 
+                             class: 'form-control', autocomplete: 'off' %>
+        <%= tag 'br' %><%= tag 'br' %>
+      </div>
+    </div>
 
     <div class="form-group">
-      <%= f.label :username %>
-      <%= f.text_field :username, autofocus: true, 
-                                  class: "form-control",
-                                  placeholder: "Username" %></div>
+      <%= f.button 'Submit', class: 'btn btn-lg btn-primary' %> or 
 
-    <div class="form-group">
-      <%= f.label :email %>
-      <%= f.email_field :email, class: "form-control", 
-                                placeholder: "Password" %></div>
-
-    <div class="form-group">
-      <%= f.label :password %>
-      <% if @minimum_password_length %>
-        <em>(<%= @minimum_password_length %> characters minimum)</em>
-      <% end %>
-      <%= f.password_field :password, autocomplete: "off", 
-                                      class: "form-control", 
-                                      placeholder: "Password" %></div>
-
-    <div class="form-group">
-      <%= f.label :password_confirmation %>
-      <%= f.password_field :password_confirmation, autocomplete: "off",
-            class: "form-control", placeholder: "Re-enter password" %></div>
-
-    <div class="form-group">
-      <%= f.button "Submit", class: "btn btn-lg btn-primary btn-block" %></div>
-
-    <div class="form-group">
-      <%= link_to "Log in", new_user_session_path, class: "btn btn-default",
-                                                   role: "button" %>
-      (If you already have an account.)</div>
+      <%= link_to 'Log in', new_user_session_path, class: 'btn btn-default',
+                  role: 'button' %> if you already have an account.
+    </div>
   <% end %>
 </div>

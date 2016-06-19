@@ -1,0 +1,27 @@
+<%= form_for @rsvp do |f| %>
+
+  <div>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
+  </div>
+  <div>
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %>
+  </div>
+  <div>
+    <%= f.label :attending %>
+    <%= f.check_box :attending %>
+  </div>
+  <div>
+    <%= f.label :vegetarian %>
+    <%= f.check_box :vegetarian %>
+  </div>
+  <div>
+    <%= f.label :guests %>
+    <%= f.text_field :guests %>
+  </div>
+  <div>
+    <%= f.submit %>
+  </div>
+
+<% end %>

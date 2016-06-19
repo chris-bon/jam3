@@ -14,4 +14,22 @@ class Post < ActiveRecord::Base
   # Scopes
   scope :published, -> { where(draft: false).order 'updated_at DESC' }
   scope :drafted,   -> { where(draft:  true).order 'updated_at DESC' }
+
+  searchable do
+    string  :title
+    text    :body 
+    # text    :comments do
+    #   comments.map { |comment| comment.body }
+    # end
+    boolean :featured
+    integer :blog_id
+    integer :author_id
+    integer :category_ids, :multiple => true
+    float   :average_rating
+    time    :published_at
+    time    :expired_at
+    string  :sort_title do
+      title.downcase.gsub /^(an?|the)/, ''
+    end
+  end
 end
