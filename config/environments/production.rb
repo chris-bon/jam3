@@ -10,6 +10,10 @@ Rails.application.configure do
   # Rake tasks automatically ignore this option for performance.
   config.eager_load = true
 
+  config.serve_static_file = ENV['RAILS_SERVE_STATIC_FILES'].present
+  config.logger = Logger.new STDOUT
+  config.logger.level = Logger::DEBUG
+
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
@@ -29,7 +33,7 @@ Rails.application.configure do
   # config.assets.css_compressor = :sass
 
   config.assets.compile = true
-  config.assets.digest = true
+  config.assets.digest  = true
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
