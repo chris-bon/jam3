@@ -4,22 +4,27 @@ ruby '2.3.1'
 # Required
 gem 'rails',   '4.2.6'
 gem 'bundler', '1.12.5'
-gem 'tzinfo-data', platforms: [:mingw, :mswin]  # Necessary for Windows
+gem 'tzinfo-data', platforms: [:mingw, :mswin]  # Windows compatibility
 
 # Database
-gem 'pg', '~> 0.15'
-gem 'seed_dump'
-gem 'faker'
+gem 'pg', '~> 0.15'          # Postgres plug-in for Rails
+gem 'seed_dump'              # database dumper
+gem 'faker'                  # random data generator
+gem 'friendly_id', '5.0.5'   # slugging and permalink plugins for ActiveRecord
 
 # Forum System
 gem 'forem',           github: 'radar/forem',           branch: 'rails4'
 gem 'forem-bootstrap', github: 'radar/forem-bootstrap', branch: 'master'
 gem 'forem-redcarpet', github: 'radar/forem-redcarpet'
 gem 'forem-rdiscount'     # Post formatter
-gem 'friendly_id', '5.0.5'   
+
+# Rails Extensions
 gem 'gravtastic'          # User avatars    
 gem 'redcarpet', '3.0.0'  # Markdown parser 
 gem 'kaminari'            # Pagination
+gem 'devise'              # User authentication
+gem 'bcrypt'              # Encryption
+gem 'mailboxer'           # User messaging
 
 # JavaScript
 gem 'uglifier',     '>= 1.3.0'
@@ -35,9 +40,8 @@ gem 'bootswatch-rails'
 gem 'font-awesome-sass'
 gem 'autoprefixer-rails'
 
-# User Authentication
-gem 'devise'
-gem 'bcrypt'
+
+
 
 
 # Google Maps

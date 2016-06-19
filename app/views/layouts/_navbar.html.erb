@@ -1,0 +1,90 @@
+<nav class="navbar navbar-default navbar-fixed-top" ng-app="app">
+<div class="container-fluid" style="padding-left:0px;">
+<ul class="nav navbar-nav" ng-controller="headerCtrl">
+
+<li style="padding-right:15px;">
+  <%= image_tag 'cloudjc.gif', height: 52 %>
+</li>
+
+<li><span width=5></span></li>
+
+<li class="dropdown">
+  <li class="<%= 'active' if current_page? root_path %>">
+
+    <%= link_to '#', class: ['navbar-brand', 'dropdown-toggle'],
+                      role: 'button', data: { toggle: 'dropdown' },
+                      aria: { haspopup: true, expanded: false } do %>
+      JamCircle <span class="caret"></span>
+    <% end %>
+
+    <ul class="dropdown-menu">
+      <li><%= link_to 'Homepage', root_path %></li>
+      <li><%= link_to 'About Me', about_path %></li>
+      <li><%= link_to 'Contact Me', contact_path %></li>
+      <li role="separator" class="divider"></li>
+      <li><%= link_to 'Future App Updates', timeline_path %></li>
+    </ul>
+    
+  </li>
+</li>
+
+<li>
+  <img ng-src="assets/{{image_url}}" ng-click="toggleImage()" height=52 />
+</li>
+
+<li class="<%= 'active' if current_page? '/musician_seeker' %>">
+  <%= link_to 'Musician Seeker', '/musician_seeker' %>
+</li>
+
+<li class="dropdown">
+
+  <%= link_to '#', role: 'button', class: 'dropdown-toggle',
+                   aria: { haspopup: true, expanded: false },
+                   data: { toggle: 'dropdown' } do %>Unfinished Apps 
+      <span class="caret"></span>
+  <% end %>
+
+  <ul class="dropdown-menu">
+    <li class="<%= 'active' if current_page? '/jam_seeker' %>">
+      <%= link_to 'Jam Seeker', '/jam_seeker' %>
+    </li>
+    <li class="<%= 'active' if current_page? '/drum_circles' %>">
+      <%= link_to 'Drum Circles', '/drum_circles' %>
+    </li>
+    <li class="<%= 'active' if current_page? '/forum' %>">
+      <%= link_to 'Forum', '/forum' %>
+    </li>
+  </ul>
+
+</li>
+
+</ul>
+      
+<!-- User Registration/Login/Logout -->
+<ul class="nav navbar-nav navbar-right">
+
+<% if user_signed_in? %>
+  <li class="dropdown">
+    <%= link_to root_path, role: 'button', class: 'dropdown-toggle',
+                           aria: { haspopup: true, expanded: false },
+                           data: { toggle: 'dropdown' } do %>
+      <%= current_user.username %> <span class="caret"></span><% end %>
+
+    <ul class="dropdown-menu">
+      <li><%= link_to 'Profile',  
+                      "/profiles/#{current_user.profile.id}" %></li>
+      <li><%= link_to 'Settings', 
+                      "profiles/#{current_user.profile.id}/settings" %></li>
+      <li role="separator" class="divider"></li>
+      <li><%= link_to 'Sign Out', destroy_user_session_path, 
+                      method: 'delete' %></li>
+    </ul>
+  </li>
+<% else %>
+  <li class="<%= 'active' if current_page? new_user_session_path %>">
+    <%= link_to 'Sign in',  new_user_session_path %></li>
+  <li class="<%= 'active' if current_page? new_user_registration_path %>">
+    <%= link_to 'Register', new_user_registration_path %></li>
+<% end %>
+
+</ul></div></nav>
