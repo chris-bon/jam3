@@ -50,7 +50,7 @@ genres = [ 'r&b','jazz','punk','k-pop','world','reggae','new age',
 random_num_gen = [1,1,1,1,1,1,1,1,2,2,2,2,3,3,4]
 
 # User Attribute Data Generation
-(2..400).each do |n|
+(2..200).each do |n|
   # Name
   name = 'name'
   while names.include? name do
