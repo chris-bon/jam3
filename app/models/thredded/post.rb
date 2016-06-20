@@ -24,7 +24,7 @@ module Thredded
     has_one :last_moderation_record, -> { order_newest_first },
             class_name: 'Thredded::PostModerationRecord'
 
-  #  validates :messageboard_id, presence: true
+   validates :messageboard_id, presence: true
 
     after_commit :auto_follow_and_notify, on: [:create, :update]
 

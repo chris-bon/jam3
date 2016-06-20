@@ -2,24 +2,19 @@
 module Thredded
   class Messageboard < ActiveRecord::Base
     extend FriendlyId
-    # friendly_id :slug_candidates,
-    #             use:            [:slugged, :reserved],
-    #             # Avoid route conflicts
-    #             reserved_words: ::Thredded::FriendlyIdReservedWordsAndPagination.new(
-    #               %w(
-    #                 admin
-    #                 autocomplete-users
-    #                 messageboards
-    #                 posts
-    #                 preferences
-    #                 private-posts
-    #                 private-topics
-    #                 theme-preview
-    #               )
-    #             )
-
-   # validates :name, uniqueness: true, length: { maximum: 60 }, presence: true
-   # validates :topics_count, numericality: true
+    friendly_id :slug_candidates, use: [:slugged, :reserved],
+      # Avoid route conflicts
+      reserved_words: ::Thredded::FriendlyIdReservedWordsAndPagination.new
+        %w(admin
+           autocomplete-users
+           messageboards
+           posts
+           preferences
+           private-posts
+           private-topics
+           theme-preview)
+    validates :name, uniqueness: true, length: { maximum: 60 }, presence: true
+    validates :topics_count, numericality: true
 
     has_many :categories, dependent: :destroy
     has_many :user_messageboard_preferences, dependent: :destroy
@@ -33,7 +28,7 @@ module Thredded
              inverse_of:  :messageboard,
              foreign_key: :thredded_messageboard_id
     has_many :recently_active_user_details,
-             -> { merge(Thredded::MessageboardUser.recently_active) },
+             -> { merge Thredded::MessageboardUser.recently_active },
              class_name: 'Thredded::UserDetail',
              through:    :messageboard_users,
              source:     :user_detail
@@ -49,20 +44,17 @@ module Thredded
 
     has_many :post_moderation_records, inverse_of: :messageboard, dependent: :delete_all
 
-    default_scope { where(closed: false).order(topics_count: :desc) }
+    default_scope { where(closed: false).order topics_count: :desc }
 
-    scope :top_level_messageboards, -> { where(group: nil) }
-    scope :by_messageboard_group, ->(group) { where(group: group.id) }
+    scope :top_level_messageboards, -> { where group: nil }
+    scope :by_messageboard_group, -> (group) { where group: group.id }
 
     def last_user
-      last_topic.try(:last_user)
+      last_topic.try :last_user
     end
 
     def slug_candidates
-      [
-        :name,
-        [:name, '-board']
-      ]
+      [:name, [:name, '-board']]
     end
   end
 end

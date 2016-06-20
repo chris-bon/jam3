@@ -16,7 +16,7 @@ module Thredded
     end
 
     def name
-      I18n.t('thredded.null_user_name')
+      I18n.t 'thredded.null_user_name'
     end
 
     def to_s

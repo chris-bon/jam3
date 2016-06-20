@@ -16,17 +16,17 @@ module Thredded
     belongs_to :post_user, class_name: Thredded.user_class, inverse_of: :thredded_post_moderation_records
     belongs_to :moderator, class_name: Thredded.user_class, inverse_of: :thredded_post_moderation_records
 
-  #  validates_each :moderation_state do |record, attr, value|
-  #    if record.previous_moderation_state == value
-   #     record.errors.add attr, "Post moderation_state is already #{value}"
-  #    end
-  #  end
+   validates_each :moderation_state do |record, attr, value|
+     if record.previous_moderation_state == value
+       record.errors.add attr, "Post moderation_state is already #{value}"
+     end
+   end
 
-    # @param [Thredded.user_class] moderator
-    # @param [Thredded::Post] post
-    # @param [Symbol, String] previous_moderation_state
-    # @param [Symbol, String] moderation_state
-    # @return [Thredded::PostModerationRecord] the newly created persisted record
+    @param [Thredded.user_class] moderator
+    @param [Thredded::Post] post
+    @param [Symbol, String] previous_moderation_state
+    @param [Symbol, String] moderation_state
+    @return [Thredded::PostModerationRecord] the newly created persisted record
     def self.record!(moderator:, post:, previous_moderation_state:, moderation_state:)
       # Rails 4 doesn't support enum _prefix
       if Rails::VERSION::MAJOR < 5

@@ -12,7 +12,7 @@ module Thredded
                foreign_key:  'post_id',
                foreign_type: 'Thredded::PrivatePost',
               class_name:   'Thredded::PrivatePost'
-  #  validates :email, presence: true
-  #  validates :post, presence: true
+   validates :email, presence: true
+   validates :post, presence: true
   end
 end

@@ -10,8 +10,8 @@ module Thredded
                inverse_of: :thredded_user_messageboard_preferences
     belongs_to :messageboard
 
-   # validates :user_id, presence: true
-   # validates :messageboard_id, presence: true
+    validates :user_id, presence: true
+    validates :messageboard_id, presence: true
 
     def self.in(messageboard)
       find_or_initialize_by(messageboard_id: messageboard.id)

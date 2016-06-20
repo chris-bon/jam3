@@ -2,31 +2,34 @@ require 'factory_girl_rails'
 
 Faker::Config.locale = 'en-US'
 
-User.create!(profile_id: 1, 
-               username: 'admin',
-                  email: 'chrisbon315@gmail.com',
-               password: 'Qwert1',
-  password_confirmation: 'Qwert1')
+User.create! profile_id: 1, username: 'admin', email: 'chrisbon315@gmail.com',
+             password: 'Qwert1', password_confirmation: 'Qwert1'
 
-Profile.create!(user_id: 1,
-                   name: 'Chris Bon',
-                    age: 27,
-                 gender: 'Male',
-              #  location: Faker::Address.city,
-           phone_number: '(650)449-6622',
-            instruments: 'keyboard, guitar',
-                  genre: "trip hop, drum 'n' bass",
-           availability: 'Sun, Sat')
+Profile.create! user_id: 1, name: 'Chris Bon', age: 27, gender: 'Male',
+                phone_number: '(650)449-6622', instruments: 'keyboard, guitar',
+                genre: "trip hop, drum 'n' bass, gypsy jazz", 
+                availability: 'Sun, Mon, Tue, Wed, Thu, Fri, Sat'
 
 # Initialize User Attributes Array
 names = ['name']
 
+# Based on Afghanistan's population pyramid which typifies a youth bulge
+# upload.wikimedia.org/wikipedia/commons/3/31/
+#   Afghanistan_population_pyramid_2005.png
 ages = []
-7.downto(2).each do |n| 
-  ages += (20..(n * 10)).to_a
-  ages += (15..27).to_a
-  ages += (20..24).to_a
-end
+16.times { ages += (15..19).to_a }
+26.times { ages += (20..24).to_a }
+23.times { ages += (25..29).to_a }
+20.times { ages += (30..34).to_a }
+17.times { ages += (35..39).to_a }
+14.times { ages += (40..44).to_a }
+12.times { ages += (45..49).to_a }
+10.times { ages += (50..54).to_a }
+ 8.times { ages += (55..59).to_a }
+ 6.times { ages += (60..64).to_a }
+ 4.times { ages += (65..69).to_a }
+ 2.times { ages += (70..74).to_a }
+ages += (75..80).to_a
 
 phone_numbers = [0]
 
@@ -84,35 +87,22 @@ random_num_gen = [1,1,1,1,1,1,1,1,2,2,2,2,3,3,4]
 
   days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].shuffle[0..rand(7)]
 
-  # Create USERS
-  User.create!(profile_id: n, 
-                 username: Faker::Internet.user_name(name.split.join),
-                    email: email,
-                 password: 'Qwert1',
-    password_confirmation: 'Qwert1')
+  # Generate Users and Profiles
+  User.create! profile_id: n, email: email,
+               username: Faker::Internet.user_name(name.split.join),
+               password: 'Qwert1', password_confirmation: 'Qwert1'
+  Profile.create! user_id: n, name: name, age: ages.sample,
+                  gender: ['Male', 'Female'].sample,
+                  phone_number: phone_number,
+                  instruments: instruments_array.join(', '),
+                  genre: genres_array.join(', '), availability: days.join(', ')
 
-  # Create profiles
-  Profile.create!(user_id: n,
-                     name: name,
-                      age: ages.sample,
-                   gender: ['Male', 'Female'].sample,
-                #  location: Faker::Address.city,
-             phone_number: phone_number,
-              instruments: instruments_array.join(', '),
-                    genre: genres_array.join(', '),
-             availability: days.join(', '))
-end
-$USERS = User.all
-require 'factory_girl_rails'
-
-# rubocop:disable HandleExceptions
 begin
   if FactoryGirl.factories.instance_variable_get(:@items).none?
     require_relative '../spec/factories'
   end
 rescue NameError
 end
-# rubocop:enable HandleExceptions
 
 module Thredded
   class SeedDatabase
@@ -123,89 +113,86 @@ module Thredded
     #   [Thredded::PrivatePost, :commit, :after, :notify_USERS],
     # ].freeze
 
-    def self.run users: 0, topics: 55, posts: (1..60)
-      # STDERR.puts 'Seeding the database...'
-      # # Disable callbacks to avoid creating notifications and performing unnecessary updates
-      # SKIP_CALLBACKS.each { |(klass, *args)| klass.skip_callback(*args) }
+    def self.run users: 200, topics: 55, posts: (1..60)
+      STDERR.puts 'Seeding the database...'
+      # Disable callbacks to avoid creating notifications and performing unnecessary updates
+      # SKIP_CALLBACKS.each { |klass, *args| klass.skip_callback *args }
       s = new
-      Messageboard.transaction do
-        s.create_messageboard
-        s.create_topics(count: topics)
-        s.create_posts(count: posts)
-        s.create_private_posts(count: posts)
-        s.create_additional_messageboards
+      Messageboard.transaction do s.create_messageboard
+        s.create_topics        count: topics
+        s.create_posts         count:  posts
+        s.create_private_posts count:  posts
+        # s.create_additional_messageboards
         s.log 'Running after_commit callbacks'
       end
-    # ensure
-    #   # Re-enable callbacks
-    #   SKIP_CALLBACKS.each { |(klass, *args)| klass.set_callback(*args) }
+    ensure
+      # # Re-enable callbacks
+      # SKIP_CALLBACKS.each { |klass, *args| klass.set_callback *args }
     end
 
-    def log(message)
+    def log message
       STDERR.puts "- #{message}"
     end
 
-    # def create_first_user
-    #   $USERS ||= $USER.first || FactoryGirl.create(
-    #                               :user, :approved, :admin, 
-    #                               name: 'Joe',
-    #                               email: 'joe@example.com'
-    #                             )
-    # end
+=begin
+    def create_first_user
+      @user ||= User.all.first || FactoryGirl.create :user, :approved, :admin, 
+                 username: 'admin', email: 'chrisbon315@gmail.com',
+                 password: 'Qwert1', password_confirmation: 'Qwert1'
+    end
 
-    # def create_users count:
-    #   log "Creating #{count} USERS..."
-    #   $USERS = [user] + FactoryGirl.create_list(:user, count, *(%i(approved) if rand > 0.1))
-    # end
+    def create_users count:
+      log "Creating #{count} USERS..."
+      @users = [user] + FactoryGirl.create_list(:user, count, *(%i(approved) if rand > 0.1))
+    end
+=end
 
     def create_messageboard
       log 'Creating a messageboard...'
-      @messageboard = FactoryGirl.create(
-        :messageboard,
-        name:        'Main Board',
-        slug:        'main-board',
-        description: 'A board is not a board without some posts'
-      )
+      @messageboard = FactoryGirl.create :messageboard, name: 'Jam Board',
+                        slug: 'main-board',
+                        description: 'A board is not a board without music!'
     end
 
     def create_additional_messageboards
       meta_group_id = MessageboardGroup.create!(name: 'Meta').id
       additional_messageboards = [
-        ['Off-Topic', "Talk about whatever here, it's all good."],
+        ['General Music', 'Talk about whatever here', meta_group_id],
         ['Help, Bugs, and Suggestions',
-         'Need help using the forum? Want to report a bug or make a suggestion? This is the place.', meta_group_id],
-        ['Praise', 'Want to tell us how great we are? This is the place.', meta_group_id]
+         'Need help using the forum? Want to report a bug or make a suggestion? 
+          This is the place.', meta_group_id]
       ]
-      log "Creating #{additional_messageboards.length} additional messageboards..."
+      log "Creating #{additional_messageboards.length} 
+           additional messageboards..."
       additional_messageboards.each do |name, description, group_id|
-        messageboard = Messageboard.create! name: name, description: description, messageboard_group_id: group_id
-        FactoryGirl.create_list :topic, 1 + rand(3), messageboard: messageboard,
-                                                       with_posts: 1
+        messageboard = Messageboard.create! name: name, 
+                                            description: description, 
+                                            messageboard_group_id: group_id
+        FactoryGirl.create_list :topic, 1 + rand(3), 
+                                messageboard: messageboard, 
+                                  with_posts: 1
       end
     end
 
-    def create_topics(count: 26, messageboard: self.messageboard)
+    def create_topics count: 26, messageboard: self.messageboard
       log "Creating #{count} topics in #{messageboard.name}..."
-      @topics = FactoryGirl.create_list(
-        :topic, count,
-        messageboard: messageboard,
-        user:         $USERS.sample,
-        last_user:    $USERS.sample
-      )
-
-      @private_topics = FactoryGirl.create_list(
-        :private_topic, count,
-        user:      $USERS.sample,
-        last_user: $USERS.sample,
-        users:     $USERS.shuffle[0..rand($USERS.size)]
-      )
+      @topics = FactoryGirl.create_list :topic, count,
+                                        messageboard: messageboard, 
+                                                user: User.all.sample,
+                                           last_user: User.all.sample
+      @private_topics = FactoryGirl.create_list :private_topic, count,    
+                               user: User.all.sample,
+                          last_user: User.all.sample, 
+                              users: User.all.shuffle[0..rand(User.count)]
     end
 
     def create_posts count: (1..30)
       log "Creating #{count} additional posts in each topic..."
       @posts = topics.flat_map do |topic|
         (count.min + rand(count.max + 1)).times do
-          FactoryGirl.create(:post, postable: topic, messageboard: messageboard, user: $USERS.sample)
+          FactoryGirl.create :post, postable: topic, 
+                                messageboard: messageboard, 
+                                        user: User.all.sample
         end
       end
     end
@@ -215,7 +202,7 @@ module Thredded
       @private_posts = private_topics.flat_map do |topic|
         (count.min + rand(count.max + 1)).times do
           FactoryGirl.create :private_post, postable: topic, 
-                                                user: $USERS.sample
+                                                user: User.all.sample
         end
       end
     end

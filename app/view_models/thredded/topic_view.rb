@@ -35,15 +35,17 @@ module Thredded
     end
 
     def edit_path
-      Thredded::UrlsHelper.edit_messageboard_topic_path(@topic.messageboard, @topic)
+      Thredded::UrlsHelper.edit_messageboard_topic_path @topic.messageboard, 
+                                                        @topic
     end
 
     def destroy_path
-      Thredded::UrlsHelper.messageboard_topic_path(@topic.messageboard, @topic)
+      Thredded::UrlsHelper.messageboard_topic_path @topic.messageboard, @topic
     end
 
     def follow_path
-      Thredded::UrlsHelper.follow_messageboard_topic_path(@topic.messageboard, @topic)
+      Thredded::UrlsHelper.follow_messageboard_topic_path @topic.messageboard, 
+                                                          @topic
     end
 
     def unfollow_path

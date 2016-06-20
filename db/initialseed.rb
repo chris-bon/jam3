@@ -2,21 +2,20 @@ require 'factory_girl_rails'
 
 Faker::Config.locale = 'en-US'
 
-User.create!(profile_id: 1, 
+User.create! profile_id: 1, 
                username: 'admin',
                   email: 'chrisbon315@gmail.com',
                password: 'Qwert1',
-  password_confirmation: 'Qwert1')
+  password_confirmation: 'Qwert1'
 
-Profile.create!(user_id: 1,
+Profile.create! user_id: 1,
                    name: 'Chris Bon',
                     age: 27,
                  gender: 'Male',
-              #  location: Faker::Address.city,
            phone_number: '(650)449-6622',
             instruments: 'keyboard, guitar',
-                  genre: "trip hop, drum 'n' bass",
-           availability: 'Sun, Sat')
+                  genre: "trip hop, drum 'n' bass, gypsy jazz",
+           availability: 'Sun, Sat'
 
 # Initialize User Attributes Array
 names = ['name']

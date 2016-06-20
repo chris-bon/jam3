@@ -62,6 +62,7 @@ group :development, :test do
   gem 'spring'
   gem 'annotate'
   gem 'figaro'
+  gem 'rubocop'
 end
 
 group :production do
