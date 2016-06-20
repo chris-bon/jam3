@@ -96,6 +96,7 @@ random_num_gen = [1,1,1,1,1,1,1,1,2,2,2,2,3,3,4]
                   phone_number: phone_number,
                   instruments: instruments_array.join(', '),
                   genre: genres_array.join(', '), availability: days.join(', ')
+end
 
 begin
   if FactoryGirl.factories.instance_variable_get(:@items).none?
