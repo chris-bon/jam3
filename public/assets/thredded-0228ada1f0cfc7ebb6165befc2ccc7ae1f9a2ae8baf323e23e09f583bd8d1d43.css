@@ -1,0 +1,2098 @@
+/*
+Version: 3.5.4 Timestamp: Sun Aug 30 13:30:32 EDT 2015
+*/
+/* line 4, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-container {
+  margin: 0;
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* line 11, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-container,
+.select2-drop,
+.select2-search,
+.select2-search input {
+  /*
+    Force border-box so that % widths fit the parent
+    container without overlap because of margin/padding.
+    More Info : http://www.quirksmode.org/css/box.html
+  */
+  /* webkit */
+  /* firefox */
+  box-sizing: border-box;
+  /* css3 */
+}
+
+/* line 25, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-container .select2-choice {
+  display: block;
+  height: 26px;
+  padding: 0 0 0 8px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid #aaa;
+  white-space: nowrap;
+  line-height: 26px;
+  color: #444;
+  text-decoration: none;
+  border-radius: 4px;
+  background-clip: padding-box;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #fff;
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #eee), color-stop(0.5, #fff));
+  background-image: -webkit-linear-gradient(center bottom, #eee 0%, #fff 50%);
+  background-image: -moz-linear-gradient(center bottom, #eee 0%, #fff 50%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#ffffff', endColorstr = '#eeeeee', GradientType = 0);
+  background-image: -webkit-linear-gradient(bottom, #eee 0%, #fff 50%);
+  background-image: linear-gradient(to top, #eee 0%, #fff 50%);
+}
+
+/* line 56, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+html[dir="rtl"] .select2-container .select2-choice {
+  padding: 0 8px 0 0;
+}
+
+/* line 60, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-container.select2-drop-above .select2-choice {
+  border-bottom-color: #aaa;
+  border-radius: 0 0 4px 4px;
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #eee), color-stop(0.9, #fff));
+  background-image: -webkit-linear-gradient(center bottom, #eee 0%, #fff 90%);
+  background-image: -moz-linear-gradient(center bottom, #eee 0%, #fff 90%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#eeeeee', GradientType=0);
+  background-image: -webkit-linear-gradient(top, #eee 0%, #fff 90%);
+  background-image: linear-gradient(to bottom, #eee 0%, #fff 90%);
+}
+
+/* line 72, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-container.select2-allowclear .select2-choice .select2-chosen {
+  margin-right: 42px;
+}
+
+/* line 76, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-container .select2-choice > .select2-chosen {
+  margin-right: 26px;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  float: none;
+  width: auto;
+}
+
+/* line 88, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+html[dir="rtl"] .select2-container .select2-choice > .select2-chosen {
+  margin-left: 26px;
+  margin-right: 0;
+}
+
+/* line 93, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-container .select2-choice abbr {
+  display: none;
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  right: 24px;
+  top: 8px;
+  font-size: 1px;
+  text-decoration: none;
+  border: 0;
+  background: url(/assets/select2-d6b5d8d83dbc18fb8d77c8761d331cd9e5123c9684950bab0406e98a24ac5ae8.png) right top no-repeat;
+  cursor: pointer;
+  outline: 0;
+}
+
+/* line 110, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-container.select2-allowclear .select2-choice abbr {
+  display: inline-block;
+}
+
+/* line 114, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-container .select2-choice abbr:hover {
+  background-position: right -11px;
+  cursor: pointer;
+}
+
+/* line 119, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-drop-mask {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  left: 0;
+  top: 0;
+  min-height: 100%;
+  min-width: 100%;
+  height: auto;
+  width: auto;
+  opacity: 0;
+  z-index: 9998;
+  /* styles required for IE to work */
+  background-color: #fff;
+  filter: alpha(opacity=0);
+}
+
+/* line 137, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-drop {
+  width: 100%;
+  margin-top: -1px;
+  position: absolute;
+  z-index: 9999;
+  top: 100%;
+  background: #fff;
+  color: #000;
+  border: 1px solid #aaa;
+  border-top: 0;
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.15);
+}
+
+/* line 155, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-drop.select2-drop-above {
+  margin-top: 1px;
+  border-top: 1px solid #aaa;
+  border-bottom: 0;
+  border-radius: 4px 4px 0 0;
+  box-shadow: 0 -4px 5px rgba(0, 0, 0, 0.15);
+}
+
+/* line 166, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-drop-active {
+  border: 1px solid #5897fb;
+  border-top: none;
+}
+
+/* line 171, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-drop.select2-drop-above.select2-drop-active {
+  border-top: 1px solid #5897fb;
+}
+
+/* line 175, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-drop-auto-width {
+  border-top: 1px solid #aaa;
+  width: auto;
+}
+
+/* line 180, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-container .select2-choice .select2-arrow {
+  display: inline-block;
+  width: 18px;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  border-left: 1px solid #aaa;
+  border-radius: 0 4px 4px 0;
+  background-clip: padding-box;
+  background: #ccc;
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #ccc), color-stop(0.6, #eee));
+  background-image: -webkit-linear-gradient(center bottom, #ccc 0%, #eee 60%);
+  background-image: -moz-linear-gradient(center bottom, #ccc 0%, #eee 60%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#eeeeee', endColorstr = '#cccccc', GradientType = 0);
+  background-image: -webkit-linear-gradient(bottom, #ccc 0%, #eee 60%);
+  background-image: linear-gradient(to top, #ccc 0%, #eee 60%);
+}
+
+/* line 201, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+html[dir="rtl"] .select2-container .select2-choice .select2-arrow {
+  left: 0;
+  right: auto;
+  border-left: none;
+  border-right: 1px solid #aaa;
+  border-radius: 4px 0 0 4px;
+}
+
+/* line 210, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-container .select2-choice .select2-arrow b {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: url(/assets/select2-d6b5d8d83dbc18fb8d77c8761d331cd9e5123c9684950bab0406e98a24ac5ae8.png) no-repeat 0 1px;
+}
+
+/* line 217, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+html[dir="rtl"] .select2-container .select2-choice .select2-arrow b {
+  background-position: 2px 1px;
+}
+
+/* line 221, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-search {
+  display: inline-block;
+  width: 100%;
+  min-height: 26px;
+  margin: 0;
+  padding: 4px 4px 0 4px;
+  position: relative;
+  z-index: 10000;
+  white-space: nowrap;
+}
+
+/* line 234, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-search input {
+  width: 100%;
+  height: auto !important;
+  min-height: 26px;
+  padding: 4px 20px 4px 5px;
+  margin: 0;
+  outline: 0;
+  font-family: sans-serif;
+  font-size: 1em;
+  border: 1px solid #aaa;
+  border-radius: 0;
+  box-shadow: none;
+  background: #fff url(/assets/select2-d6b5d8d83dbc18fb8d77c8761d331cd9e5123c9684950bab0406e98a24ac5ae8.png) no-repeat 100% -22px;
+  background: url(/assets/select2-d6b5d8d83dbc18fb8d77c8761d331cd9e5123c9684950bab0406e98a24ac5ae8.png) no-repeat 100% -22px, -webkit-gradient(linear, left bottom, left top, color-stop(0.85, #fff), color-stop(0.99, #eee));
+  background: url(/assets/select2-d6b5d8d83dbc18fb8d77c8761d331cd9e5123c9684950bab0406e98a24ac5ae8.png) no-repeat 100% -22px, -webkit-linear-gradient(center bottom, #fff 85%, #eee 99%);
+  background: url(/assets/select2-d6b5d8d83dbc18fb8d77c8761d331cd9e5123c9684950bab0406e98a24ac5ae8.png) no-repeat 100% -22px, -webkit-linear-gradient(top, #fff 85%, #eee 99%) 0 0;
+  background: url(/assets/select2-d6b5d8d83dbc18fb8d77c8761d331cd9e5123c9684950bab0406e98a24ac5ae8.png) no-repeat 100% -22px, linear-gradient(to bottom, #fff 85%, #eee 99%) 0 0;
+}
+
+/* line 258, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+html[dir="rtl"] .select2-search input {
+  padding: 4px 5px 4px 20px;
+  background: #fff url(/assets/select2-d6b5d8d83dbc18fb8d77c8761d331cd9e5123c9684950bab0406e98a24ac5ae8.png) no-repeat -37px -22px;
+  background: url(/assets/select2-d6b5d8d83dbc18fb8d77c8761d331cd9e5123c9684950bab0406e98a24ac5ae8.png) no-repeat -37px -22px, -webkit-gradient(linear, left bottom, left top, color-stop(0.85, #fff), color-stop(0.99, #eee));
+  background: url(/assets/select2-d6b5d8d83dbc18fb8d77c8761d331cd9e5123c9684950bab0406e98a24ac5ae8.png) no-repeat -37px -22px, -webkit-linear-gradient(center bottom, #fff 85%, #eee 99%);
+  background: url(/assets/select2-d6b5d8d83dbc18fb8d77c8761d331cd9e5123c9684950bab0406e98a24ac5ae8.png) no-repeat -37px -22px, -webkit-linear-gradient(top, #fff 85%, #eee 99%) 0 0;
+  background: url(/assets/select2-d6b5d8d83dbc18fb8d77c8761d331cd9e5123c9684950bab0406e98a24ac5ae8.png) no-repeat -37px -22px, linear-gradient(to bottom, #fff 85%, #eee 99%) 0 0;
+}
+
+/* line 268, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-search input.select2-active {
+  background: #fff url(/assets/select2-spinner-f6ecff617ec2ba7f559e6f535cad9b70a3f91120737535dab4d4548a6c83576c.gif) no-repeat 100%;
+  background: url(/assets/select2-spinner-f6ecff617ec2ba7f559e6f535cad9b70a3f91120737535dab4d4548a6c83576c.gif) no-repeat 100%, -webkit-gradient(linear, left bottom, left top, color-stop(0.85, #fff), color-stop(0.99, #eee));
+  background: url(/assets/select2-spinner-f6ecff617ec2ba7f559e6f535cad9b70a3f91120737535dab4d4548a6c83576c.gif) no-repeat 100%, -webkit-linear-gradient(center bottom, #fff 85%, #eee 99%);
+  background: url(/assets/select2-spinner-f6ecff617ec2ba7f559e6f535cad9b70a3f91120737535dab4d4548a6c83576c.gif) no-repeat 100%, -webkit-linear-gradient(top, #fff 85%, #eee 99%) 0 0;
+  background: url(/assets/select2-spinner-f6ecff617ec2ba7f559e6f535cad9b70a3f91120737535dab4d4548a6c83576c.gif) no-repeat 100%, linear-gradient(to bottom, #fff 85%, #eee 99%) 0 0;
+}
+
+/* line 276, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-container-active .select2-choice,
+.select2-container-active .select2-choices {
+  border: 1px solid #5897fb;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+/* line 285, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-dropdown-open .select2-choice {
+  border-bottom-color: transparent;
+  box-shadow: 0 1px 0 #fff inset;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  background-color: #eee;
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #fff), color-stop(0.5, #eee));
+  background-image: -webkit-linear-gradient(center bottom, #fff 0%, #eee 50%);
+  background-image: -moz-linear-gradient(center bottom, #fff 0%, #eee 50%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#ffffff', GradientType=0);
+  background-image: -webkit-linear-gradient(bottom, #fff 0%, #eee 50%);
+  background-image: linear-gradient(to top, #fff 0%, #eee 50%);
+}
+
+/* line 301, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-dropdown-open.select2-drop-above .select2-choice,
+.select2-dropdown-open.select2-drop-above .select2-choices {
+  border: 1px solid #5897fb;
+  border-top-color: transparent;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff), color-stop(0.5, #eee));
+  background-image: -webkit-linear-gradient(center top, #fff 0%, #eee 50%);
+  background-image: -moz-linear-gradient(center top, #fff 0%, #eee 50%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#ffffff', GradientType=0);
+  background-image: -webkit-linear-gradient(top, #fff 0%, #eee 50%);
+  background-image: linear-gradient(to bottom, #fff 0%, #eee 50%);
+}
+
+/* line 313, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-dropdown-open .select2-choice .select2-arrow {
+  background: transparent;
+  border-left: none;
+  -webkit-filter: none;
+          filter: none;
+}
+
+/* line 318, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+html[dir="rtl"] .select2-dropdown-open .select2-choice .select2-arrow {
+  border-right: none;
+}
+
+/* line 322, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-dropdown-open .select2-choice .select2-arrow b {
+  background-position: -18px 1px;
+}
+
+/* line 326, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+html[dir="rtl"] .select2-dropdown-open .select2-choice .select2-arrow b {
+  background-position: -16px 1px;
+}
+
+/* line 330, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-hidden-accessible {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+/* results */
+/* line 342, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-results {
+  max-height: 200px;
+  padding: 0 0 0 4px;
+  margin: 4px 4px 4px 0;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* line 352, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+html[dir="rtl"] .select2-results {
+  padding: 0 4px 0 0;
+  margin: 4px 0 4px 4px;
+}
+
+/* line 357, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-results ul.select2-result-sub {
+  margin: 0;
+  padding-left: 0;
+}
+
+/* line 362, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-results li {
+  list-style: none;
+  display: list-item;
+  background-image: none;
+}
+
+/* line 368, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-results li.select2-result-with-children > .select2-result-label {
+  font-weight: bold;
+}
+
+/* line 372, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-results .select2-result-label {
+  padding: 3px 7px 4px;
+  margin: 0;
+  cursor: pointer;
+  min-height: 1em;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* line 386, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-results-dept-1 .select2-result-label {
+  padding-left: 20px;
+}
+
+/* line 387, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-results-dept-2 .select2-result-label {
+  padding-left: 40px;
+}
+
+/* line 388, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-results-dept-3 .select2-result-label {
+  padding-left: 60px;
+}
+
+/* line 389, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-results-dept-4 .select2-result-label {
+  padding-left: 80px;
+}
+
+/* line 390, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-results-dept-5 .select2-result-label {
+  padding-left: 100px;
+}
+
+/* line 391, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-results-dept-6 .select2-result-label {
+  padding-left: 110px;
+}
+
+/* line 392, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-results-dept-7 .select2-result-label {
+  padding-left: 120px;
+}
+
+/* line 394, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-results .select2-highlighted {
+  background: #3875d7;
+  color: #fff;
+}
+
+/* line 399, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-results li em {
+  background: #feffde;
+  font-style: normal;
+}
+
+/* line 404, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-results .select2-highlighted em {
+  background: transparent;
+}
+
+/* line 408, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-results .select2-highlighted ul {
+  background: #fff;
+  color: #000;
+}
+
+/* line 413, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-results .select2-no-results,
+.select2-results .select2-searching,
+.select2-results .select2-ajax-error,
+.select2-results .select2-selection-limit {
+  background: #f4f4f4;
+  display: list-item;
+  padding-left: 5px;
+}
+
+/*
+disabled look for disabled choices in the results dropdown
+*/
+/* line 425, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-results .select2-disabled.select2-highlighted {
+  color: #666;
+  background: #f4f4f4;
+  display: list-item;
+  cursor: default;
+}
+
+/* line 431, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-results .select2-disabled {
+  background: #f4f4f4;
+  display: list-item;
+  cursor: default;
+}
+
+/* line 437, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-results .select2-selected {
+  display: none;
+}
+
+/* line 441, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-more-results.select2-active {
+  background: #f4f4f4 url(/assets/select2-spinner-f6ecff617ec2ba7f559e6f535cad9b70a3f91120737535dab4d4548a6c83576c.gif) no-repeat 100%;
+}
+
+/* line 445, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-results .select2-ajax-error {
+  background: rgba(255, 50, 50, 0.2);
+}
+
+/* line 449, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-more-results {
+  background: #f4f4f4;
+  display: list-item;
+}
+
+/* disabled styles */
+/* line 456, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-container.select2-container-disabled .select2-choice {
+  background-color: #f4f4f4;
+  background-image: none;
+  border: 1px solid #ddd;
+  cursor: default;
+}
+
+/* line 463, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-container.select2-container-disabled .select2-choice .select2-arrow {
+  background-color: #f4f4f4;
+  background-image: none;
+  border-left: 0;
+}
+
+/* line 469, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-container.select2-container-disabled .select2-choice abbr {
+  display: none;
+}
+
+/* multiselect */
+/* line 476, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-container-multi .select2-choices {
+  height: auto !important;
+  height: 1%;
+  margin: 0;
+  padding: 0 5px 0 0;
+  position: relative;
+  border: 1px solid #aaa;
+  cursor: text;
+  overflow: hidden;
+  background-color: #fff;
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(1%, #eee), color-stop(15%, #fff));
+  background-image: -webkit-linear-gradient(top, #eee 1%, #fff 15%);
+  background-image: linear-gradient(to bottom, #eee 1%, #fff 15%);
+}
+
+/* line 494, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+html[dir="rtl"] .select2-container-multi .select2-choices {
+  padding: 0 0 0 5px;
+}
+
+/* line 498, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-locked {
+  padding: 3px 5px 3px 5px !important;
+}
+
+/* line 502, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-container-multi .select2-choices {
+  min-height: 26px;
+}
+
+/* line 506, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-container-multi.select2-container-active .select2-choices {
+  border: 1px solid #5897fb;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+/* line 513, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-container-multi .select2-choices li {
+  float: left;
+  list-style: none;
+}
+
+/* line 517, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+html[dir="rtl"] .select2-container-multi .select2-choices li {
+  float: right;
+}
+
+/* line 521, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-container-multi .select2-choices .select2-search-field {
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+}
+
+/* line 527, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-container-multi .select2-choices .select2-search-field input {
+  padding: 5px;
+  margin: 1px 0;
+  font-family: sans-serif;
+  font-size: 100%;
+  color: #666;
+  outline: 0;
+  border: 0;
+  box-shadow: none;
+  background: transparent !important;
+}
+
+/* line 541, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-container-multi .select2-choices .select2-search-field input.select2-active {
+  background: #fff url(/assets/select2-spinner-f6ecff617ec2ba7f559e6f535cad9b70a3f91120737535dab4d4548a6c83576c.gif) no-repeat 100% !important;
+}
+
+/* line 545, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-default {
+  color: #999 !important;
+}
+
+/* line 549, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-container-multi .select2-choices .select2-search-choice {
+  padding: 3px 5px 3px 18px;
+  margin: 3px 0 3px 5px;
+  position: relative;
+  line-height: 13px;
+  color: #333;
+  cursor: default;
+  border: 1px solid #aaaaaa;
+  border-radius: 3px;
+  box-shadow: 0 0 2px #fff inset, 0 1px 0 rgba(0, 0, 0, 0.05);
+  background-clip: padding-box;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #e4e4e4;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#f4f4f4', GradientType=0);
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(20%, #f4f4f4), color-stop(50%, #f0f0f0), color-stop(52%, #e8e8e8), color-stop(100%, #eee));
+  background-image: -webkit-linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eee 100%);
+  background-image: linear-gradient(to bottom, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eee 100%);
+}
+
+/* line 579, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+html[dir="rtl"] .select2-container-multi .select2-choices .select2-search-choice {
+  margin: 3px 5px 3px 0;
+  padding: 3px 18px 3px 5px;
+}
+
+/* line 584, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-container-multi .select2-choices .select2-search-choice .select2-chosen {
+  cursor: default;
+}
+
+/* line 587, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-container-multi .select2-choices .select2-search-choice-focus {
+  background: #d4d4d4;
+}
+
+/* line 591, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-search-choice-close {
+  display: block;
+  width: 12px;
+  height: 13px;
+  position: absolute;
+  right: 3px;
+  top: 4px;
+  font-size: 1px;
+  outline: none;
+  background: url(/assets/select2-d6b5d8d83dbc18fb8d77c8761d331cd9e5123c9684950bab0406e98a24ac5ae8.png) right top no-repeat;
+}
+
+/* line 603, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+html[dir="rtl"] .select2-search-choice-close {
+  right: auto;
+  left: 3px;
+}
+
+/* line 608, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-container-multi .select2-search-choice-close {
+  left: 3px;
+}
+
+/* line 612, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+html[dir="rtl"] .select2-container-multi .select2-search-choice-close {
+  left: auto;
+  right: 2px;
+}
+
+/* line 617, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-container-multi .select2-choices .select2-search-choice .select2-search-choice-close:hover {
+  background-position: right -11px;
+}
+
+/* line 620, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-container-multi .select2-choices .select2-search-choice-focus .select2-search-choice-close {
+  background-position: right -11px;
+}
+
+/* disabled styles */
+/* line 625, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-container-multi.select2-container-disabled .select2-choices {
+  background-color: #f4f4f4;
+  background-image: none;
+  border: 1px solid #ddd;
+  cursor: default;
+}
+
+/* line 632, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-container-multi.select2-container-disabled .select2-choices .select2-search-choice {
+  padding: 3px 5px 3px 5px;
+  border: 1px solid #ddd;
+  background-image: none;
+  background-color: #f4f4f4;
+}
+
+/* line 639, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-container-multi.select2-container-disabled .select2-choices .select2-search-choice .select2-search-choice-close {
+  display: none;
+  background: none;
+}
+
+/* end multiselect */
+/* line 645, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-result-selectable .select2-match,
+.select2-result-unselectable .select2-match {
+  text-decoration: underline;
+}
+
+/* line 650, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-offscreen, .select2-offscreen:focus {
+  clip: rect(0 0 0 0) !important;
+  width: 1px !important;
+  height: 1px !important;
+  border: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  position: absolute !important;
+  outline: 0 !important;
+  left: 0px !important;
+  top: 0px !important;
+}
+
+/* line 664, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-display-none {
+  display: none;
+}
+
+/* line 668, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+.select2-measure-scrollbar {
+  position: absolute;
+  top: -10000px;
+  left: -10000px;
+  width: 100px;
+  height: 100px;
+  overflow: scroll;
+}
+
+/* Retina-ize icons */
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx) {
+  /* line 680, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+  .select2-search input,
+  .select2-search-choice-close,
+  .select2-container .select2-choice abbr,
+  .select2-container .select2-choice .select2-arrow b {
+    background-image: url(/assets/select2x2-6fe28d687dc0ed4d96016238c608ba1e7198c9c9accfa0b360b78018b9fb9bc2.png) !important;
+    background-repeat: no-repeat !important;
+    background-size: 60px 40px !important;
+  }
+
+  /* line 689, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/select2-rails-3.5.10/vendor/assets/stylesheets/select2.scss */
+  .select2-search input {
+    background-position: 100% -21px !important;
+  }
+}
+/* line 17, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/base/_alerts.scss */
+.thredded--alert, .thredded--flash-message {
+  border: solid 1px;
+  border-radius: 3px;
+  margin-bottom: 1.5rem;
+  padding: 0.75rem;
+  text-decoration: none;
+}
+
+/* line 25, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/base/_alerts.scss */
+.thredded--alert-success, .thredded--flash-message--success {
+  background: #e6efc2;
+  border-color: #cce5cc;
+  color: #3c763d;
+}
+/* line 6, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/base/_alerts.scss */
+.thredded--alert-success a, .thredded--flash-message--success a {
+  color: #2b542c;
+  text-decoration: underline;
+}
+/* line 10, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/base/_alerts.scss */
+.thredded--alert-success a:focus, .thredded--flash-message--success a:focus, .thredded--alert-success a:hover, .thredded--flash-message--success a:hover {
+  color: #224323;
+}
+
+/* line 29, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/base/_alerts.scss */
+.thredded--alert-danger, .thredded--flash-message--error {
+  background: #fbe3e4;
+  border-color: #f9f1f1;
+  color: #a94442;
+}
+/* line 6, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/base/_alerts.scss */
+.thredded--alert-danger a, .thredded--flash-message--error a {
+  color: #843534;
+  text-decoration: underline;
+}
+/* line 10, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/base/_alerts.scss */
+.thredded--alert-danger a:focus, .thredded--flash-message--error a:focus, .thredded--alert-danger a:hover, .thredded--flash-message--error a:hover {
+  color: #722e2d;
+}
+
+/* line 33, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/base/_alerts.scss */
+.thredded--alert-info, .thredded--flash-message--notice {
+  background: #e6f3fa;
+  border-color: #e4eefb;
+  color: #1f69c1;
+}
+/* line 6, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/base/_alerts.scss */
+.thredded--alert-info a, .thredded--flash-message--notice a {
+  color: #185195;
+  text-decoration: underline;
+}
+/* line 10, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/base/_alerts.scss */
+.thredded--alert-info a:focus, .thredded--flash-message--notice a:focus, .thredded--alert-info a:hover, .thredded--flash-message--notice a:hover {
+  color: #14457f;
+}
+
+/* line 37, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/base/_alerts.scss */
+.thredded--alert-warning, .thredded--flash-message--alert {
+  background: #fcf8e3;
+  border-color: #eee5d6;
+  color: #8a6d3b;
+}
+/* line 6, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/base/_alerts.scss */
+.thredded--alert-warning a, .thredded--flash-message--alert a {
+  color: #66512c;
+  text-decoration: underline;
+}
+/* line 10, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/base/_alerts.scss */
+.thredded--alert-warning a:focus, .thredded--flash-message--alert a:focus, .thredded--alert-warning a:hover, .thredded--flash-message--alert a:hover {
+  color: #544324;
+}
+
+/* line 1, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/base/_buttons.scss */
+.thredded--button, .thredded--form--submit {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  -webkit-font-smoothing: antialiased;
+  background: #4a90e2;
+  border-radius: 3px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1;
+  padding: 0.75em 1em;
+  text-decoration: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+/* line 20, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/base/_buttons.scss */
+.thredded--button:hover, .thredded--form--submit:hover, .thredded--button:focus, .thredded--form--submit:focus {
+  background-color: #1f69c1;
+  color: #fff;
+  text-decoration: none;
+}
+/* line 27, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/base/_buttons.scss */
+.thredded--button:focus, .thredded--form--submit:focus {
+  box-shadow: 0 0 3px #4a90e2;
+  outline: none;
+}
+/* line 32, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/base/_buttons.scss */
+.thredded--button:disabled, .thredded--form--submit:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+/* line 36, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/base/_buttons.scss */
+.thredded--button:disabled:hover, .thredded--form--submit:disabled:hover {
+  background: #4a90e2;
+}
+
+/* line 42, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/base/_buttons.scss */
+.thredded--post-moderation-actions, .thredded--messageboards--actions {
+  text-align: center;
+}
+/* line 44, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/base/_buttons.scss */
+.thredded--post-moderation-actions a, .thredded--messageboards--actions a, .thredded--post-moderation-actions .button_to, .thredded--messageboards--actions .button_to {
+  display: block;
+  margin-top: 0.75rem;
+}
+@media screen and (min-width: 34.00001rem) {
+  /* line 49, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/base/_buttons.scss */
+  .thredded--post-moderation-actions a, .thredded--messageboards--actions a, .thredded--post-moderation-actions .button_to, .thredded--messageboards--actions .button_to {
+    display: inline-block;
+  }
+  /* line 52, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/base/_buttons.scss */
+  .thredded--post-moderation-actions a + a, .thredded--messageboards--actions a + a, .thredded--post-moderation-actions .button_to + .button_to, .thredded--messageboards--actions .button_to + .button_to {
+    margin-left: 0.75rem;
+  }
+}
+
+/* line 1, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/base/_forms.scss */
+.thredded--form [type='color'], .thredded--form [type='date'], .thredded--form [type='datetime'], .thredded--form [type='datetime-local'], .thredded--form [type='email'], .thredded--form [type='month'],
+.thredded--form [type='number'], .thredded--form [type='password'], .thredded--form [type='search'], .thredded--form [type='tel'], .thredded--form [type='text'], .thredded--form [type='time'], .thredded--form [type='url'],
+.thredded--form [type='week'], .thredded--form input:not([type]), .thredded--form textarea, .thredded--form select[multiple=multiple], .thredded--select2-container > .select2-choices {
+  background: #fff;
+  border: 1px solid #e1e1e1;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
+  color: #575d6b;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  font-size: 1rem;
+  padding: 0.75rem;
+  -webkit-transition: border-color;
+  transition: border-color;
+}
+/* line 11, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/base/_forms.scss */
+.thredded--form [type='color']:hover, .thredded--form [type='date']:hover, .thredded--form [type='datetime']:hover, .thredded--form [type='datetime-local']:hover, .thredded--form [type='email']:hover, .thredded--form [type='month']:hover,
+.thredded--form [type='number']:hover, .thredded--form [type='password']:hover, .thredded--form [type='search']:hover, .thredded--form [type='tel']:hover, .thredded--form [type='text']:hover, .thredded--form [type='time']:hover, .thredded--form [type='url']:hover,
+.thredded--form [type='week']:hover, .thredded--form input:hover:not([type]), .thredded--form textarea:hover, .thredded--form select[multiple=multiple]:hover, .thredded--select2-container > .select2-choices:hover {
+  border-color: #d1d1d1;
+}
+/* line 15, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/base/_forms.scss */
+.thredded--form [type='color']:focus, .thredded--form [type='date']:focus, .thredded--form [type='datetime']:focus, .thredded--form [type='datetime-local']:focus, .thredded--form [type='email']:focus, .thredded--form [type='month']:focus,
+.thredded--form [type='number']:focus, .thredded--form [type='password']:focus, .thredded--form [type='search']:focus, .thredded--form [type='tel']:focus, .thredded--form [type='text']:focus, .thredded--form [type='time']:focus, .thredded--form [type='url']:focus,
+.thredded--form [type='week']:focus, .thredded--form input:focus:not([type]), .thredded--form textarea:focus, .thredded--form select[multiple=multiple]:focus, .thredded--select2-container > .select2-choices:focus, .thredded--select2-container.select2-container-active > .select2-choices, .thredded--select2-container.select2-dropdown-open > .select2-choices {
+  border-color: #4a90e2;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06), 0 0 3px #4a90e2;
+  outline: none;
+}
+
+/* line 23, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/base/_forms.scss */
+.thredded--form fieldset {
+  background-color: #fff;
+  border: 1px solid #eee;
+  margin: 0 0 0.75rem;
+  padding: 1.5rem;
+}
+/* line 30, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/base/_forms.scss */
+.thredded--form input,
+.thredded--form label,
+.thredded--form select {
+  display: block;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  font-size: 1rem;
+}
+/* line 38, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/base/_forms.scss */
+.thredded--form label {
+  font-weight: 600;
+  margin-bottom: 0.375rem;
+}
+/* line 42, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/base/_forms.scss */
+.thredded--form label.required::after {
+  content: "*";
+}
+/* line 46, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/base/_forms.scss */
+.thredded--form label abbr {
+  display: none;
+}
+/* line 51, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/base/_forms.scss */
+.thredded--form [type='color'], .thredded--form [type='date'], .thredded--form [type='datetime'], .thredded--form [type='datetime-local'], .thredded--form [type='email'], .thredded--form [type='month'],
+.thredded--form [type='number'], .thredded--form [type='password'], .thredded--form [type='search'], .thredded--form [type='tel'], .thredded--form [type='text'], .thredded--form [type='time'], .thredded--form [type='url'],
+.thredded--form [type='week'], .thredded--form input:not([type]), .thredded--form textarea, .thredded--form select[multiple=multiple] {
+  box-sizing: border-box;
+  width: 100%;
+}
+/* line 59, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/base/_forms.scss */
+.thredded--form textarea {
+  line-height: 1.5;
+  resize: vertical;
+}
+/* line 64, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/base/_forms.scss */
+.thredded--form input[type="search"] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+/* line 68, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/base/_forms.scss */
+.thredded--form input[type="checkbox"],
+.thredded--form input[type="radio"] {
+  display: inline;
+  margin-right: 0.375rem;
+}
+/* line 74, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/base/_forms.scss */
+.thredded--form input[type="file"] {
+  padding-bottom: 0.75rem;
+  width: 100%;
+}
+/* line 79, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/base/_forms.scss */
+.thredded--form select {
+  margin-bottom: 0.75rem;
+  max-width: 100%;
+  width: auto;
+}
+
+/* line 1, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/base/_lists.scss */
+.thredded--user-navigation, .thredded--moderation-navigation--items, .thredded--main-navigation, .thredded--navigation-breadcrumbs, .thredded--currently-online--users, .thredded--form-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 1, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/base/_nav.scss */
+.thredded--user-navigation--item a, .thredded--moderation-navigation--item a, .thredded--navigation-breadcrumbs a {
+  color: #575d6b;
+  text-decoration: none;
+  -webkit-transition: color 0.1s linear;
+  transition: color 0.1s linear;
+}
+/* line 6, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/base/_nav.scss */
+.thredded--user-navigation--item a:active, .thredded--moderation-navigation--item a:active, .thredded--navigation-breadcrumbs a:active, .thredded--user-navigation--item a:focus, .thredded--moderation-navigation--item a:focus, .thredded--navigation-breadcrumbs a:focus, .thredded--user-navigation--item a:hover, .thredded--moderation-navigation--item a:hover, .thredded--navigation-breadcrumbs a:hover {
+  color: #4a90e2;
+  text-decoration: none;
+}
+/* line 13, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/base/_nav.scss */
+.thredded--user-navigation--item a:active, .thredded--moderation-navigation--item a:active, .thredded--navigation-breadcrumbs a:active, .thredded--user-navigation--item a:focus, .thredded--moderation-navigation--item a:focus, .thredded--navigation-breadcrumbs a:focus {
+  outline: none;
+}
+
+/* line 19, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/base/_nav.scss */
+.thredded--preferences .thredded--user-navigation--settings a, .thredded--new-private-topic .thredded--user-navigation--private-topics a, .thredded--private-topics-index .thredded--user-navigation--private-topics a, .thredded--private-topic-show .thredded--user-navigation--private-topics a, .thredded--pending-moderation .thredded--user-navigation--moderation a, .thredded--moderation-history .thredded--user-navigation--moderation a, .thredded--moderation-users .thredded--user-navigation--moderation a, .thredded--moderation-user .thredded--user-navigation--moderation a, .thredded--moderation-activity .thredded--user-navigation--moderation a, .thredded--pending-moderation .thredded--moderation-navigation--pending a, .thredded--moderation-history .thredded--moderation-navigation--history a, .thredded--moderation-users .thredded--moderation-navigation--users a, .thredded--moderation-user .thredded--moderation-navigation--users a, .thredded--moderation-activity .thredded--moderation-navigation--activity a {
+  color: #4a90e2;
+}
+
+/* line 24, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/base/_nav.scss */
+.thredded--user-navigation, .thredded--moderation-navigation--items {
+  border-bottom: 1px solid #eee;
+  font-size: 0.875rem;
+  margin-left: 0;
+  margin-bottom: 1rem;
+  text-align: left;
+  list-style-type: none;
+}
+/* line 32, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/base/_grid.scss */
+.thredded--user-navigation::after, .thredded--moderation-navigation--items::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+@media screen and (min-width: 34.00001rem) {
+  /* line 24, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/base/_nav.scss */
+  .thredded--user-navigation, .thredded--moderation-navigation--items {
+    margin-bottom: 0;
+  }
+}
+
+/* line 39, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/base/_nav.scss */
+.thredded--user-navigation--item, .thredded--moderation-navigation--item {
+  display: inline-block;
+  margin-right: 1rem;
+}
+/* line 43, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/base/_nav.scss */
+.thredded--user-navigation--item a, .thredded--moderation-navigation--item a {
+  display: inline-block;
+  color: #a5aab6;
+  padding: 0.75rem 0;
+}
+/* line 50, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/base/_nav.scss */
+.thredded--user-navigation--item:last-child, .thredded--moderation-navigation--item:last-child {
+  margin-right: 0;
+}
+
+/* line 55, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/base/_nav.scss */
+.thredded--preferences .thredded--user-navigation--settings, .thredded--new-private-topic .thredded--user-navigation--private-topics, .thredded--private-topics-index .thredded--user-navigation--private-topics, .thredded--private-topic-show .thredded--user-navigation--private-topics, .thredded--pending-moderation .thredded--user-navigation--moderation, .thredded--moderation-history .thredded--user-navigation--moderation, .thredded--moderation-users .thredded--user-navigation--moderation, .thredded--moderation-user .thredded--user-navigation--moderation, .thredded--moderation-activity .thredded--user-navigation--moderation, .thredded--pending-moderation .thredded--moderation-navigation--pending, .thredded--moderation-history .thredded--moderation-navigation--history, .thredded--moderation-users .thredded--moderation-navigation--users, .thredded--moderation-user .thredded--moderation-navigation--users, .thredded--moderation-activity .thredded--moderation-navigation--activity {
+  border-bottom: 1px solid #4a90e2;
+  margin-bottom: -1px;
+}
+
+/* line 64, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/base/_nav.scss */
+.thredded--user-navigation--private-topics--unread, .thredded--user-navigation--moderation--pending-count {
+  background: #4a90e2;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 0.75rem;
+  line-height: 1;
+  margin-left: 0.4rem;
+  padding: 2px 6px;
+}
+
+/* line 1, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/base/_tables.scss */
+.thredded--table, .thredded--post--content table {
+  -webkit-font-feature-settings: "kern", "liga", "tnum";
+          font-feature-settings: "kern", "liga", "tnum";
+  border-collapse: collapse;
+  margin: 0.75rem 0;
+}
+/* line 6, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/base/_tables.scss */
+.thredded--table td, .thredded--post--content table td, .thredded--table th, .thredded--post--content table th {
+  text-align: center;
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid #eee;
+  vertical-align: middle;
+}
+/* line 13, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/base/_tables.scss */
+.thredded--table th, .thredded--post--content table th {
+  font-weight: bold;
+}
+
+/* line 1, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/base/_typography.scss */
+.thredded--currently-online--title, .thredded--empty--title, .thredded--messageboard--title, .thredded--messageboard--meta, .thredded--post--topic, .thredded--post--user, .thredded--post--user-and-topic, .thredded--post-form--title, .thredded--preferences-header--title, .thredded--topic-header--title, .thredded--topics--title {
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1.2;
+  margin: 0 0 0.75rem;
+}
+
+/* line 8, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/base/_typography.scss */
+.thredded--post-moderation-record--moderation-state-notice a, .thredded--post-moderation-record--content-changed-notice a, .thredded--link, .thredded--messageboard, .thredded--post--user a, .thredded--post--topic a, .thredded--post--user-and-topic a, .thredded--post--edit, .thredded--post--delete, .thredded--post--content a, .thredded--topic-header--started-by a, .thredded--topic-header--edit-topic, .thredded--topic-follow-info form input[type=submit], .thredded--topics--title a, .thredded--topics--started-by a, .thredded--topics--updated-by a {
+  color: #4a90e2;
+  text-decoration: none;
+  -webkit-transition: color 0.1s linear;
+  transition: color 0.1s linear;
+}
+/* line 13, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/base/_typography.scss */
+.thredded--post-moderation-record--moderation-state-notice a:active, .thredded--post-moderation-record--content-changed-notice a:active, .thredded--link:active, .thredded--messageboard:active, .thredded--post--user a:active, .thredded--post--topic a:active, .thredded--post--user-and-topic a:active, .thredded--post--edit:active, .thredded--post--delete:active, .thredded--post--content a:active, .thredded--topic-header--started-by a:active, .thredded--topic-header--edit-topic:active, .thredded--topic-follow-info form input[type=submit]:active, .thredded--topics--title a:active, .thredded--topics--started-by a:active, .thredded--topics--updated-by a:active, .thredded--post-moderation-record--moderation-state-notice a:focus, .thredded--post-moderation-record--content-changed-notice a:focus, .thredded--link:focus, .thredded--messageboard:focus, .thredded--post--user a:focus, .thredded--post--topic a:focus, .thredded--post--user-and-topic a:focus, .thredded--post--edit:focus, .thredded--post--delete:focus, .thredded--post--content a:focus, .thredded--topic-header--started-by a:focus, .thredded--topic-header--edit-topic:focus, .thredded--topic-follow-info form input[type=submit]:focus, .thredded--topics--title a:focus, .thredded--topics--started-by a:focus, .thredded--topics--updated-by a:focus, .thredded--post-moderation-record--moderation-state-notice a:hover, .thredded--post-moderation-record--content-changed-notice a:hover, .thredded--link:hover, .thredded--messageboard:hover, .thredded--post--user a:hover, .thredded--post--topic a:hover, .thredded--post--user-and-topic a:hover, .thredded--post--edit:hover, .thredded--post--delete:hover, .thredded--post--content a:hover, .thredded--topic-header--started-by a:hover, .thredded--topic-header--edit-topic:hover, .thredded--topic-follow-info form input[type=submit]:hover, .thredded--topics--title a:hover, .thredded--topics--started-by a:hover, .thredded--topics--updated-by a:hover {
+  color: #1f69c1;
+  text-decoration: none;
+}
+/* line 20, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/base/_typography.scss */
+.thredded--post-moderation-record--moderation-state-notice a:active, .thredded--post-moderation-record--content-changed-notice a:active, .thredded--link:active, .thredded--messageboard:active, .thredded--post--user a:active, .thredded--post--topic a:active, .thredded--post--user-and-topic a:active, .thredded--post--edit:active, .thredded--post--delete:active, .thredded--post--content a:active, .thredded--topic-header--started-by a:active, .thredded--topic-header--edit-topic:active, .thredded--topic-follow-info form input[type=submit]:active, .thredded--topics--title a:active, .thredded--topics--started-by a:active, .thredded--topics--updated-by a:active, .thredded--post-moderation-record--moderation-state-notice a:focus, .thredded--post-moderation-record--content-changed-notice a:focus, .thredded--link:focus, .thredded--messageboard:focus, .thredded--post--user a:focus, .thredded--post--topic a:focus, .thredded--post--user-and-topic a:focus, .thredded--post--edit:focus, .thredded--post--delete:focus, .thredded--post--content a:focus, .thredded--topic-header--started-by a:focus, .thredded--topic-header--edit-topic:focus, .thredded--topic-follow-info form input[type=submit]:focus, .thredded--topics--title a:focus, .thredded--topics--started-by a:focus, .thredded--topics--updated-by a:focus {
+  outline: none;
+}
+
+/* line 26, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/base/_typography.scss */
+.thredded--post--content hr {
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+  border-top: 1px solid #eee;
+  margin: 1.5rem 0;
+}
+
+/* line 34, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/base/_typography.scss */
+.thredded--form-list--hint, .thredded--messageboard--description, .thredded--messageboard--byline, .thredded--post--created-at, .thredded--post--content p {
+  margin: 0 0 0.75rem;
+}
+
+/* line 38, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/base/_typography.scss */
+.thredded--icon {
+  fill: currentColor;
+}
+
+/* line 42, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/base/_typography.scss */
+.thredded--blockquote, .thredded--post--content blockquote {
+  margin: 0 0 0.75rem;
+  border-left: solid 5px #eee;
+  padding: 1rem;
+}
+/* line 47, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/base/_typography.scss */
+.thredded--blockquote p:last-of-type, .thredded--post--content blockquote p:last-of-type {
+  margin-bottom: 0;
+}
+
+/* line 3, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/utilities/_is-compact.scss */
+.thredded--is-compact input[type="submit"],
+.thredded--is-compact label {
+  height: 0;
+  margin: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+/* line 11, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/utilities/_is-compact.scss */
+.thredded--is-compact input {
+  margin: 0;
+}
+/* line 15, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/utilities/_is-compact.scss */
+.thredded--is-compact li {
+  margin-bottom: 0;
+}
+/* line 18, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/utilities/_is-compact.scss */
+.thredded--is-compact li:not(.title) {
+  height: 0;
+  visibility: hidden;
+  opacity: 0;
+  margin: 0;
+}
+/* line 2, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/utilities/_is-expanded.scss */
+.thredded--is-expanded label {
+  height: auto;
+  margin-bottom: 0.375rem;
+  opacity: 1;
+  visibility: visible;
+}
+/* line 9, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/utilities/_is-expanded.scss */
+.thredded--is-expanded .private_users,
+.thredded--is-expanded .content,
+.thredded--is-expanded .submit {
+  height: auto;
+  opacity: 1;
+  visibility: visible;
+}
+/* line 1, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/layout/_main-container.scss */
+.thredded--main-container {
+  -webkit-font-smoothing: antialiased;
+  color: #575d6b;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0 auto;
+  max-width: 43.125rem;
+  padding: 0;
+}
+/* line 32, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/base/_grid.scss */
+.thredded--main-container::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+@media screen and (min-width: 34.00001rem) {
+  /* line 1, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/layout/_main-container.scss */
+  .thredded--main-container {
+    padding: 0 2rem 0.75rem 2rem;
+  }
+}
+/* line 1, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/layout/_main-navigation.scss */
+.thredded--main-navigation {
+  display: block;
+}
+/* line 32, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/base/_grid.scss */
+.thredded--main-navigation::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+@media screen and (min-width: 48.00001rem) {
+  /* line 1, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/layout/_main-navigation.scss */
+  .thredded--main-navigation {
+    margin-top: 0.75rem;
+  }
+}
+/* line 13, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/layout/_main-navigation.scss */
+.thredded--navigation-breadcrumbs li {
+  display: inline-block;
+  font-weight: bold;
+}
+/* line 17, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/layout/_main-navigation.scss */
+.thredded--navigation-breadcrumbs li a {
+  display: inline-block;
+  padding: 0.75rem 0;
+}
+/* line 22, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/layout/_main-navigation.scss */
+.thredded--navigation-breadcrumbs li:after {
+  background: url(/assets/thredded/breadcrumb-chevron-8caae024568d3d25a005ebafdc7f2eb671b9971dac66e08720f1bed36184305c.svg) no-repeat center center;
+  content: "";
+  display: inline-block;
+  height: 10px;
+  margin: 0 0.45rem 0 0.75rem;
+  width: 6px;
+}
+/* line 31, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/layout/_main-navigation.scss */
+.thredded--navigation-breadcrumbs li:last-child:after {
+  display: none;
+}
+/* line 1, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/layout/_search-navigation.scss */
+.thredded--navigation--search {
+  margin-right: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+@media screen and (max-width: 48rem) {
+  /* line 1, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/layout/_search-navigation.scss */
+  .thredded--navigation--search {
+    position: initial;
+  }
+}
+/* line 12, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/layout/_search-navigation.scss */
+.thredded--navigation--search label {
+  display: none;
+}
+/* line 16, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/layout/_search-navigation.scss */
+.thredded--navigation--search input[type="search"] {
+  box-shadow: none;
+  width: 100%;
+}
+@media screen and (min-width: 48.00001rem) {
+  /* line 16, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/layout/_search-navigation.scss */
+  .thredded--navigation--search input[type="search"] {
+    background: transparent;
+    border-color: transparent;
+    font-size: 0.875rem;
+    line-height: 1rem;
+    min-width: 13rem;
+    text-align: right;
+    width: auto;
+    padding: 0.90625rem 0.75rem 0.8125rem 0.75rem;
+    margin-right: -0.75rem;
+    -webkit-margin-end: -1.5rem;
+  }
+  /* line 34, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/layout/_search-navigation.scss */
+  .thredded--navigation--search input[type="search"], .thredded--navigation--search input[type="search"]:focus {
+    -webkit-transition: background, border-color, box-shadow, min-width 0.15s ease-out 0s;
+    transition: background, border-color, box-shadow, min-width 0.15s ease-out 0s;
+  }
+  /* line 38, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/layout/_search-navigation.scss */
+  .thredded--navigation--search input[type="search"]:focus {
+    background: #fff;
+    box-shadow: none;
+    margin-right: 0;
+    -webkit-margin-end: 0;
+    min-width: 16rem;
+    text-align: left;
+  }
+  /* line 47, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/layout/_search-navigation.scss */
+  .thredded--navigation--search input[type="search"]:hover {
+    border-color: transparent;
+    box-shadow: none;
+  }
+  /* line 52, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/layout/_search-navigation.scss */
+  .thredded--navigation--search input[type="search"]::-webkit-input-placeholder {
+    color: #a5aab6;
+    -webkit-transition: color 0.1s linear;
+    transition: color 0.1s linear;
+    opacity: 1;
+  }
+  .thredded--navigation--search input[type="search"]::-moz-placeholder {
+    color: #a5aab6;
+    -webkit-transition: color 0.1s linear;
+    transition: color 0.1s linear;
+    opacity: 1;
+  }
+  .thredded--navigation--search input[type="search"]:-ms-input-placeholder {
+    color: #a5aab6;
+    -webkit-transition: color 0.1s linear;
+    transition: color 0.1s linear;
+    opacity: 1;
+  }
+  .thredded--navigation--search input[type="search"]::placeholder {
+    color: #a5aab6;
+    -webkit-transition: color 0.1s linear;
+    transition: color 0.1s linear;
+    opacity: 1;
+  }
+  /* line 60, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/layout/_search-navigation.scss */
+  .thredded--navigation--search input[type="search"]:hover:not(:focus) {
+    cursor: pointer;
+  }
+  /* line 62, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/layout/_search-navigation.scss */
+  .thredded--navigation--search input[type="search"]:hover:not(:focus)::-webkit-input-placeholder {
+    color: #4a90e2;
+  }
+  .thredded--navigation--search input[type="search"]:hover:not(:focus)::-moz-placeholder {
+    color: #4a90e2;
+  }
+  .thredded--navigation--search input[type="search"]:hover:not(:focus):-ms-input-placeholder {
+    color: #4a90e2;
+  }
+  .thredded--navigation--search input[type="search"]:hover:not(:focus)::placeholder {
+    color: #4a90e2;
+  }
+  /* line 67, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/layout/_search-navigation.scss */
+  .thredded--navigation--search input[type="search"]:focus {
+    border-color: #eee;
+  }
+}
+/* line 73, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/layout/_search-navigation.scss */
+.thredded--navigation--search [type="submit"] {
+  display: none;
+}
+/* line 1, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/layout/_navigation.scss */
+.thredded--navigation {
+  margin-bottom: 0.75rem;
+  position: relative;
+}
+/* line 4, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/layout/_navigation.scss */
+.thredded--navigation .thredded--icon {
+  display: none;
+}
+@media screen and (max-width: 48rem) {
+  /* line 11, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/layout/_navigation.scss */
+  .thredded--navigation {
+    display: table;
+    position: relative;
+    width: 100%;
+  }
+  /* line 16, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/layout/_navigation.scss */
+  .thredded--main-navigation {
+    position: relative;
+    border: none;
+  }
+  /* line 20, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/layout/_navigation.scss */
+  .thredded--navigation-breadcrumbs {
+    font-size: 0.875rem;
+    padding-right: 5.25rem;
+  }
+  /* line 23, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/layout/_navigation.scss */
+  .thredded--is-moderator .thredded--navigation-breadcrumbs {
+    padding-right: 7.875rem;
+  }
+  /* line 27, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/layout/_navigation.scss */
+  .thredded--navigation--search-topics {
+    display: none;
+  }
+  /* line 29, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/layout/_navigation.scss */
+  .thredded--messageboards-index .thredded--navigation--search-topics, .thredded--topics-index .thredded--navigation--search-topics, .thredded--topic-search-results .thredded--navigation--search-topics {
+    display: block;
+  }
+  /* line 35, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/layout/_navigation.scss */
+  .thredded--user-navigation {
+    display: table-footer-group;
+  }
+  /* line 37, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/layout/_navigation.scss */
+  .thredded--user-navigation-standalone {
+    display: block;
+    margin-bottom: 0;
+  }
+  /* line 41, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/layout/_navigation.scss */
+  .thredded--user-navigation .thredded--user-navigation--settings, .thredded--user-navigation .thredded--user-navigation--private-topics, .thredded--user-navigation .thredded--user-navigation--moderation {
+    margin-right: 0;
+    padding: 0;
+    position: absolute;
+    top: 0.05rem;
+    z-index: 2;
+  }
+  /* line 47, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/layout/_navigation.scss */
+  .thredded--user-navigation .thredded--user-navigation--settings a, .thredded--user-navigation .thredded--user-navigation--private-topics a, .thredded--user-navigation .thredded--user-navigation--moderation a {
+    display: block;
+    padding: 0.375rem 0 0.375rem 0;
+  }
+  /* line 51, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/layout/_navigation.scss */
+  .thredded--user-navigation .thredded--user-navigation--settings .thredded--icon, .thredded--user-navigation .thredded--user-navigation--private-topics .thredded--icon, .thredded--user-navigation .thredded--user-navigation--moderation .thredded--icon {
+    display: block;
+    width: 2rem;
+    height: 2rem;
+  }
+  /* line 57, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/layout/_navigation.scss */
+  .thredded--user-navigation .thredded--user-navigation--private-topics--unread, .thredded--user-navigation .thredded--user-navigation--moderation--pending-count {
+    bottom: 0.3rem;
+    position: absolute;
+    right: -0.2rem;
+  }
+  /* line 62, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/layout/_navigation.scss */
+  .thredded--user-navigation .thredded--nav-text {
+    display: none;
+  }
+  /* line 65, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/layout/_navigation.scss */
+  .thredded--user-navigation--settings {
+    right: 2.625rem;
+  }
+  /* line 69, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/layout/_navigation.scss */
+  .thredded--user-navigation--private-topics {
+    right: 0;
+    top: 1px;
+  }
+  /* line 73, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/layout/_navigation.scss */
+  .thredded--user-navigation--private-topics a {
+    position: relative;
+  }
+  /* line 80, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/layout/_navigation.scss */
+  .thredded--user-navigation--moderation {
+    right: 5.25rem;
+  }
+}
+/* line 1, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/layout/_moderation.scss */
+.thredded--moderation-navigation {
+  position: relative;
+}
+/* line 23, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/layout/_moderation.scss */
+.thredded--moderated-notice {
+  margin-bottom: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  background: #eee;
+}
+/* line 30, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/layout/_moderation.scss */
+.thredded--post-moderation .thredded--post--user a, .thredded--post-moderation-record .thredded--post--user a {
+  color: #4a90e2;
+}
+/* line 36, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/layout/_moderation.scss */
+.thredded--post-moderation-record .thredded--post {
+  margin-bottom: 0;
+  margin-left: 1rem;
+}
+@media (min-width: 47.125rem) {
+  /* line 36, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/layout/_moderation.scss */
+  .thredded--post-moderation-record .thredded--post {
+    margin-left: 4rem;
+  }
+}
+/* line 43, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/layout/_moderation.scss */
+.thredded--post-moderation-record--moderation-state-notice {
+  margin-bottom: 1rem;
+}
+/* line 48, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/layout/_moderation.scss */
+.thredded--post-moderation-record-approved .thredded--post-moderation-record--moderation-state-notice {
+  color: #3c763d;
+}
+/* line 51, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/layout/_moderation.scss */
+.thredded--post-moderation-record-blocked .thredded--post-moderation-record--moderation-state-notice {
+  color: #a94442;
+}
+/* line 55, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/layout/_moderation.scss */
+.thredded--post-moderation-record--content-changed-notice {
+  font-style: italic;
+}
+/* line 63, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/layout/_moderation.scss */
+.thredded--post-moderation-record + .thredded--post-moderation-record {
+  margin-top: 3rem;
+}
+/* line 67, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/layout/_moderation.scss */
+.thredded--moderation--users-table {
+  width: 100%;
+}
+/* line 69, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/layout/_moderation.scss */
+.thredded--moderation--users-table a {
+  display: block;
+}
+/* line 74, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/layout/_moderation.scss */
+.thredded--moderation--user--title {
+  margin: 0;
+}
+/* line 78, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/layout/_moderation.scss */
+.thredded--moderation--user--info {
+  margin-left: 2rem;
+}
+/* line 82, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/layout/_moderation.scss */
+.thredded--user--moderation-actions {
+  text-align: left;
+  margin-left: 4rem;
+}
+/* line 85, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/layout/_moderation.scss */
+.thredded--user--moderation-actions .button_to {
+  display: inline-block;
+}
+/* line 88, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/layout/_moderation.scss */
+.thredded--user--moderation-actions .button_to + .button_to {
+  margin-left: 0.75rem;
+}
+/* line 1, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/layout/_user.scss */
+.thredded--user--avatar {
+  border-radius: 50%;
+  display: inline-block;
+  height: 1.75em;
+  width: 1.75em;
+  margin-right: 0.4375em;
+  vertical-align: baseline;
+  position: relative;
+  top: 0.5em;
+}
+/* line 1, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_currently-online.scss */
+.thredded--currently-online {
+  background-color: #eee;
+  bottom: -1.25rem;
+  padding: 1.5rem;
+  position: fixed;
+  right: 0;
+  width: 16.25rem;
+}
+@media screen and (max-width: 34rem) {
+  /* line 1, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_currently-online.scss */
+  .thredded--currently-online {
+    display: none;
+  }
+}
+/* line 13, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_currently-online.scss */
+.thredded--currently-online.thredded--is-expanded {
+  bottom: 0;
+  position: fixed;
+  right: 0;
+}
+/* line 19, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_currently-online.scss */
+.thredded--currently-online--title {
+  margin-bottom: 1.5rem;
+}
+/* line 24, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_currently-online.scss */
+.thredded--currently-online--avatar {
+  background-color: #575d6b;
+  border-radius: 50%;
+  display: inline-block;
+  height: 1.75rem;
+  margin-right: 0.75rem;
+  vertical-align: middle;
+  width: 1.75rem;
+}
+/* line 34, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_currently-online.scss */
+.thredded--currently-online--user {
+  padding: 0.75rem 0;
+}
+/* line 38, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_currently-online.scss */
+.thredded--currently-online--users {
+  height: 0;
+  visibility: hidden;
+}
+/* line 44, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_currently-online.scss */
+.thredded--currently-online.thredded--is-expanded .thredded--currently-online--users {
+  height: auto;
+  visibility: visible;
+}
+/* line 1, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_empty.scss */
+.thredded--empty {
+  border: 1px solid #eee;
+  padding: 1.5rem;
+  text-align: center;
+}
+/* line 7, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_empty.scss */
+.thredded--empty--title {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+/* line 4, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_form-list.scss */
+.thredded--form-list.on-top {
+  margin-bottom: 0.75rem;
+}
+/* line 8, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_form-list.scss */
+.thredded--form-list li {
+  -webkit-transition: all 0.15s ease-out 0s;
+  transition: all 0.15s ease-out 0s;
+  margin-bottom: 0.75rem;
+}
+/* line 13, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_form-list.scss */
+.thredded--form-list label {
+  -webkit-transition: all 0.15s ease-out 0s;
+  transition: all 0.15s ease-out 0s;
+}
+/* line 19, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_form-list.scss */
+.thredded--form-list--admin-options label {
+  cursor: pointer;
+  display: inline-block;
+  margin-bottom: 0;
+  margin-right: 1.5rem;
+}
+/* line 27, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_form-list.scss */
+.thredded--form-list--hint {
+  color: #a5aab6;
+  font-size: 0.875rem;
+  font-weight: normal;
+  position: relative;
+}
+/* line 1, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_main-section.scss */
+.thredded--main-section {
+  margin-bottom: 3rem;
+}
+/* line 1, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_messageboard.scss */
+.thredded--messageboard {
+  border: 1px solid #eee;
+  display: block;
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  position: relative;
+}
+/* line 9, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_messageboard.scss */
+.thredded--messageboard header {
+  margin-bottom: 0.75rem;
+}
+/* line 13, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_messageboard.scss */
+.thredded--messageboard:hover {
+  background-color: rgba(74, 144, 226, 0.035);
+}
+/* line 18, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_messageboard.scss */
+.thredded--messageboard--title {
+  display: inline-block;
+  float: left;
+  font-size: 1.125rem;
+  line-height: 1.2;
+  margin-bottom: 0;
+  margin-right: 0.75rem;
+  vertical-align: baseline;
+}
+/* line 29, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_messageboard.scss */
+.thredded--messageboard--meta {
+  color: #a5aab6;
+  display: inline-block;
+  font-weight: normal;
+  margin-bottom: 0;
+  vertical-align: baseline;
+}
+/* line 38, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_messageboard.scss */
+.thredded--messageboard--description {
+  clear: both;
+  margin-bottom: 0.375rem;
+  color: #575d6b;
+}
+/* line 45, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_messageboard.scss */
+.thredded--messageboard--byline {
+  color: #a5aab6;
+  font-size: 0.875em;
+  font-weight: normal;
+  margin-bottom: 0;
+}
+/* line 1, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_pagination.scss */
+.thredded--pagination {
+  border-top: 1px solid #eee;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  text-align: center;
+}
+/* line 7, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_pagination.scss */
+.thredded--pagination > span {
+  color: #a5aab6;
+  display: inline-block;
+  margin-right: 0.75rem;
+}
+/* line 12, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_pagination.scss */
+.thredded--pagination > span > a {
+  color: #575d6b;
+  display: inline-block;
+}
+/* line 16, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_pagination.scss */
+.thredded--pagination > span > a:focus, .thredded--pagination > span > a:hover {
+  color: #4a90e2;
+}
+/* line 22, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_pagination.scss */
+.thredded--pagination > span.current, .thredded--pagination > span > a {
+  padding: 0.375rem 0.75rem;
+}
+/* line 1, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_post.scss */
+.thredded--post {
+  position: relative;
+  margin-bottom: 3rem;
+}
+@media screen and (max-width: 34rem) {
+  /* line 1, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_post.scss */
+  .thredded--post {
+    margin-bottom: 1.5rem;
+  }
+}
+/* line 9, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_post.scss */
+.thredded--post--avatar {
+  border-radius: 50%;
+  display: inline-block;
+  height: 1.75rem;
+  margin-right: 0.4375em;
+  position: relative;
+  top: 6px;
+  vertical-align: baseline;
+  width: 1.75rem;
+}
+@media (min-width: 47.125rem) {
+  /* line 9, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_post.scss */
+  .thredded--post--avatar {
+    height: 2.25rem;
+    left: -3rem;
+    position: absolute;
+    top: -0.5rem;
+    width: 2.25rem;
+  }
+}
+/* line 28, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_post.scss */
+.thredded--post--topic {
+  font-size: 1.25rem;
+  line-height: 1.2;
+  margin-bottom: 0.375rem;
+}
+/* line 35, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_post.scss */
+.thredded--post--user, .thredded--post--topic, .thredded--post--user-and-topic {
+  display: inline;
+  font-size: 1.125rem;
+  line-height: 1.2;
+  margin-right: 0.4375em;
+}
+/* line 50, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_post.scss */
+.thredded--post--user a {
+  color: #575d6b;
+}
+/* line 55, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_post.scss */
+.thredded--post--created-at {
+  font-size: 0.875rem;
+  color: #a5aab6;
+  display: inline-block;
+}
+/* line 62, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_post.scss */
+.thredded--post--edit, .thredded--post--delete {
+  font-size: 0.875rem;
+}
+/* line 67, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_post.scss */
+.thredded--post--delete {
+  margin-left: 0.4rem;
+}
+/* line 71, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_post.scss */
+.thredded--post--content {
+  font-size: 1.063rem;
+  line-height: 1.65;
+  word-break: break-word;
+}
+/* line 84, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_post.scss */
+.thredded--post--content img {
+  max-width: 100%;
+  height: auto;
+}
+/* line 95, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_post.scss */
+.thredded--post--content--spoiler {
+  color: #eee;
+  background-color: #eee;
+  cursor: pointer;
+}
+/* line 100, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_post.scss */
+.thredded--post--content--spoiler:hover, .thredded--post--content--spoiler:focus {
+  color: black;
+}
+/* line 2, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_post-form.scss */
+.thredded--post-form label {
+  display: none;
+}
+/* line 6, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_post-form.scss */
+.thredded--post-form--wrapper {
+  border-top: 1px solid #eee;
+  margin-top: 1.5rem;
+  padding-top: 3rem;
+}
+@media screen and (max-width: 34rem) {
+  /* line 6, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_post-form.scss */
+  .thredded--post-form--wrapper {
+    padding-top: 1.5rem;
+  }
+}
+/* line 15, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_post-form.scss */
+.thredded--post-form--title {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+/* line 21, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_post-form.scss */
+.thredded--post-form--submit {
+  margin-top: 0.75rem;
+}
+/* line 2, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_preferences.scss */
+.thredded--preferences-header--title {
+  font-size: 1.5rem;
+}
+/* line 1, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_select2.scss */
+.thredded--select2-container {
+  width: 100%;
+}
+/* line 4, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_select2.scss */
+.thredded--select2-container > .select2-choices {
+  padding-top: 0.15rem;
+  min-height: unset;
+}
+/* line 12, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_select2.scss */
+.thredded--select2-container > .select2-choices > .select2-search-choice {
+  border: 1px solid #eee;
+  background-color: #eee;
+  margin: 0.4rem 0.6rem -0.2rem 0;
+}
+/* line 16, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_select2.scss */
+.thredded--select2-container > .select2-choices > .select2-search-choice.select2-search-choice-focus {
+  background: #4a90e2;
+  border: 1px solid #4a90e2;
+  box-shadow: 0 0 2px #4a90e2 inset, 0 1px 0 rgba(0, 0, 0, 0.05);
+  color: #fff;
+  -webkit-transition: none;
+  transition: none;
+}
+/* line 25, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_select2.scss */
+.thredded--select2-container > .select2-choices > .select2-search-field {
+  background: transparent;
+  margin-top: 0.6rem;
+}
+/* line 28, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_select2.scss */
+.thredded--select2-container > .select2-choices > .select2-search-field > [type="text"] {
+  color: #575d6b;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
+}
+/* line 34, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_select2.scss */
+.thredded--select2-container > .select2-choices > .select2-search-field > [type="text"].select2-active {
+  background-color: transparent !important;
+}
+/* line 49, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_select2.scss */
+.thredded--select2-drop {
+  background: inherit;
+  border-color: #4a90e2;
+  border-top: 1px solid #eee;
+  box-shadow: 0 1px 1px #4a90e2;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+/* line 58, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_select2.scss */
+.thredded--select2-drop .select2-results {
+  background: #fff;
+  padding: 4px;
+  margin: 0;
+}
+/* line 64, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_select2.scss */
+.thredded--select2-drop .select2-result {
+  color: #575d6b;
+}
+/* line 67, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_select2.scss */
+.thredded--select2-drop .select2-result.select2-highlighted {
+  background: #4a90e2;
+  color: #fff;
+}
+/* line 72, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_select2.scss */
+.thredded--select2-drop .select2-result > .select2-result-label {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  font-size: 1rem;
+  padding: 0.75rem;
+}
+/* line 79, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_select2.scss */
+.thredded--select2-drop .select2-no-results, .thredded--select2-drop .select2-searching {
+  background: transparent;
+  color: #575d6b;
+}
+/* line 87, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_select2.scss */
+.thredded--select2-user-result__avatar {
+  width: 2rem;
+  min-height: 2rem;
+  height: auto;
+  display: inline-block;
+  vertical-align: middle;
+}
+/* line 94, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_select2.scss */
+.thredded--select2-user-result__name {
+  display: inline-block;
+  margin-left: 0.6rem;
+}
+/* line 101, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_select2.scss */
+.thredded--select2-user-selection__avatar {
+  width: 1rem;
+  min-height: 1rem;
+  height: auto;
+  display: inline-block;
+  vertical-align: text-bottom;
+}
+/* line 108, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_select2.scss */
+.thredded--select2-user-selection__name {
+  display: inline-block;
+  margin-left: 0.4rem;
+}
+/* line 3, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_topic-delete.scss */
+.thredded--topic-delete--wrapper {
+  border-top: 1px solid #eee;
+  margin-top: 1.5rem;
+  padding-top: 3rem;
+}
+/* line 1, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_topic-header.scss */
+.thredded--topic-header {
+  margin-bottom: 3rem;
+  margin-top: 1.5rem;
+}
+@media screen and (max-width: 34rem) {
+  /* line 1, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_topic-header.scss */
+  .thredded--topic-header {
+    margin-bottom: 0.75rem;
+    margin-top: 0;
+  }
+}
+/* line 10, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_topic-header.scss */
+.thredded--topic-header--title {
+  font-size: 1.5rem;
+  line-height: 1.2;
+  margin-bottom: 0.375rem;
+}
+/* line 17, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_topic-header.scss */
+.thredded--topic-header--started-by {
+  font-size: 0.875rem;
+  color: #a5aab6;
+  font-style: normal;
+}
+/* line 26, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_topic-header.scss */
+.thredded--topic-header--edit-topic {
+  font-size: 0.875rem;
+  margin-left: 0.4rem;
+}
+/* line 31, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_topic-header.scss */
+.thredded--topic-follow-info {
+  float: right;
+  color: #a5aab6;
+  font-style: normal;
+  max-width: 60%;
+  text-align: right;
+}
+/* line 34, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_topic-header.scss */
+.thredded--topic-follow-info.thredded--following {
+  font-size: 0.65rem;
+}
+/* line 37, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_topic-header.scss */
+.thredded--topic-follow-info.thredded--notfollowing {
+  font-size: 0.875rem;
+}
+/* line 43, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_topic-header.scss */
+.thredded--topic-follow-info p {
+  margin: 0;
+}
+/* line 46, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_topic-header.scss */
+.thredded--topic-follow-info form {
+  display: inline-block;
+}
+/* line 48, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_topic-header.scss */
+.thredded--topic-follow-info form input[type=submit] {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+}
+/* line 1, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_topics.scss */
+.thredded--topics--topic {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+@media (max-width: 43.125rem) {
+  /* line 1, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_topics.scss */
+  .thredded--topics--topic {
+    margin-left: 3rem;
+  }
+}
+/* line 10, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_topics.scss */
+.thredded--topics--title {
+  display: inline;
+  font-size: 1.125rem;
+  line-height: 1.5;
+}
+/* line 16, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_topics.scss */
+.thredded--topics--title a {
+  color: #575d6b;
+  display: inline;
+}
+/* line 21, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_topics.scss */
+.thredded--topics--title a:hover {
+  color: #4a90e2;
+}
+/* line 27, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_topics.scss */
+.thredded--topics--categories {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  line-height: 1rem;
+}
+/* line 34, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_topics.scss */
+.thredded--topics--categories li {
+  font-size: .5rem;
+  display: inline-block;
+  color: #575d6b;
+  background-color: #ebedef;
+  box-shadow: inset 0 -1px 0 #c1c5cd;
+  padding: 1px 6px;
+  border-radius: 2px;
+  text-transform: lowercase;
+  letter-spacing: 1px;
+  vertical-align: bottom;
+}
+/* line 48, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_topics.scss */
+.thredded--topics--started-by, .thredded--topics--updated-by {
+  color: #a5aab6;
+  font-size: 0.875rem;
+  font-style: normal;
+}
+/* line 54, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_topics.scss */
+.thredded--topics--started-by a, .thredded--topics--updated-by a {
+  color: #89909f;
+}
+/* line 58, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_topics.scss */
+.thredded--topics--started-by a:hover, .thredded--topics--updated-by a:hover {
+  color: #4a90e2;
+}
+/* line 65, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_topics.scss */
+.thredded--topics--started-by abbr::after, .thredded--topics--updated-by abbr::after {
+  content: ' by ';
+}
+/* line 71, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_topics.scss */
+.thredded--topics--updated-by {
+  margin-right: 0.75rem;
+}
+/* line 75, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_topics.scss */
+.thredded--topics--updated-by abbr::before {
+  content: 'updated ';
+}
+/* line 81, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_topics.scss */
+.thredded--topics--started-by {
+  display: none;
+}
+/* line 85, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_topics.scss */
+.thredded--topics--started-by abbr::before {
+  content: 'started ';
+}
+/* line 91, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_topics.scss */
+.thredded--topics--moderation-state {
+  padding: 0.3em 0.5em;
+  font-size: 0.875rem;
+  font-style: normal;
+}
+/* line 97, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_topics.scss */
+.thredded--topics--posts-count {
+  border-radius: 50%;
+  display: inline-block;
+  font-weight: 900;
+  font-size: 0.8rem;
+  height: 2rem;
+  left: -3rem;
+  line-height: 2rem;
+  margin-right: 1.5rem;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 2rem;
+  -webkit-transition: background 0.1s linear, color 0.1s linear;
+  transition: background 0.1s linear, color 0.1s linear;
+}
+/* line 113, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_topics.scss */
+.thredded--topic-unread > .thredded--topics--posts-count {
+  background: #4a90e2;
+  color: #fff;
+}
+/* line 118, /Users/god/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/thredded-0.6.1/app/assets/stylesheets/thredded/components/_topics.scss */
+.thredded--topic-read > .thredded--topics--posts-count {
+  background: rgba(87, 93, 107, 0.3);
+  color: #fff;
+}

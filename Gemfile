@@ -7,7 +7,7 @@ gem 'bundler', '1.12.5'
 gem 'tzinfo-data', platforms: [:mingw, :mswin]  # Windows compatibility
 
 # Database
-gem 'pg', '~> 0.15'          # Postgres plug-in for Rails
+gem 'pg', '~> 0.15'          # Postgres plug-in
 gem 'seed_dump'              # database dumper
 gem 'faker'                  # random data generator
 gem 'factory_girl_rails'     # create factories
@@ -67,6 +67,7 @@ end
 
 group :production do
   gem 'rails_12factor'
+  gem 'thin'
 end
 
 group :doc do
