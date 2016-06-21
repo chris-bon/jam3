@@ -114,17 +114,17 @@ module Thredded
     #   [Thredded::PrivatePost, :commit, :after, :notify_USERS],
     # ].freeze
 
-    def self.run users: 200, topics: 55, posts: (1..60)
+    def self.run users: 200, topics: 13, posts: (1..15), private_posts: (1..5)
       STDERR.puts 'Seeding the database...'
       # Disable callbacks to avoid creating notifications and performing unnecessary updates
       # SKIP_CALLBACKS.each { |klass, *args| klass.skip_callback *args }
       s = new
       Messageboard.transaction do s.create_messageboard
         s.create_topics        count: topics
-        s.create_posts         count:  posts
-        s.create_private_posts count:  posts
+        s.create_posts         count: posts
+        s.create_private_posts count: private_posts
         # s.create_additional_messageboards
-        s.log 'Running after_commit callbacks'
+        # s.log 'Running after_commit callbacks'
       end
     ensure
       # # Re-enable callbacks
@@ -135,18 +135,18 @@ module Thredded
       STDERR.puts "- #{message}"
     end
 
-=begin
-    def create_first_user
-      @user ||= User.all.first || FactoryGirl.create :user, :approved, :admin, 
-                 username: 'admin', email: 'chrisbon315@gmail.com',
-                 password: 'Qwert1', password_confirmation: 'Qwert1'
-    end
 
-    def create_users count:
-      log "Creating #{count} USERS..."
-      @users = [user] + FactoryGirl.create_list(:user, count, *(%i(approved) if rand > 0.1))
-    end
-=end
+    # def create_first_user
+    #   @user ||= User.all.first || FactoryGirl.create :user, :approved, :admin, 
+    #              username: 'admin', email: 'chrisbon315@gmail.com',
+    #              password: 'Qwert1', password_confirmation: 'Qwert1'
+    # end
+
+    # def create_users count:
+    #   log "Creating #{count} USERS..."
+    #   @users = [user] + FactoryGirl.create_list(:user, count, *(%i(approved) if rand > 0.1))
+    # end
+
 
     def create_messageboard
       log 'Creating a messageboard...'
@@ -155,27 +155,27 @@ module Thredded
                         description: 'A board is not a board without music!'
     end
 
-    def create_additional_messageboards
-      meta_group_id = MessageboardGroup.create!(name: 'Meta').id
-      additional_messageboards = [
-        ['General Music', 'Talk about whatever here', meta_group_id],
-        ['Help, Bugs, and Suggestions',
-         'Need help using the forum? Want to report a bug or make a suggestion? 
-          This is the place.', meta_group_id]
-      ]
-      log "Creating #{additional_messageboards.length} 
-           additional messageboards..."
-      additional_messageboards.each do |name, description, group_id|
-        messageboard = Messageboard.create! name: name, 
-                                            description: description, 
-                                            messageboard_group_id: group_id
-        FactoryGirl.create_list :topic, 1 + rand(3), 
-                                messageboard: messageboard, 
-                                  with_posts: 1
-      end
-    end
+    # def create_additional_messageboards
+    #   meta_group_id = MessageboardGroup.create!(name: 'Meta').id
+    #   additional_messageboards = [
+    #     ['General Music', 'Talk about whatever here', meta_group_id],
+    #     ['Help, Bugs, and Suggestions',
+    #      'Need help using the forum? Want to report a bug or make a suggestion? 
+    #       This is the place.', meta_group_id]
+    #   ]
+    #   log "Creating #{additional_messageboards.length} 
+    #        additional messageboards..."
+    #   additional_messageboards.each do |name, description, group_id|
+    #     messageboard = Messageboard.create! name: name, 
+    #                                         description: description, 
+    #                                         messageboard_group_id: group_id
+    #     FactoryGirl.create_list :topic, 1 + rand(3), 
+    #                             messageboard: messageboard, 
+    #                               with_posts: 1
+    #   end
+    # end
 
-    def create_topics count: 26, messageboard: self.messageboard
+    def create_topics count: 13, messageboard: self.messageboard
       log "Creating #{count} topics in #{messageboard.name}..."
       @topics = FactoryGirl.create_list :topic, count,
                                         messageboard: messageboard, 
@@ -187,23 +187,23 @@ module Thredded
                               users: User.all.shuffle[0..rand(User.count)]
     end
 
-    def create_posts count: (1..30)
+    def create_posts count: (1..15)
       log "Creating #{count} additional posts in each topic..."
       @posts = topics.flat_map do |topic|
         (count.min + rand(count.max + 1)).times do
           FactoryGirl.create :post, postable: topic, 
-                                messageboard: messageboard, 
-                                        user: User.all.sample
+                                    messageboard: messageboard, 
+                                    user: User.all.sample
         end
       end
     end
 
-    def create_private_posts count: (1..30)
+    def create_private_posts count: (1..5)
       log "Creating #{count} additional posts in each private topic..."
       @private_posts = private_topics.flat_map do |topic|
         (count.min + rand(count.max + 1)).times do
           FactoryGirl.create :private_post, postable: topic, 
-                                                user: User.all.sample
+                                            ser: User.all.sample
         end
       end
     end
