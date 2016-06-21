@@ -54796,7 +54796,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 
 
-// require gmaps/google
 
 
 ;
