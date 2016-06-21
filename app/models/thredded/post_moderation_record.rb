@@ -4,7 +4,7 @@ module Thredded
     include ModerationState
     # Rails 4 doesn't support enum _prefix
     if Rails::VERSION::MAJOR >= 5
-      enum previous_moderation_state: moderation_states, _prefix: :previous
+      enum(previous_moderation_state: moderation_states, _prefix: :previous)
     end
    # validates :previous_moderation_state, presence: true
 
@@ -18,7 +18,7 @@ module Thredded
 
    validates_each :moderation_state do |record, attr, value|
      if record.previous_moderation_state == value
-       record.errors.add attr, "Post moderation_state is already #{value}"
+       record.errors.add(attr, "Post moderation_state is already #{value}")
      end
    end
 
