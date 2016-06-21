@@ -111,7 +111,7 @@ module Thredded
 
     # SKIP_CALLBACKS = [
     #   [Thredded::Post, :commit, :after, :auto_follow_and_notify],
-    #   [Thredded::PrivatePost, :commit, :after, :notify_USERS],
+    #   [Thredded::PrivatePost, :commit, :after, :notify_users],
     # ].freeze
 
     def self.run users: 200, topics: 13, posts: (1..15), private_posts: (1..5)
@@ -134,7 +134,6 @@ module Thredded
     def log message
       STDERR.puts "- #{message}"
     end
-
 
     # def create_first_user
     #   @user ||= User.all.first || FactoryGirl.create :user, :approved, :admin, 
@@ -203,7 +202,7 @@ module Thredded
       @private_posts = private_topics.flat_map do |topic|
         (count.min + rand(count.max + 1)).times do
           FactoryGirl.create :private_post, postable: topic, 
-                                            ser: User.all.sample
+                                            user: User.all.sample
         end
       end
     end
