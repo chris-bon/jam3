@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   
   # Profiles
   resources :profiles
-  get      '/profiles/hide'     => 'profiles#hide',   as: 'hide_profile'
+  get      '/profiles/:id/hide' => 'profiles#hide',   as: 'hide_profile'
   # get    '/profiles'          => 'profiles#index',  as: 'profiles'
   # get    '/profiles/:id'      => 'profiles#show',   as: 'profile'
   # # Create

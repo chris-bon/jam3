@@ -1,7 +1,46 @@
-<div class="container">
-  <% if @profile.user == current_user %>
-    <p>User Dashboard</p>
-  <% else %>
-    <p>Goodbye</p>
-  <% end %>
-</div>
+<div class="container center_div">
+<h1 style="text-align:center">
+  <%= @profile.user.username %>'s Profile
+  <%= image_tag @profile.image_url, size: "80x80" %></h1>
+<table class="table table-striped">
+  <tr>
+    <div class="col-xs-6 col-md-2"><th>Username</th></div>
+    <div class="col-xs-6 col-md-3"><td><%= @profile.user.username %></td></div>
+  </tr>
+  <tr>
+    <div class="col-xs-6 col-md-2"><th>Email</th></div>
+    <div class="col-xs-6 col-md-3"><td><%= @profile.user.email %></td></div>
+  </tr>
+  <tr>
+    <div class="col-xs-6 col-md-2"><th>Phone Number</th></div>
+    <div class="col-xs-6 col-md-3"><td><%= @profile.phone_number %></td></div>
+  </tr>
+  <tr>
+    <div class="col-xs-6 col-md-2"><th>Name</th></div>
+    <div class="col-xs-6 col-md-3"><td><%= @profile.name %></td></div>
+  </tr>
+  <tr>
+    <div class="col-xs-6 col-md-2"><th>Age</th></div>
+    <div class="col-xs-6 col-md-3"><td><%= @profile.age %></td></div>
+  </tr>
+  <tr>
+    <div class="col-xs-6 col-md-2"><th>Gender</th></div>
+    <div class="col-xs-6 col-md-3"><td><%= @profile.gender %></td></div>
+  </tr>
+  <tr>
+    <div class="col-xs-6 col-md-2"><th>Location</th></div>
+    <div class="col-xs-6 col-md-3"><td><%= @profile.location.city %></td></div>
+  </tr>
+  <tr>
+    <div class="col-xs-6 col-md-2"><th>Instruments</th></div>
+    <div class="col-xs-6 col-md-3"><td><%= @profile.instruments %></td></div>
+  </tr>
+  <tr>
+    <div class="col-xs-6 col-md-2"><th>Genre</th></div>
+    <div class="col-xs-6 col-md-3"><td><%= @profile.genre %></td></div>
+  </tr>
+  <tr>
+    <div class="col-xs-6 col-md-2"><th>Availability</th></div>
+    <div class="col-xs-6 col-md-3"><td><%= @profile.availability %></td></div>
+  </tr>
+</table></div>

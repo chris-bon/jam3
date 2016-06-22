@@ -53,7 +53,7 @@ random_num_gen = [1,1,1,1,1,1,1,1,2,2,2,2,3,3,4]
 (2..200).each do |n|
   # Name
   name = 'name'
-  while names.include? name do
+  while names.include?(name) || name.include?("'") do
     first_name = Faker::Name.first_name
      last_name = Faker::Name.last_name
           name = "#{first_name} #{last_name}"
@@ -86,16 +86,25 @@ random_num_gen = [1,1,1,1,1,1,1,1,2,2,2,2,3,3,4]
   end
 
   days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].shuffle[0..rand(7)]
-
   # Generate Users and Profiles
-  User.create! profile_id: n, email: email,
-               username: Faker::Internet.user_name(name.split.join),
-               password: 'Qwert1', password_confirmation: 'Qwert1'
-  Profile.create! user_id: n, name: name, age: ages.sample,
+  User.create! profile_id: n,
+               email: email,
+               username: name.downcase.split.join,
+               password: 'Qwert1',
+               password_confirmation: 'Qwert1'
+  Profile.create! user_id: n, 
+                  name: name, 
+                  age: ages.sample,
                   gender: ['Male', 'Female'].sample,
                   phone_number: phone_number,
                   instruments: instruments_array.join(', '),
-                  genre: genres_array.join(', '), availability: days.join(', ')
+                  genre: genres_array.join(', '), 
+                  availability: days.join(', '),
+                  hide: ((1..10).to_a.sample < 2)
+  Location.create! profile_id: n,
+                   city: Faker::Address.city
+end
+
 end
 
 begin

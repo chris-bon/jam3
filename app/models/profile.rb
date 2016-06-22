@@ -2,12 +2,23 @@ class Profile < ActiveRecord::Base
   belongs_to :user
   has_one :location
 
-  # searchable do
-  #   integer :age
-  #   string :name
-  #   string :gender
-  #   string :phone_number
-  #   string :genre
-  #   string :availability
-  # end
+  def self.search_names(search)
+    where("name LIKE ?", "%#{search}%")
+  end
+
+  def self.search_ages(search)
+    where("age LIKE ?", "%#{search}%")
+  end
+  
+  def self.search_genres(search)
+    where("genre LIKE ?", "%#{search}%")
+  end
+
+  def self.search_availabilities(search)
+    where("age LIKE ?", "%#{search}%")
+  end
+
+  def self.search_ages(search)
+    where("age LIKE ?", "%#{search}%")
+  end
 end

@@ -20,6 +20,10 @@ gem 'jquery-rails'
 gem 'jbuilder',     '~> 2.0'
 gem 'underscore-rails'
 
+# AngularJS
+#gem 'angularjs-rails'
+#gem 'angular-ui-bootstrap-rails'
+
 # Bootstrap and CSS Themes
 gem 'sass-rails',   '~> 5.0'
 gem 'bootstrap-sass'
@@ -32,14 +36,14 @@ gem 'babel-source'
 gem 'devise'         
 gem 'bcrypt'            
 
+# File Upload
+gem "paperclip", "~> 5.0.0.beta1"
+
 # User Avatars:  Profile <-{ Images }
 gem 'gravtastic'
 
 # Messager
 gem 'mailboxer' 
-
-# Search Engine
-gem 'sunspot_rails'
 
 # Forum System
 gem 'thredded', '~> 0.6.1'
@@ -48,8 +52,8 @@ gem 'thredded', '~> 0.6.1'
 gem 'kaminari'
 
 # Google Maps
-gem 'gmaps4rails'
-gem 'geocoder'
+#gem 'gmaps4rails'
+#gem 'geocoder'
 
 # Extra
 gem 'rename'

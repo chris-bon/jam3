@@ -3,9 +3,11 @@ json.array! @profiles do |profile|
   json.name profile.name
   json.age profile.age
   json.gender profile.gender
-  json.location profile.location
+  json.instruments profile.instruments
+  json.location profile.location.city
   json.phone_number profile.phone_number
   json.genre profile.genre
   json.availability profile.availability
-  json.email profile.user.email
+  json.hide profile.hide
+  json.image_url profile.image_url
 end

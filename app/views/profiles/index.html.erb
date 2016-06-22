@@ -1,39 +1,101 @@
-<div ng-app="app"><div ng-controller="profilesCtrl" ng-init="setup()">
-<ul>
-  <li ng-repeat="error in errors">{{ error }}</li>
-</ul>
-<datalist id="instruments">
-  <option ng-repeat="profile in profiles">{{ profile.instruments }}</option>
-</datalist>
+<div ng-controller="profilesCtrl" ng-init="setup()">
 
-Filter by instrument: <input ng-model="instrumentFilter" list="names">
+<div style="text-align:center">
+  <h2>Musician Seeker</h2>
+  
+  <p>Fill in the filters to find musicians that play certain instruments or genres.</p><%= tag 'br' %>
+
+  <ul><li ng-repeat="error in errors">{{ error }}</li></ul>
+</div>
+
 
 <table class="table table-hover">
 <tr>
-  <th><a href="#" ng-click="toggleOrder('username')">Username</a></th>
-  <th><a href="#" ng-click="toggleOrder('email')">Email</a></th>
-  <th><a href="#" ng-click="toggleOrder('name')">Name</a></th>
+  <th>Avatar</th>
+  <th><a href="#" ng-click="toggleOrder('name')" align="center">Name</a></th>
   <th><a href="#" ng-click="toggleOrder('age')">Age</a></th>
-  <th>Gender</th>
-  <th>Phone Number</th>
+  <th><a href="#" ng-click="toggleOrder('gender')">Gender</a></th>
   <th><a href="#" ng-click="toggleOrder('location')">Location</a></th>
   <th><a href="#" ng-click="toggleOrder('instruments')">Instruments</a></th>
   <th><a href="#" ng-click="toggleOrder('genre')">Genre</a></th>
-  <th><a href="#" ng-click="toggleOrder('availability')">Availability</a></th>
+  <th>Availability</th>
 </tr>
-<tr ng-repeat="profile in profiles" | filter: 'instrumentFilter' | 
-               orderBy: {orderAttribute:descending}
-    ng-hide="profile.username == 'admin'" >
-  <td>{{profile.username}}</td>
-  <td>{{profile.email}}</td>
-  <td>{{profile.name}}</td>
-  <td>{{profile.age}}</td>
-  <td>{{profile.gender}}</td>
-  <td>{{profile.phone_number}}</td>
-  <td>{{profile.location}}</td>
-  <td>{{profile.instruments)}}</td>
-  <td>{{profile.genre}}</td>
-  <td>{{profile.availability}}</td>
+<tr>
+  <th></th>
+  <th>
+    <datalist id="names">
+      <option ng-repeat="musician in musicians" ng-hide="musician.hide">
+        {{ musician.name }}
+      </option>
+    </datalist>
+    <input ng-model="nameFilter" list="names" size="14">
+  </th>
+  <th>
+    <datalist id="ages">
+      <option ng-repeat="musician in musicians" ng-hide="musician.hide">
+        {{ musician.age }}
+      </option>
+    </datalist>
+    <input ng-model="ageFilter" list="ages" size="4">
+  </th>
+  <th>
+    <datalist id="genders">
+      <option ng-repeat="musician in musicians" ng-hide="musician.hide">
+        {{ musician.gender }}
+      </option>
+    </datalist>
+    <input ng-model="genderFilter" list="genders" size="8">
+  </th>
+  <th>
+    <datalist id="locations">
+      <option ng-repeat="musician in musicians" ng-hide="musician.hide">
+        {{ musician.location }}
+      </option>
+    </datalist>
+    <input ng-model="locationFilter" list="locations" size="14">
+  </th>
+  <th>
+    <datalist id="instruments">
+      <option ng-repeat="musician in musicians" ng-hide="musician.hide">
+        {{ musician.instruments }}
+      </option>
+    </datalist>
+    <input ng-model="instrumentFilter" list="instruments" size="15">
+  </th>
+  <th>
+    <datalist id="genres">
+      <option ng-repeat="musician in musicians" ng-hide="musician.hide">
+        {{ musician.genre }}
+      </option>
+    </datalist>
+    <input ng-model="genreFilter" list="genres" size="12">
+  </th>
+  <th>
+    <datalist id="availability">
+      <option ng-repeat="musician in musicians" ng-hide="musician.hide">
+        {{ musician.availability }}
+      </option>
+    </datalist>
+    <input ng-model="availabilityFilter" list="availabilities" size="14">
+  </th>
+</tr>
+<tr ng-repeat="musician in musicians     | filter:   nameFilter | 
+              filter:          ageFilter | filter: genderFilter | 
+              filter:   instrumentFilter | filter:  genreFilter |
+              filter: availabilityFilter | orderBy: orderAttribute:descending"
+    ng-hide="musician.hide">
+    <td>
+      <a ng-href="/profiles/{{ musician.id }}">
+        <img src="{{ musician.image_url }}" height="42" />
+      </a>
+    </td>
+    <td><a ng-href="/profiles/{{ musician.id }}">{{ musician.name }}</a></td>
+    <td>{{ musician.age }}</td>
+    <td>{{ musician.gender }}</td>
+    <td>{{ musician.location }}</td>
+    <td>{{ musician.instruments }}</td>
+    <td>{{ musician.genre }}</td>
+    <td>{{ musician.availability }}</td>
 </tr>
 </table>
-</div></div>
+</div>

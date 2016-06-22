@@ -1,65 +1,57 @@
 class ProfilesController < ApplicationController
   skip_before_action :verify_authenticity_token
-  before_action :set_profile, only: [:show, :hide, :edit, :update, :destroy]
+  before_action :set_profile, only: [:settings, :show, :hide, :edit, :update, 
+                                     :destroy]
 
   # GET /profiles
   def index
+    # if params[:name]
+    #   @profiles = Profile.search_names(params[:name])
+    # end
+    
+    # search_results = []
+    # Profile.all.each do |profile|
+    #   if params[:name] && profile.name.include?(params[:name])
+    #     search_results << profile
+    #   elsif params[:age] && profile.age == params[:age]
+    #       search_results << profile
+    #   elsif params[:location] && 
+    #         profile.location.city.include?(params[:location])
+    #     search_results << profile
+    #   elsif params[:genre] && profile.genre.include?(params[:genre])
+    #     search_results << profile
+    #   elsif params[:availability]
+    #     params[:availability].downcase!
+    #     if params[:availability].include?(',')
+    #       days = params[:availability].downcase.split(',').map!(&:strip)
+    #       has_day = false
+    #       days.each do |day| 
+    #         has_day = true if profile.availability.include?(day)
+    #       end
+    #       search_results << profile if has_day
+    #     elsif params[:availabilty].include? ' '
+    #       days = params[:availability].downcase.split(' ').map!(&:strip)
+    #       has_day = false
+    #       days.each do |day| 
+    #         has_day = true if profile.availability.include?(day)
+    #       end
+    #       search_results << profile if has_day
+    #     else
+    #       if profile.availability.include?(params[:availability])
+    #         search_results << profile
+    #       end
+    #     end
+    #   end
+    # end
     @profiles = Profile.all
-    profiles = []
-    if params[:name]
-      @profiles.each do |p| 
-        if p.name.include? params[:name]
-          profiles << p
-        end
-      end
-    end
-    if params[:age]
-      @profiles.each do |p|
-        unless profiles.include?(p) || p.age != params[:age]
-          profiles << p
-        end
-      end
-    end
-    if params[:location]
-      @profiles.each do |p|
-        unless profiles.include?(p) || !p.location.include?(params[:location])
-          profiles << p
-        end
-      end
-    end
-    if params[:genres]
-      @profiles.each do |p|
-        unless profiles.include?(p) || !p.genres.include?(params[:genres])
-          profiles << p
-        end
-      end
-    end
-    if params[:availability]
-      days = params[:availability].downcase.split(',').map! &:strip  
-      @profiles.each do |p|
-        unless profiles.include? p
-          days.each do |day| 
-            if p.include? day
-              profiles << p
-              break
-            end
-          end
-        end
-      end
-    end
-    @profs = profiles
   end
 
   # GET /profiles/:id
   def show
-    redirect_to '/profiles/unshow' unless signed_in?
-
-    if signed_in? && @profile.user != current_user
-      redirect_to "/profiles/#{params[:id]}/hide" 
-    end
-
-    if signed_in? && @profile.user == current_user
-      redirect_to "/profiles/#{params[:id]}/edit"
+    if @profile.user == current_user
+      redirect_to edit_profile_path(@profile)
+    elsif @profile.hide
+      redirect_to hide_profile_path(@profile)
     end
   end
 
@@ -74,23 +66,19 @@ class ProfilesController < ApplicationController
 
   # POST /profiles
   def create
-    @profile = Profile.new       user_id: current_user.id, 
-      name: params[:name],       age: params[:age], 
-      gender: params[:gender],   phone_number: params[:phone_number], 
-      email: params[:email],     location: params[:location], 
-      privacy: params[:privacy], genre: params[:genre], 
-      availability: params[:availability],
-      instruments: params[:instruments].downcase
-    current_user.update profile_id: @profile.id
-    respond_to do |format|
-      if @profile.save
-        format.html { redirect_to root_path, notice: 'New profile created!' }
-        format.json { render :show, status: :created, location: @profile }
-      else
-        format.html { render :new }
-        format.json { render json: @profile.errors, 
-                             status: :unprocessable_entity }
-      end
+    @profile = Profile.new image_url: params[:image_url], name: params[:name],
+                           age: params[:age], gender: params[:gender],
+                           phone_number: params[:phone_number],
+                           instruments: params[:instruments],
+                           genre: params[:genre], hide: params[:hide],
+                           availability: params[:availability]
+    Location.create! profile_id: @profile.id
+    if @profile.save
+      flash[:success] = 'New Profile Created!' 
+      redirect_to root_path
+    else
+      flash[:warning] = 'Profile has not been updated!'
+      redirect_to edit_profile_path
     end
   end
 
@@ -100,21 +88,19 @@ class ProfilesController < ApplicationController
 
   # PATCH /profiles/:id
   def update
-    post_params = {            user_id: current_user.id,            
-      name: params[:name],     age: params[:age],          
-      gender: params[:gender], phone_number: params[:phone_number],
-      email: params[:email],   genre: params[:genre],
-      availability: params[:availability], 
-      instruments: params[:instruments].downcase }
-    respond_to do |format|
-      if @profile.update post_params
-        format.html { redirect_to @post, notice: 'Profile updated!' }
-        format.json { render :show, status: :ok, location: @profile }
-      else
-        format.html { render :edit }
-        format.json { render json: @profile.errors,
-                             status: :unprocessable_entity }
-      end
+    @profile.user.update username: params[:username]
+    @profile.location.update city: params[:location]
+    if @profile.update image_url: params[:image_url], name: params[:name],
+                       age: params[:age], gender: params[:gender],
+                       phone_number: params[:phone_number],
+                       instruments: params[:instruments],
+                       genre: params[:genre], hide: params[:hide],
+                       availability: params[:availability]
+      flash[:success] = 'Profile has been updated!'
+      redirect_to root_path
+    else
+      flash[:warning] = 'Profile has not been updated!'
+      redirect_to edit_profile_path(@profile)
     end
   end
 
@@ -138,6 +124,6 @@ class ProfilesController < ApplicationController
   end
 
   def profile_params
-    params.fetch :profile, {}
+    params.fetch :location, {}
   end
 end
