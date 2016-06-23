@@ -9,8 +9,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   def create
-    @profile = Profile.create! user_id: current_user.id
-    Location.create! profile_id: @profile.id
   end
 
   # GET /resource/edit

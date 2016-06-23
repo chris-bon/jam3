@@ -7,8 +7,11 @@
     <ul class="thredded--currently-online--users">
       <% users.each do |user| %>
         <li class="thredded--currently-online--user">
-          <img class="thredded--currently-online--avatar" src="<%= Thredded.avatar_url.call(user) %>" alt=""/>
-          <%= user %>
+          <%= link_to "/profiles/#{user.id}" do %>
+            <img class="thredded--currently-online--avatar"
+                 src="<%= user.profile.image_url %>" alt=""/>
+            <%= user %>
+          <% end %>
         </li>
       <% end %>
     </ul>

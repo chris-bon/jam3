@@ -1,3 +1,11 @@
 <header role="banner">
   <%= render 'thredded/shared/nav' %>
+  <% if content_for? :thredded_main_navigation %>
+    <%= yield :thredded_main_navigation %>
+  <% else %>
+    <div class="thredded--main-navigation">
+      <%= yield :thredded_breadcrumbs %>
+      <%= render 'thredded/search/form', messageboard: messageboard_or_nil %>
+    </div>
+  <% end %>
 </header>
